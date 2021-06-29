@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  height: 76px;
+  justify-content: center;
   > div {
     flex-grow: 1;
     height: 76px;
@@ -10,24 +10,71 @@
   > div:nth-child(2) {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 1040px;
   }
   > div:last-child, .lang {
     background-color: #0077E4;
   }
-
-  .lang::before {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: 10;
-    border-top: 38px solid transparent;
-    border-bottom: 38px solid transparent;
-    margin: 0 0 0 -18px;
-    border-right: 18px solid #0077E4;
-  }
 }
 
 .nav {
+  display: flex;
   flex-grow: 1;
+  flex-direction: row;
+  justify-content: center;
+  width: 885px;
+  ul {
+    margin: 0;
+    padding: 0 29px 0 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    li {
+      flex-grow: 1;
+      background-color: #fff;
+      text-align: center;
+      a {
+        display: block;
+        line-height: 74px;
+        text-decoration: none;
+        font-size: 16px;
+        color: #000000;
+      }
+      a:hover {
+        color: #0077E4;
+      }
+    }
+    li:hover {
+      border-top: 4px solid #0077E4;
+      border-bottom: 4px solid #fff;
+      a {
+        line-height: 66px;
+      }
+    }
+  }
+}
+
+.lang {
+  ul {
+    margin: 0;
+    list-style: none;
+    li {
+      a {
+      }
+    }
+  }
+   
+}
+
+.lang::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 10;
+  border-top: 38px solid transparent;
+  border-bottom: 38px solid transparent;
+  margin: 0 0 0 -18px;
+  border-right: 18px solid #0077E4;
 }
