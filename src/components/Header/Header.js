@@ -4,9 +4,9 @@ import styles from './Header.module.scss';
 
 const Header = () => {
   return (
-     <div className={styles.container}>
-       <div></div>
-       <div>
+    <div className={styles.container}>
+      <div></div>
+      <div>
         <div className={styles.nav}>
           <ul>
             <li>
@@ -30,9 +30,9 @@ const Header = () => {
           <a href='#RU' className={styles.active}>Рус</a>
           <a href='#UA'>Укр</a>
         </div>
-       </div>
-       <div></div>
-     </div>
+      </div>
+      <div></div>
+    </div>
   );
 };
 
