@@ -1,12 +1,14 @@
 import React from 'react';
 
-import styles from './App.module.scss';
+import Header from 'components/Header/Header';
+
+//import styles from './App.module.scss';
 
 function App() {
   return (
-    <div className={styles.container}>
-      Hello World!
-    </div>
+    <React.Fragment>
+      <Header />
+    </React.Fragment>
   );
 }
 
