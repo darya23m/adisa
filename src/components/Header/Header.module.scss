@@ -1,0 +1,33 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 76px;
+  > div {
+    flex-grow: 1;
+    height: 76px;
+  }
+  > div:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    width: 1040px;
+  }
+  > div:last-child, .lang {
+    background-color: #0077E4;
+  }
+
+  .lang::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 10;
+    border-top: 38px solid transparent;
+    border-bottom: 38px solid transparent;
+    margin: 0 0 0 -18px;
+    border-right: 18px solid #0077E4;
+  }
+}
+
+.nav {
+  flex-grow: 1;
+}
