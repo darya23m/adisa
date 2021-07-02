@@ -1,0 +1,210 @@
+.economy {
+  display: flex;
+  align-items: center;
+  
+  flex-direction: column;
+  position: relative;
+  h1 {
+    font-size: 40px;
+    line-height: 54px;
+    text-align: center;
+  }
+  .title {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    h2 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 50px;
+    }
+    span {
+      position: relative;
+      padding-top: 3px;
+      margin-right: 8px;
+      width: 56px;
+      height: 56px;
+      font-size: 32px;
+      border: 1px solid #0077E4;
+      border-radius: 50px;
+    }
+    span::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width: 48px;
+      height: 48px;
+      border: 0.5px solid #0077E4;
+      border-radius: 50px;
+    }
+  }
+  h3 {
+    margin-top: 48px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    b {
+      font-weight: 600;
+    }
+  }
+  .calculator {
+    margin-top: 64px;
+    width: 1040px;
+    height: 680px;
+    background: rgba(0, 119, 228, 0.1);
+    
+    &_power {
+      margin-top: 32px;
+      margin-left: 42px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      
+      &_descr {
+        label {
+          position: relative;
+          width: 371px;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 27px;
+          color: #fff;
+        }
+        label::before {
+            content: '';
+            position: absolute;
+            display: block;
+            z-index: 10;
+            top: -19px;
+            left: 348px;
+            border-top: 48px solid transparent;
+            border-bottom: 49px solid transparent;
+            border-left: 26px solid #0077E4;
+        }
+      }
+
+      &_descr::after {
+        content: '';
+        position: absolute;
+        display: block;
+        z-index: -1;
+        background-color: #0077E4;
+        width: 50vw;
+        height: 97px;
+        top: 460px;
+        left: -130px;
+      }
+
+      input {
+        height: 68px;
+        width: 173px;
+        padding: 12px;
+        margin-left: 100px;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 48px;
+        color: #000;
+        background-color: #fff;
+        border: 1px solid #0077E4;
+        text-align: right;
+      }
+
+      input:focus, input:active, input:hover {
+        outline: 0;
+        outline-offset: 0;
+        border: 1px solid #0077E4;
+      }
+
+      p {
+        margin: 0 26px 0 16px;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 38px;
+        display: flex;
+        color: #313336;
+      }
+
+      button {
+        width: 167px;
+        height: 77.57px;
+        background-color: #0077E4;
+        font-family: Roboto;
+        color: #fff;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        border: none;
+        border-radius: 2px;
+      }
+    }
+
+    &_title {
+      margin-top: 36px;
+      margin-left: 160px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 40px;
+      align-items: left;
+      color: #313336;
+      span {
+        font-weight: 600;
+      }
+    }
+    
+    .graf {
+      margin-top: 36px;
+      margin-left: 160px;
+      display: grid;
+      grid-template-columns: 721px;
+      grid-template-rows: 353px 40px;
+
+      &_grid {
+        display: grid;
+        grid-template-columns: repeat(45, 16px);
+        grid-template-rows: repeat(22, 16px);
+        background: linear-gradient(#0077E4, transparent 1px), linear-gradient(90deg, #0077E4, transparent 1px);
+        background-size: 16px 16px;
+        background-position: top left;
+
+        div {
+          background-color: #0077E4;
+          opacity: 0.2;
+        }
+
+        &_first {
+          grid-column: 5/12;
+          grid-row: 17/23;
+        }
+        &_second {
+          grid-column: 15/22;
+          grid-row: 13/23;
+        }
+        &_third {
+          grid-column: 25/32;
+          grid-row: 8/23;
+        }
+        &_forth {
+          grid-row: 4/23;
+          grid-column: 35/42;
+        }
+      }
+      &_years {
+        margin: 0 64px 0 64px;
+        display: grid;
+        grid-template-columns: repeat(4, 100px);
+        column-gap: 62px;
+
+        div {
+          font-size: 16px;
+          line-height: 30px;
+          color: #0077E4;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
