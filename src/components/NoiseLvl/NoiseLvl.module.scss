@@ -1,9 +1,9 @@
 @import '../../styles/variables.scss';
 
 .title {
-    margin: 0 auto 0 500px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     text-align: center;
     align-items: center;
     h2 {
