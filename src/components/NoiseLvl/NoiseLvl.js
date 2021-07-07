@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './NoiseLvl.module.scss';
 import noiselvl from './noiselvl.svg';
-import kotel from './Kotel.jpg';
+import kotel from './Kotel.png';
 import gorelka from './Gorelka.jpg';
 import porolon from './Porolon.jpg';
 import vibroopory from './vibroopory.jpg';

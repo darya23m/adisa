@@ -1,0 +1,75 @@
+@import '../../styles/variables.scss';
+
+.quality {
+  width: 100%;
+  background: url(./Background_boiler.jpg) center (top/cover) no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding-top: 84px;
+  padding-bottom: 114px;
+  margin-top: -119px;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 88px;
+  h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 36px;
+  }
+  span {
+    position: relative;
+    margin-top: 7px;
+    padding-top: 3px;
+    margin-right: 18px;
+    width: 56px;
+    height: 56px;
+    font-size: 32px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+  }
+  span::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    border: 0.5px solid #fff;
+    border-radius: 50px;
+  }
+}
+
+.qualityArt {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.qualityText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  margin-right: 68px;
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.qualityTextP2, .qualityTextP3 {
+  margin-top: 28px;
+}
+
+.siemens {
+  border-radius: 10px;
+}

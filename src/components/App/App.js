@@ -5,6 +5,7 @@ import Intro from 'components/Intro/Intro';
 import Economy from 'components/Economy/Economy';
 import Power from 'components/Power/Power';
 import NoiseLvl from 'components/NoiseLvl/NoiseLvl';
+import Quality from 'components/Quality/Quality';
 
 //import styles from './App.module.scss';
 
@@ -16,6 +17,7 @@ function App() {
       <Economy />
       <Power />
       <NoiseLvl />
+      <Quality />
     </React.Fragment>
   );
 }
