@@ -1,0 +1,115 @@
+@import '../../styles/variables.scss';
+
+.pollution {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 65px;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 47px;
+  h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 36px;
+  }
+  span {
+    position: relative;
+    margin-top: 7px;
+    padding-top: 3px;
+    margin-right: 18px;
+    width: 56px;
+    height: 56px;
+    font-size: 32px;
+    border: 1px solid $main-color;
+    border-radius: 50px;
+  }
+  span::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    border: 0.5px solid $main-color;
+    border-radius: 50px;
+  }
+}
+
+.pollutionSubtitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &_p {
+    width: 645px;
+    height: 72px;
+    font-size: 16px;
+    line-height: 28px;
+    color: #313336;
+    text-align: center;
+    background-color: rgba(90, 220, 44, 0.2);
+    border-radius: 41px;
+    padding: 22px 30px;
+  }
+}
+
+.pollutionIll {
+  margin-top: 55px;
+}
+
+.illNames {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.illNameOne {
+  color: $main-color;
+}
+
+.illNameTwo {
+  color: #313336;
+}
+
+.pollutionDescr {
+  margin-top: 52px;
+}
+
+.buttonCalculation {
+  position: relative;
+  width: 290px;
+  height: 60px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFFFFF;
+  background-color: $main-color;
+  border: none;
+  filter: drop-shadow(0px 4px 19px rgba(40, 65, 130, 0.34));
+  margin-top: 38px;
+  margin-left: 735px;
+}
+
+.buttonCalculation::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: -7px;
+  left: -6px;
+  width: 300px;
+  height: 72px;
+  border: 1px solid rgba(0, 119, 228, 0.5)
+}
