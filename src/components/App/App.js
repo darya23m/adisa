@@ -8,6 +8,7 @@ import NoiseLvl from 'components/NoiseLvl/NoiseLvl';
 import Quality from 'components/Quality/Quality';
 import Pollution from 'components/Pollution/Pollution';
 import Training from 'components/Training/Training';
+import Repairs from 'components/Repairs/Repairs';
 
 //import styles from './App.module.scss';
 
@@ -22,6 +23,7 @@ function App() {
       <Quality />
       <Pollution />
       <Training />
+      <Repairs />
     </React.Fragment>
   );
 }
