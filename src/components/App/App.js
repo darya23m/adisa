@@ -9,6 +9,7 @@ import Quality from 'components/Quality/Quality';
 import Pollution from 'components/Pollution/Pollution';
 import Training from 'components/Training/Training';
 import Repairs from 'components/Repairs/Repairs';
+import Certificates from 'components/pages/Certificates/Certificates';
 
 //import styles from './App.module.scss';
 
@@ -24,6 +25,7 @@ function App() {
       <Pollution />
       <Training />
       <Repairs />
+      <Certificates />
     </React.Fragment>
   );
 }

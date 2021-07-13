@@ -16,7 +16,7 @@ const Repairs = () => {
         <a href='#Services' className={styles.services}>СЕРВИСНЫХ ОРГАНИЗАЦИЯХ.</a>
         </p>
       </div>
-      <button className={styles.buttonCalculation}> ПРОСЧИТАТЬ КОТЕЛЬНУЮ</button>
+      <button className={styles.buttonCalculation}>ПРОСЧИТАТЬ КОТЕЛЬНУЮ</button>
     </div>
   );
 };
