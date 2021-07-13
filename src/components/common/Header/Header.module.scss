@@ -1,0 +1,128 @@
+.container {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 76px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  padding: 0 30px;
+  z-index: 1100;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-right: 30px;
+}
+
+.navLink {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  align-items: center;
+  height: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  color: #313336;
+  text-decoration: none;
+  user-select: none;
+  padding-top: 4px;
+  cursor: pointer;
+
+  &:hover {
+    color: #0077E4;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 4px solid #0077E4;
+  }
+
+  &Active {
+    color: #0077E4;
+
+    &:after {
+      transform: translateY(4px);
+    }
+  }
+}
+
+.lang {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: 36px;
+}
+
+.langLink {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  background-color: #0077E4;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  z-index: 20;
+
+  &:not(:first-child) {
+    margin-left: 5px;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+
+  &Active {
+    background-color: #0066C4;
+    color: #fff;
+  }
+}
+
+.arrow {
+  position: absolute;
+  width: 50vw;
+  height: 100%;
+  top: 0;
+  left: 18px;
+  background-color: #0077E4;
+  z-index: 10;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    border-top: 38px solid transparent;
+    border-bottom: 38px solid transparent;
+    border-right: 18px solid #0077E4;
+  }
+}
