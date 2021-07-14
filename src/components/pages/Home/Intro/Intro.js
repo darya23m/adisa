@@ -3,15 +3,13 @@ import React from 'react';
 import styles from './Intro.module.scss';
 import logo from './logo.svg';
 
-const Intro = () => {
+const Intro = ({ data }) => {
   return (
-    <div className={styles.intro}>
-      <div className={styles.intro__info}>
-        <header><img src={logo} alt='ADISA' /></header>
-        <h1>Официальный<br /> 
-        предствитель ADISA<br />  
-        в Украине</h1>
-        <p>самые компактные <span>котлы</span></p>
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <header><img src={logo} alt={data.logoAlt} /></header>
+        <h1>{data.header}</h1>
+        <div className={styles.subHeader} dangerouslySetInnerHTML={{__html: data.subHeader}}></div>
       </div>
     </div>
   );
