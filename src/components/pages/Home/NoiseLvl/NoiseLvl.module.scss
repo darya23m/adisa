@@ -1,0 +1,162 @@
+@import '../../styles/variables.scss';
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    h2 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 36px;
+    }
+    span {
+      position: relative;
+      margin-top: 7px;
+      padding-top: 3px;
+      margin-right: 18px;
+      width: 56px;
+      height: 56px;
+      font-size: 32px;
+      border: 1px solid $main-color;
+      border-radius: 50px;
+    }
+    span::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width: 48px;
+      height: 48px;
+      border: 0.5px solid $main-color;
+      border-radius: 50px;
+    }
+  }
+
+.noise {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+}
+
+.noiseLevel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.noiseText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #313336;
+
+  span {
+    font-weight: 600;
+  }
+}
+
+h3 {
+  line-height: 52px;
+  font-size: 16px;
+}
+
+.noiseGraf {
+  width: 487px;
+  height: 414px;
+  padding-left: 43px;
+}
+
+.example {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 95px;
+}
+
+.mainImg {
+  padding-right: 29px;
+  z-index: 10;
+}
+
+.detailNames, .detailsImg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.detailNames {
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: #922033;
+  padding: 0 55px;
+
+  &_p2 {
+    margin-left: 65px;
+  }
+
+  &_p3 {
+    margin-left: 91px;
+  }
+}
+
+.d1, .d2, .d3 {
+  margin-left: 53px;
+  position: relative;
+
+  img {
+    border: 1px solid #922033;
+    border-radius: 50%;
+  }
+}
+
+.d1::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 20;
+  top: 103px;
+  left: -112px;
+  width: 14px;
+  height: 14px;
+  background: #922033;
+  border-radius: 50%;
+}
+
+.d1::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 20;
+  top: 110px;
+  left: -99px;
+  width: 99px;
+  height: 1px; 
+  background-color: #922033;
+}
+
+.d2::after, .d3::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 110px;
+  left: -53px;
+  width: 53px;
+  height: 1px; 
+  background-color: #922033;
+}
