@@ -1,128 +1,122 @@
-@import '../../styles/variables.scss';
-
-.title {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    h2 {
-      margin: 0;
-      font-size: 28px;
-      line-height: 36px;
-    }
-    span {
-      position: relative;
-      margin-top: 7px;
-      padding-top: 3px;
-      margin-right: 18px;
-      width: 56px;
-      height: 56px;
-      font-size: 32px;
-      border: 1px solid $main-color;
-      border-radius: 50px;
-    }
-    span::before {
-      content: '';
-      display: block;
-      position: absolute;
-      z-index: 10;
-      top:50%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      width: 48px;
-      height: 48px;
-      border: 0.5px solid $main-color;
-      border-radius: 50px;
-    }
-  }
-
-.noise {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 10;
+.container {
+  padding: 0 179px 0 80px;
 }
 
-.noiseLevel {
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 0 105px;
+}
+
+.title {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+.titleText {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.titleNumber {
+  position: relative;
+  text-align: center;
+  width: 48px;
+  height: 48px;
+  font-size: 32px;
+  line-height: 44px;
+  border: 1px solid #0077E4;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.titleNumber::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(110%);
+  height: calc(110%);
+  border: 1px solid #0077E4;
+  border-radius: 50%;
+}
+
+.noiseInfo {
+  padding-top: 60px;
 }
 
 .noiseText {
-  font-weight: 400;
+  max-width: 510px;
   font-size: 16px;
   line-height: 28px;
   color: #313336;
-
-  span {
-    font-weight: 600;
-  }
 }
 
-h3 {
-  line-height: 52px;
+.listTitle {
+  font-weight: 600;
   font-size: 16px;
+  line-height: 28px;
+  color: #313336;
+  margin: 34px 0;
 }
 
-.noiseGraf {
+.noiseList {
+  font-size: 16px;
+  line-height: 28px;
+  color: #313336;
+}
+
+.noiseChart {
   width: 487px;
   height: 414px;
-  padding-left: 43px;
+  float: right;
 }
 
 .example {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  margin-top: 48px;
-}
-
-.details {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 95px;
+  //align-items: center;
+  margin-top: 75px;
 }
 
 .mainImg {
-  padding-right: 29px;
+  width: 314px;
+  height: 560px;
   z-index: 10;
+  margin-right: 80px;
 }
 
-.detailNames, .detailsImg {
+.detailsImg {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  max-height: 280px;
+  margin-top: 120px;
 }
 
-.detailNames {
+.nameD1, .nameD2, .nameD3 {
+  text-align: center;
   font-size: 20px;
   line-height: 28px;
-  text-align: center;
   color: #922033;
-  padding: 0 55px;
-
-  &_p2 {
-    margin-left: 65px;
-  }
-
-  &_p3 {
-    margin-left: 91px;
-  }
+  margin-bottom: 14px;
 }
 
 .d1, .d2, .d3 {
-  margin-left: 53px;
   position: relative;
+}
 
-  img {
-    border: 1px solid #922033;
-    border-radius: 50%;
-  }
+.d2, .d3 {
+  margin-left: 53px;
+}
+
+.imageD {
+  width: 220px;
+  height: 220px;
+  border: 1px solid #922033;
+  border-radius: 50%;
 }
 
 .d1::before {
@@ -130,10 +124,10 @@ h3 {
   display: block;
   position: absolute;
   z-index: 20;
-  top: 103px;
+  top: 52%;
   left: -112px;
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   background: #922033;
   border-radius: 50%;
 }
@@ -143,9 +137,9 @@ h3 {
   display: block;
   position: absolute;
   z-index: 20;
-  top: 110px;
-  left: -99px;
-  width: 99px;
+  top: 55%;
+  left: -45%;
+  width: 100px;
   height: 1px; 
   background-color: #922033;
 }
@@ -154,9 +148,14 @@ h3 {
   content: '';
   display: block;
   position: absolute;
-  top: 110px;
+  top: 55%;
   left: -53px;
   width: 53px;
   height: 1px; 
   background-color: #922033;
+}
+
+.d3::after {
+  left: -55px;
+  width: 55px;
 }

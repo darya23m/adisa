@@ -2,62 +2,49 @@ import React from 'react';
 
 import styles from './NoiseLvl.module.scss';
 import noiselvl from './noiselvl.svg';
-import kotel from './Kotel.jpg';
+import kotel from './Kotel.png';
 import gorelka from './Gorelka.jpg';
 import porolon from './Porolon.jpg';
 import vibroopory from './vibroopory.jpg';
 
-const NoiseLvl = () => {
+const NoiseLvl = ({ data }) => {
+  const list = data.list.map((curr, index) => <li key={index}> {curr} </li>);
+
+  //const detailNames = data.imgNames.map((curr, index) => <div key={index} className={styles.detailName}> {curr} </div>);
+ 
   return (
-    <div className={styles.noise}>
+    <div className={styles.container}>
       <div className={styles.title}>
-        <span>3</span>
-        <h2>Низкий уровень шума</h2>
+        <div className={styles.titleNumber}>{data.title.number}</div>
+        <h2 className={styles.titleText}>{data.title.text}</h2>
       </div>
-      <div className={styles.noiseLevel}>
-        <div className={styles.noiseText}>
-          <p>
-            <span>Уровень шума в 18 раз ниже,</span> чем у жаротрубного котла с<br/>
-            модулирующей горелкой. Нет необходимости в шумоизоляции<br/>
-            котельной, а   также установке дорогостоящих (от<br/>
-            шумоглушителей) горелок и дымоходов. 
-          </p>
-          <h3>Такой выдающийся показатель достигнут благодаря:</h3>
-          <ul>
-            <li>Уникальной конструкции премиксной горелки котла;</li>
-            <li>Шумоподавляющим матам (входят в стоимость котла);</li>
-            <li>Виброопорам (входят в стоимость котла).</li>
-          </ul>
-        </div>
-        <div className={styles.noiseGraf}>
-          <img src={noiselvl} alt='noise-level' />
+      <div className={styles.content}>
+        <img src={noiselvl} alt='noise-level' className={styles.noiseChart} />
+        <div className={styles.noiseInfo}>
+          <p className={styles.noiseText} dangerouslySetInnerHTML={{__html: data.noiseText}}></p>
+          <div className={styles.listTitle}>{data.listTitle}</div>
+          <ul className={styles.noiseList}>{list}</ul>
         </div>
       </div>
       <div className={styles.example}>
-        <img src={kotel} alt='BOILER' width='313' height='561' className={styles.mainImg} />
-        <div className={styles.details}>
-          <div className={styles.detailNames}>
-            <p className={styles.detailNames_p1}>Премиксная горелка</p>
-            <p className={styles.detailNames_p2}>Акустический поролон</p>
-            <p className={styles.detailNames_p3}>Виброопоры</p>
+        <img src={kotel} alt='BOILER' className={styles.mainImg} />
+        <div className={styles.detailsImg}>
+          <div className={styles.d1}>
+            <div className={styles.nameD1}>{data.imgNames[0]}</div>
+            <img src={gorelka} alt='BURNER' className={styles.imageD} />
           </div>
-          <div className={styles.detailsImg}>
-            <div className={styles.d1}>
-              <img src={gorelka} alt='BURNER' width='221' height='221' />
-            </div>
-            <div className={styles.d2}>
-              <img src={porolon} alt='FOAM-RUBBER' width='221' height='221' />
-            </div>
-            <div className={styles.d3}>
-              <img src={vibroopory} alt='MOUNTS' width='221' height='221' />
-            </div>
+          <div className={styles.d2}>
+            <div className={styles.nameD2}>{data.imgNames[1]}</div>
+            <img src={porolon} alt='FOAM-RUBBER' className={styles.imageD} />
+          </div>
+          <div className={styles.d3}>
+            <div className={styles.nameD3}>{data.imgNames[2]}</div>
+            <img src={vibroopory} alt='MOUNTS' className={styles.imageD} />
           </div>
         </div>
       </div>
     </div>
   );
 };
-
-//
 
 export default NoiseLvl;
