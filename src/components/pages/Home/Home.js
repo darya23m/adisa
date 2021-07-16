@@ -6,6 +6,7 @@ import Economy from './Economy/Economy';
 import Power from './Power/Power';
 import NoiseLvl from './NoiseLvl/NoiseLvl';
 import Quality from './Quality/Quality';
+import Pollution from './Pollution/Pollution';
 
 function Home({ data }) {
   return (
@@ -16,6 +17,7 @@ function Home({ data }) {
       <Power data={data.power}/>
       <NoiseLvl data={data.noiseLvl} />
       <Quality data={data.quality} />
+      <Pollution data={data.pollution} />
     </>
   )
 }

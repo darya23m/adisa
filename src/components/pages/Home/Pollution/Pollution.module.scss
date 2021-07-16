@@ -1,0 +1,106 @@
+.container {
+  padding-top: 65px;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.titleText {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.titleNumber {
+  position: relative;
+  text-align: center;
+  width: 48px;
+  height: 48px;
+  font-size: 32px;
+  line-height: 44px;
+  border: 1px solid #0077E4;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.titleNumber::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(110%);
+  height: calc(110%);
+  border: 1px solid #0077E4;
+  border-radius: 50%;
+}
+
+.pollutionSubtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pollutionSubtitleText {
+  width: 645px;
+  height: 72px;
+  font-size: 16px;
+  line-height: 28px;
+  color: #313336;
+  text-align: center;
+  background-color: #def8d5;
+  border-radius: 41px;
+  padding: 22px 30px;
+}
+
+.eco {
+  width: 192px;
+  height: 94px;
+}
+
+.pollutionChart {
+  display: flex;
+  justify-content: center;
+  margin-top: 66px;
+}
+
+.good, .bad {
+  width: 520px;
+  height: 352px;
+}
+
+.good {
+  margin-right: 10px;
+}
+
+.chartNameOne, .chartNameTwo {
+  text-align: center;
+  font-size: 16px;
+  line-height: 28px;
+  margin-top: 23px;
+}
+
+.chartNameOne {
+  color: #0077E4;
+}
+
+.chartNameTwo {
+  color: #313336;
+}
+
+.pollutionDescr {
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  color: #313336;
+  margin-top: 52px;
+}
