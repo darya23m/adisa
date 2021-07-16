@@ -5,6 +5,7 @@ import DataProvider from 'components/layouts/DataProvider/DataProvider';
 import Header from 'components/common/Header/Header';
 import Home from 'components/pages/Home/Home';
 import locales from 'content/locales';
+import Footer from 'components/common/Footer/Footer';
 
 function Nav() {
   const renderMainRoutes = (data, locale) => {
@@ -28,6 +29,7 @@ function Nav() {
             <div>Contacts</div>
           </Route>
         </Switch>
+        <Footer locale={locale} data={data.footer} />
       </>
     );
   };
