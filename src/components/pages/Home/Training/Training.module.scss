@@ -1,0 +1,82 @@
+.container {
+  width: 100%;
+  background-image: linear-gradient(rgba(24, 24, 26, 0.8), rgba(24, 24, 26, 0.8)), url(./Back_training.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  padding-top: 80px;
+  padding-bottom: 173px;
+ }
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.titleText {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.titleNumber {
+  position: relative;
+  text-align: center;
+  width: 48px;
+  height: 48px;
+  font-size: 32px;
+  line-height: 44px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.titleNumber::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(110%);
+  height: calc(110%);
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trainingText {
+  max-width: 656px;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  margin: 0 auto 163px auto;
+}
+
+.buttonVideo {
+  position: relative;
+  width: 330px;
+  height: 60px;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFFFFF;
+  background-color: #0077E4;
+  border: none;
+}
+
+.buttonVideo::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: -7px;
+  left: -6px;
+  width: 342px;
+  height: 72px;
+  border: 1px solid rgba(0, 119, 228, 0.5)
+}
