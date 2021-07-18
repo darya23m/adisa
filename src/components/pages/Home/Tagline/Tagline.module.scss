@@ -1,0 +1,41 @@
+.container {
+  text-align: center;
+  padding: 60px 30px;
+}
+
+.description {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 56px;
+  color: #313336;
+}
+
+.divider {
+  display: block;
+  width: 258px;
+  height: 12px;
+  margin: 60px auto 0;
+}
+
+@media (max-width: 1024px) {
+  .description {
+    font-size: 34px;
+    line-height: 48px;
+  }
+
+  .divider {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .description {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .divider {
+    width: 160px;
+    margin-top: 30px;
+  }
+}

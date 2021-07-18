@@ -1,3 +1,5 @@
+@import "src/styles/animations";
+
 .container {
   overflow: hidden;
   position: fixed;
@@ -5,6 +7,7 @@
   left: 0;
   height: 76px;
   width: 100%;
+  min-width: 320px;
   background-color: #fff;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   padding: 0 30px;
@@ -19,6 +22,16 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.logoMob {
+  display: none;
+  width: 130px;
+  animation: fadeIn 0.3s ease-in-out 0.8s both;
+
+  svg {
+    display: block;
+  }
 }
 
 .nav {
@@ -41,11 +54,17 @@
   color: #313336;
   text-decoration: none;
   user-select: none;
+  animation-name: showAndMoveDown;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
   padding-top: 4px;
   cursor: pointer;
 
-  &:hover {
-    color: #0077E4;
+  @media  (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: #0077E4;
+    }
   }
 
   &:after {
@@ -66,9 +85,19 @@
       transform: translateY(4px);
     }
   }
+
+  &WithMobAnimation {
+    animation-name: showAndMoveUp;
+  }
 }
 
-.lang {
+.langMob {
+  display: none;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.leftBar {
   position: relative;
   display: flex;
   align-items: center;
@@ -90,14 +119,20 @@
   background-color: #0077E4;
   border-radius: 50%;
   transition: all 0.2s ease-in-out;
+  animation-name: fadeIn;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
   z-index: 20;
 
   &:not(:first-child) {
     margin-left: 5px;
   }
 
-  &:hover {
-    color: #fff;
+  @media  (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: #fff;
+    }
   }
 
   &Active {
@@ -113,6 +148,11 @@
   top: 0;
   left: 18px;
   background-color: #0077E4;
+  animation-name: moveLeft;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out;
+  animation-delay: 1.5s;
+  animation-fill-mode: both;
   z-index: 10;
 
   &:before {
@@ -124,5 +164,156 @@
     border-top: 38px solid transparent;
     border-bottom: 38px solid transparent;
     border-right: 18px solid #0077E4;
+  }
+}
+
+.menuBtnMob {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  animation: scaleInAndBounce 0.5s ease-in-out 1.6s both;
+  z-index: 20;
+
+  div {
+    position: absolute;
+    left: 0;
+    top: calc(50% - 1px);
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    transition: all 0.3s ease-in;
+    border-radius: 10px;
+
+    &:first-child {
+      transform: translateY(-8px);
+      transition: all 0.4s ease-in-out;
+    }
+
+    &:last-child {
+      transform: translateY(8px);
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  &Active {
+    div {
+      transform: rotate(135deg) scale(0);
+
+      &:first-child {
+        transform: translateY(0) rotate(-135deg);
+      }
+
+      &:last-child {
+        transform: translateY(0) rotate(135deg);
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    height: 68px;
+  }
+
+  .logoMob {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    display: block;
+    height: calc(100vh - 68px);
+    width: 100%;
+    top: 68px;
+    left: 0;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+    transform: translateX(-100%);
+    padding: 40px 30px;
+    z-index: 1100;
+
+    &OpenedMob {
+      transform: translateX(0);
+
+      .langLink {
+        animation-name: showAndMoveUp;
+      }
+    }
+  }
+
+  .navLink {
+    display: block;
+    height: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .langMob {
+    display: flex;
+  }
+
+  .leftBar {
+    padding-left: 46px;
+  }
+
+  .langLink {
+    display: none;
+    color: #0066C4;
+    background-color: #fff;
+    border: 1px solid transparent;
+
+    &:not(:first-child) {
+      margin-left: 25px;
+    }
+
+    &:hover {
+      color: #0066C4;
+    }
+
+    &Mob {
+      display: flex;
+    }
+
+    &Active {
+      border: 1px solid #0066C4;
+    }
+  }
+
+  .menuBtnMob {
+    display: block;
+  }
+
+  .arrow {
+    animation-delay: 1s;
+
+    &:before {
+      border-top: 34px solid transparent;
+      border-bottom: 34px solid transparent;
+      border-right: 16px solid #0077E4;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 50px;
+  }
+
+  .nav {
+    height: calc(100vh - 50px);
+    top: 50px;
+  }
+
+  .arrow {
+    &:before {
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+      border-right: 14px solid #0077E4;
+    }
   }
 }
