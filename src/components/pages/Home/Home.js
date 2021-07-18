@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Intro from './Intro/Intro';
-import MainTitle from './MainTitle/MainTitle';
+import Tagline from './Tagline/Tagline';
 import Economy from './Economy/Economy';
 import Power from './Power/Power';
 
@@ -9,7 +9,7 @@ function Home({ data }) {
   return (
     <>
       <Intro data={data.intro} />
-      <MainTitle data={data.mainTitle} />
+      <Tagline data={data.tagline} />
       <Economy data={data.economy} />
       <Power data={data.power}/>
     </>

@@ -1,183 +1,140 @@
 .container {
-  position: relative;
-  padding-top: 64px;
-}
-
-.content {
-  height: 100%;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.title {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-  
-  h2 {
-    margin: 0;
-    font-size: 28px;
-    line-height: 50px;
-  }
-  
-  span {
-    position: relative;
-    padding-top: 3px;
-    margin-right: 8px;
-    width: 56px;
-    height: 56px;
-    font-size: 32px;
-    border: 1px solid #0077E4;
-    border-radius: 50px;
-  }
-  
-  span::before {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: 10;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    width: 48px;
-    height: 48px;
-    border: 0.5px solid #0077E4;
-    border-radius: 50px;
-  }
+  padding: 0 30px;
 }
 
 .subtitle {
-  width: 540px;
-  font-weight: 400;
+  max-width: 540px;
   font-size: 16px;
   line-height: 28px;
   text-align: center;
-  margin: 48px auto 64px auto;
-
-  b {
-    font-weight: 600;
-  }
+  margin: 48px auto 64px;
 }
 
 .calculator {
-  width: 1040px;
-  height: 680px;
-  background: rgba(0, 119, 228, 0.1);
-  margin: 0 auto;
-  padding-right: 160px;
-  padding-top: 41px;
-}  
-
-.power {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  vertical-align: middle;
-  align-items: center;
-  margin-left: 42px;
-} 
-
-.powerDescr {
   position: relative;
-  width: 371px;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 27px;
+  max-width: 1040px;
+  background: rgba(0, 119, 228, 0.1);
+  padding: 42px 30px 55px;
+  margin: 0 auto;
+}
+
+.labelWrap {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: calc(50% - 144px);
+  height: 96px;
+  top: 32px;
+  left: 30px;
+  padding-right: 20px;
+}
+
+.label {
+  position: relative;
   color: #fff;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 26px;
+  z-index: 20;
 }
 
-.powerDescr::before {
-  content: '';
+.arrow {
   position: absolute;
-  display: block;
+  top: 0;
+  right: 20px;
+  height: 100%;
+  width: 50vw;
+  background-color: #0077e4;
   z-index: 10;
-  top: -35%;
-  right: -20%;
-  border-top: 48px solid transparent;
-  border-bottom: 49px solid transparent;
-  border-left: 26px solid #0077E4;
+
+  &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 100%;
+      border-top: 48px solid transparent;
+      border-bottom: 48px solid transparent;
+      border-left: 20px solid #0077E4;
+    }
 }
 
-.powerDescr::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  background-color: #0077E4;
-  width: 48vw;
-  height: 97px;
-  bottom: -45%;
-  left: -100%;
+.content {
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.powerInput {
-  height: 68px;
-  width: 173px;
-  padding: 12px;
-  margin-left: 100px;
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spacer,
+.right {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.field {
+  height: 60px;
+  width: 160px;
+  text-align: right;
   font-weight: 600;
   font-size: 28px;
   line-height: 48px;
   color: #000;
   background-color: #fff;
   border: 1px solid #0077E4;
-  text-align: right;
+  padding: 12px;
 }
 
-.powerInput:focus, .powerInput:active, .powerInput:hover {
-  outline: 0;
-  outline-offset: 0;
-  border: 1px solid #0077E4;
+.unitMob {
+  display: none;
+  width: 60px;
 }
 
+.right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.unitMob,
 .unit {
-  width: 53px;
-  font-weight: 600;
   font-size: 28px;
   line-height: 38px;
-  color: #313336;
-  margin: 0 26px 0 16px;
+  font-weight: 600;
+  margin-left: 16px;
 }
 
-.calculate {
-  width: 167px;
-  height: 77.57px;
-  text-align: center;
-  background-color: #0077E4;
-  font-family: Roboto;
+.calcBtn {
   color: #fff;
   font-size: 24px;
   line-height: 28px;
-  border: none;
+  font-family: 'Roboto', sans-serif;
+  background-color: #0077E4;
   border-radius: 2px;
+  padding: 24px;
 }
 
-.grafTitle {
-  margin-top: 36px;
-  margin-left: 160px;
-  font-size: 16px;
-  line-height: 40px;
-  align-items: left;
+.chartDescription {
   color: #313336;
-}
-    
-.graf {
-  margin-top: 36px;
-  margin-left: 160px;
-  display: grid;
-  grid-template-columns: 721px;
-  grid-template-rows: 353px 40px;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 46px 0 30px;
 }
 
-.grafGrid {
+.chart {
   display: grid;
   grid-template-columns: repeat(45, 16px);
   grid-template-rows: repeat(22, 16px);
   background: linear-gradient(#0077E4, transparent 1px), linear-gradient(90deg, #0077E4, transparent 1px);
   background-size: 16px 16px;
   background-position: top left;
-  
+  border-right: 1px solid #0077E4;
+  border-bottom: 1px solid #0077E4;
+
   div {
     background-color: #0077E4;
     opacity: 0.2;
@@ -204,16 +161,97 @@
   grid-column: 35/42;
 }
 
-.grafYears {
-  margin: 0 64px 0 64px;
+.scale {
   display: grid;
   grid-template-columns: repeat(4, 100px);
   column-gap: 62px;
+  margin: 0 64px 0 64px;
 
-  div {
+  &Item {
     font-size: 16px;
     line-height: 30px;
     color: #0077E4;
     opacity: 0.5;
+  }
+}
+
+@media (max-width: 1024px) {
+  .labelWrap {
+    width: calc(50% - 126px);
+    padding-right: 30px;
+  }
+
+  .label {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .field {
+    width: 140px;
+  }
+
+  .unit {
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .labelWrap {
+    width: calc(100% - 60px);
+    height: 68px;
+  }
+
+  .arrow {
+    width: 100vw;
+
+    &:after {
+      border-top: 34px solid transparent;
+      border-bottom: 34px solid transparent;
+      border-left: 20px solid #0077E4;
+    }
+  }
+
+  .calculator {
+    padding-top: 120px;
+  }
+
+  .form {
+    flex-wrap: wrap;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  .field {
+    width: calc(100% - 80px);
+  }
+
+  .unitMob {
+    display: block;
+  }
+
+  .right {
+    margin-top: 20px;
+  }
+
+  .unit {
+    display: none;
+  }
+
+  .calcBtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .labelWrap {
+    padding-right: 20px;
+  }
+
+  .label {
+    font-size: 14px;
+    line-height: 18px;
   }
 }

@@ -1,42 +1,49 @@
 import React from 'react';
+import cx from 'classnames';
 
+import Title from 'components/common/Title/Title';
 import styles from './Economy.module.scss';
+import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 
-const Economy = ({ data }) => {
+function Economy({ data }) {
+  const renderScaleItems = () =>
+    data.scaleItems.map((curr, index) =>
+      <div key={index} className={styles.scaleItem}>{ curr }</div>
+    );
+
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <div className={styles.title}>
-          <span>{data.title.number}</span>
-          <h2>{data.title.text}</h2>
+    <div className={cx("commonContentContainer", styles.container)}>
+      <Title title={data.title} number="1" />
+      <div className={styles.subtitle}>{ parseStrWithBoldElems(data.subtitle) }</div>
+      <div className={styles.calculator}>
+        <div className={styles.labelWrap}>
+          <div className={styles.label}>{ parseStrWithBoldElems(data.label) }</div>
+          <div className={styles.arrow} />
         </div>
-        <h3 className={styles.subtitle} dangerouslySetInnerHTML={{__html: data.subtitle}}></h3>
-        <div className={styles.calculator}>
-          <div className={styles.power}>
-            <label className={styles.powerDescr}>{data.label}</label>
-            <input type='number' className={styles.powerInput}></input>
-            <p className={styles.unit}>{data.unit}</p>
-            <button className={styles.calculate}>Посчитать</button>
+        <div className={styles.content}>
+          <div className={styles.form}>
+            <div className={styles.spacer} />
+            <input type='text' className={styles.field} />
+            <div className={styles.unitMob}>{ data.unit }</div>
+            <div className={styles.right}>
+              <div className={styles.unit}>{ data.unit }</div>
+              <button type="button" className={styles.calcBtn}>{ data.calcButton }</button>
+            </div>
           </div>
-          <div className={styles.grafTitle} dangerouslySetInnerHTML={{__html: data.description}}></div>
-          <div className={styles.graf}>
-            <div className={styles.grafGrid}>
-              <div className={styles.gridFirst}></div>
-              <div className={styles.gridSecond}></div>
-              <div className={styles.gridThird}></div>
-              <div className={styles.gridForth}></div>
-            </div>
-            <div className={styles.grafYears}>
-              <div className={styles.yearsOne}>{data.grafYears[0]}</div>
-              <div className={styles.yearsFive}>{data.grafYears[1]}</div>
-              <div className={styles.yearsTen}>{data.grafYears[2]}</div>
-              <div className={styles.yearsTwenty}>{data.grafYears[3]}</div>
-            </div>
+          <div className={styles.chartDescription}>{ parseStrWithBoldElems(data.chartDescription) }</div>
+          <div className={styles.chart}>
+            <div className={styles.gridFirst} />
+            <div className={styles.gridSecond} />
+            <div className={styles.gridThird} />
+            <div className={styles.gridForth} />
+          </div>
+          <div className={styles.scale}>
+            { renderScaleItems() }
           </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Economy;

@@ -1,0 +1,26 @@
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scaleInAndBounce {
+  0%   { transform: scale(1, 0) }
+  50%  { transform: scale(1, 1.2) }
+  75%  { transform: scale(1, 0.8) }
+  100% { transform: scale(1, 1) }
+}
+
+@keyframes showAndMoveUp {
+  0%   { opacity: 0; transform: translateY(10px) }
+  100% { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes showAndMoveDown {
+  0%   { opacity: 0; transform: translateY(-10px) }
+  100% { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes moveLeft {
+  0%   { transform: translateX(500px) }
+  100% { transform: translateX(0) }
+}
