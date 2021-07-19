@@ -4,7 +4,7 @@ import Title from 'components/common/Title/Title';
 import styles from './Pollution.module.scss';
 import eco from './img/eco.jpg';
 import { ReactComponent as Good } from './img/Good.svg';
-import { ReactComponent as Bad } from'./img/Bad.svg';
+import { ReactComponent as Bad } from './img/Bad.svg';
 import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 
 const Pollution = ({ data }) => {
