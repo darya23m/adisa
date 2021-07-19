@@ -44,9 +44,11 @@
 }
 
 .title {
+  max-width: 562px;
   font-weight: 600;
   font-size: 28px;
   line-height: 38px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

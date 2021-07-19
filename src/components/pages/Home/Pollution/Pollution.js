@@ -1,36 +1,34 @@
 import React from 'react';
-import { ReactSVG } from 'react-svg';
 
+import Title from 'components/common/Title/Title';
 import styles from './Pollution.module.scss';
-import eco from './eco.jpg';
-import good from './Good.svg';
-import bad from './Bad.svg';
+import eco from './img/eco.jpg';
+import { ReactComponent as Good } from './img/Good.svg';
+import { ReactComponent as Bad } from './img/Bad.svg';
+import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 
 const Pollution = ({ data }) => {
   return (
      <div className={styles.container}>
-      <div className={styles.title}>
-        <div className={styles.titleNumber}>{data.title.number}</div>
-        <h2 className={styles.titleText}>{data.title.text}</h2>
-      </div>
+      <Title title={data.title} number="5" />
       <div className={styles.content}>
         <div className={styles.pollutionSubtitle}>
-           <img src={eco} alt='ECO' className={styles.eco} />
+           <div className={styles.ecoImg}><img src={eco} alt={data.ecoAlt} className={styles.eco} /></div>
            <div className={styles.pollutionSubtitleText}>
            {data.pollutionSubtitleText}
            </div>
         </div>
         <div className={styles.pollutionChart}>
-          <div className={styles.goodCgart}>
-            <ReactSVG src={good} className={styles.good} />
-            <div className={styles.chartNameOne}>{data.chartNames[0]}</div>
+          <div className={styles.goodChart}>
+            <Good className={styles.good} />
+            <div className={styles.chartNameOne}>{data.chartNameAdisa}</div>
           </div>
           <div className={styles.badChart}>
-            <ReactSVG src={bad} className={styles.bad} />
-            <div className={styles.chartNameTwo}>{data.chartNames[1]}</div>
+            <Bad className={styles.bad} />
+            <div className={styles.chartNameTwo}>{data.chartNameCommon}</div>
           </div>
         </div>
-        <div className={styles.pollutionDescr} dangerouslySetInnerHTML={{__html: data.pollutionDescr}}></div>
+        <div className={styles.pollutionDescr}>{ parseStrWithBoldElems(data.pollutionDescr) }</div>
       </div>
      </div>
    );

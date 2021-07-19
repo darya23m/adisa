@@ -1,21 +1,18 @@
 import React from 'react';
-import { ReactSVG } from 'react-svg';
 
+import Title from 'components/common/Title/Title';
 import styles from './Repairs.module.scss';
-import service from './Service.svg';
+import { ReactComponent as Service } from './img/Service.svg';
 
 const Repairs = ({ data }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-        <div className={styles.titleNumber}>{data.title.number}</div>
-        <h2 className={styles.titleText}>{data.title.text}</h2>
-      </div>
+      <Title title={data.title} number="7" />
       <div className={styles.content}>
-        <ReactSVG src={service} alt='SERVICES' width='428' height='372' />
-        <p className={styles.repairBlockText}>{data.repairBlockText}
-        <a href='#Services' className={styles.services}>{data.services}</a>
-        </p>
+        <div className={styles.serviseImg}><Service className={styles.service} /></div>
+        <div className={styles.text}>{data.repairBlockText}
+          <a href='#Services' className={styles.services}>{data.services}</a>
+        </div>
       </div>
     </div>
   );

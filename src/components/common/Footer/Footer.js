@@ -1,7 +1,7 @@
 import React from 'react';
 
  import styles from './Footer.module.scss';
- import background from './background.png';
+ import background from './img/background.png';
 
  const Footer = ({ data }) => {
 
