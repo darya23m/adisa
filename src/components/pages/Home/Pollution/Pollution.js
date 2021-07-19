@@ -1,10 +1,10 @@
 import React from 'react';
-import { ReactSVG } from 'react-svg';
+//import { ReactSVG } from 'react-svg';
 
 import styles from './Pollution.module.scss';
 import eco from './eco.jpg';
-import good from './Good.svg';
-import bad from './Bad.svg';
+// import good from './Good.svg';
+// import bad from './Bad.svg';
 
 const Pollution = ({ data }) => {
   return (
@@ -22,11 +22,11 @@ const Pollution = ({ data }) => {
         </div>
         <div className={styles.pollutionChart}>
           <div className={styles.goodCgart}>
-            <ReactSVG src={good} className={styles.good} />
+            {/* <ReactSVG src={good} className={styles.good} /> */}
             <div className={styles.chartNameOne}>{data.chartNames[0]}</div>
           </div>
           <div className={styles.badChart}>
-            <ReactSVG src={bad} className={styles.bad} />
+            {/* <ReactSVG src={bad} className={styles.bad} /> */}
             <div className={styles.chartNameTwo}>{data.chartNames[1]}</div>
           </div>
         </div>

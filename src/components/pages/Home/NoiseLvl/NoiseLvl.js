@@ -1,48 +1,51 @@
 import React from 'react';
 
+import Title from 'components/common/Title/Title';
 import styles from './NoiseLvl.module.scss';
-import noiselvl from './noiselvl.svg';
-import kotel from './Kotel.png';
-import gorelka from './Gorelka.jpg';
-import porolon from './Porolon.jpg';
-import vibroopory from './vibroopory.jpg';
+import { ReactComponent as NoiseChart } from './img/noiseChart.svg';
+import boiler from './img/Kotel.png';
+import gorelka from './img/Gorelka.jpg';
+import porolon from './img/Porolon.jpg';
+import vibroopory from './img/vibroopory.jpg';
+import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 
 const NoiseLvl = ({ data }) => {
   const list = data.list.map((curr, index) => <li key={index}> {curr} </li>);
-
-  //const detailNames = data.imgNames.map((curr, index) => <div key={index} className={styles.detailName}> {curr} </div>);
  
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-        <div className={styles.titleNumber}>{data.title.number}</div>
-        <h2 className={styles.titleText}>{data.title.text}</h2>
-      </div>
+      <Title title={data.title} number="3" />
       <div className={styles.content}>
-        <img src={noiselvl} alt='noise-level' className={styles.noiseChart} />
-        <div className={styles.noiseInfo}>
-          <p className={styles.noiseText} dangerouslySetInnerHTML={{__html: data.noiseText}}></p>
-          <div className={styles.listTitle}>{data.listTitle}</div>
-          <ul className={styles.noiseList}>{list}</ul>
+        <div className={styles.info}>
+          <div className={styles.infoText}>
+            <p className={styles.text}>{ parseStrWithBoldElems(data.noiseText) }</p>
+            <div className={styles.listTitle}>{data.listTitle}</div>
+            <ul className={styles.list}>{list}</ul>
+          </div>
+          <NoiseChart className={styles.Chart} />
         </div>
-      </div>
-      <div className={styles.example}>
-        <img src={kotel} alt='BOILER' className={styles.mainImg} />
-        <div className={styles.detailsImg}>
-          <div className={styles.d1}>
-            <div className={styles.nameD1}>{data.imgNames[0]}</div>
-            <img src={gorelka} alt='BURNER' className={styles.imageD} />
+        <div className={styles.example}>
+          <div className={styles.boiler}>
+            <div className={styles.connector}></div>
+            <img src={boiler} alt='BOILER' className={styles.boilerImg} />
           </div>
-          <div className={styles.d2}>
-            <div className={styles.nameD2}>{data.imgNames[1]}</div>
-            <img src={porolon} alt='FOAM-RUBBER' className={styles.imageD} />
-          </div>
-          <div className={styles.d3}>
-            <div className={styles.nameD3}>{data.imgNames[2]}</div>
-            <img src={vibroopory} alt='MOUNTS' className={styles.imageD} />
+          <div className={styles.features}>
+            <div className={styles.redLine}></div>
+            <div className={styles.feature1}>
+              <div className={styles.name1}>{data.nameOne}</div>
+              <img src={gorelka} alt='BURNER' className={styles.imageFeature} />
+            </div>
+            <div className={styles.feature2}>
+              <div className={styles.name2}>{data.nameTwo}</div>
+              <img src={porolon} alt='FOAM-RUBBER' className={styles.imageFeature} />
+            </div>
+            <div className={styles.feature3}>
+              <div className={styles.name3}>{data.nameThree}</div>
+              <img src={vibroopory} alt='MOUNTS' className={styles.imageFeature} />
+            </div>
           </div>
         </div>
-      </div>
+      </div> 
     </div>
   );
 };
