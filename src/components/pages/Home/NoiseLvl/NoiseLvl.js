@@ -22,7 +22,7 @@ const NoiseLvl = ({ data }) => {
             <div className={styles.listTitle}>{data.listTitle}</div>
             <ul className={styles.list}>{list}</ul>
           </div>
-          <NoiseChart className={styles.Chart} />
+          <NoiseChart className={styles.chart} />
         </div>
         <div className={styles.example}>
           <div className={styles.boiler}>
