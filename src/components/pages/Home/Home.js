@@ -16,8 +16,8 @@ function Home({ data }) {
       <Intro data={data.intro} />
       <Tagline data={data.tagline} />
       {/* <Economy data={data.economy} />
-      <Power data={data.power}/>
-      <NoiseLvl data={data.noiseLvl} /> */}
+      <Power data={data.power}/> */}
+      <NoiseLvl data={data.noiseLvl} />
       <Quality data={data.quality} />
       <Pollution data={data.pollution} />
       <Training data={data.training} />
