@@ -18,8 +18,8 @@ function Home({ data }) {
       {/* <Economy data={data.economy} />
       <Power data={data.power}/>
       <NoiseLvl data={data.noiseLvl} />
-      <Quality data={data.quality} />
-      <Pollution data={data.pollution} /> */}
+      <Quality data={data.quality} /> */}
+      <Pollution data={data.pollution} />
       <Training data={data.training} />
       <Repairs data={data.repairs} />
     </>
