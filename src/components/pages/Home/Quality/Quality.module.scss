@@ -38,3 +38,83 @@
   height: auto;
   border-radius: 10px;
 }
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 90px 30px 85px;
+    margin-top: -100px;
+  }
+
+  .description {
+    margin-top: 60px;
+  }
+
+  .qualityText {
+    width: 55%;
+  }
+
+  .siemensImg {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 40px 65px;
+    margin-top: -80px;
+  }
+
+  .description {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .qualityText {
+    width: 100%;
+  }
+
+  .siemensImg {
+    width: 60%;
+    margin-top: 20px;;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 50px 20px 55px;
+    margin-top: -60px;
+  }
+
+  .description {
+    margin-top: 25px;
+  }
+  
+  .qualityText {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .qualityTextP2, .qualityTextP3 {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 370px) {
+  .container {
+    padding: 40px 20px 45px;
+  }
+
+  .description {
+    margin-top: 20px;
+  }
+  
+  .qualityText {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  
+  .qualityTextP2, .qualityTextP3 {
+    margin-top: 15px;
+  }
+}
