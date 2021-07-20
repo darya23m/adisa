@@ -45,3 +45,58 @@
   color: #fff;
   font-weight: 600;
 }
+
+@media (max-width: 1024px) {
+  .container {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 50px;
+  }
+
+  .text {
+    line-height: 22px;
+    margin-top: 25px;
+  }
+
+  .madeBy {
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .text {
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .textSecond, .textFirst {
+    width: 100%;
+  }
+}
+
+@media (max-width: 370px) {
+  .container {
+    padding-top: 35px;
+  }
+
+  .header {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .text {
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

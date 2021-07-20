@@ -65,10 +65,11 @@
   width: 25%;
   height: 1px;
   background-color: #922033;
+  
   &::before {
     content: '';
     position: absolute;
-    top: 8px;
+    top: -8px;
     left: -10%;
     width: 15px;
     height: 15px;
