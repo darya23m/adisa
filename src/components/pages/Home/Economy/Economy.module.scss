@@ -165,7 +165,7 @@
   display: grid;
   grid-template-columns: repeat(4, 100px);
   column-gap: 62px;
-  margin: 0 64px 0 64px;
+  margin: 0 64px;
 
   &Item {
     font-size: 16px;
@@ -242,6 +242,14 @@
 
   .calcBtn {
     width: 100%;
+  }
+
+  .chart {
+    display: none;
+  }
+
+  .scale {
+    display: none;
   }
 }
 
