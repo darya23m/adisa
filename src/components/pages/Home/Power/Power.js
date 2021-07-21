@@ -9,9 +9,9 @@ const Power = ({ data }) => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <Title title={data.title} number="2" />
-        <p className={styles.textFirst}>{data.textFirst}</p>
-        <p className={styles.textSecond}>{ parseStrWithBoldElems(data.textSecond) }</p>
+        <Title title={data.title} number="2" isWide />
+        <div className={styles.textFirst}>{data.textFirst}</div>
+        <div className={styles.textSecond}>{ parseStrWithBoldElems(data.textSecond) }</div>
         <div className={styles.plan}>
           <div className={styles.subTitle}>{data.subTitle}</div>
           <div className={styles.planNames}>

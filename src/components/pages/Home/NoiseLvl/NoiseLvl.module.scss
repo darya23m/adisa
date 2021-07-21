@@ -65,10 +65,11 @@
   width: 25%;
   height: 1px;
   background-color: #922033;
+  
   &::before {
     content: '';
     position: absolute;
-    top: 8px;
+    top: -8px;
     left: -10%;
     width: 15px;
     height: 15px;
@@ -117,4 +118,163 @@
   height: auto;
   border: 1px solid #922033;
   border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+  .infoText, .chart {
+    width: 48%;
+  }
+  
+  .listTitle {
+    margin: 28px 0;
+  }
+  
+  .list {
+    padding-left: 20px;
+  }
+
+  .name3 {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info {
+    flex-direction: column-reverse;
+    margin-top: 35px;
+  }
+
+  .infoText {
+    width: 100%;
+  }
+
+  .chart {
+    width: 60%;
+  }
+
+  .infoText {
+    margin-top: 20px;
+  }
+
+  .listTitle {
+    margin: 20px 0;
+  }
+
+  .text, .listTitle, .list {
+    line-height: 24px;
+  }
+
+  .example {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .boiler {
+    width: 50%;
+  }
+
+  .connector {
+    top: 80%;
+    left: 50%;
+    width: 1px;
+    height: 20%;
+    
+    &::before {
+      top: -5%;
+      left: -8px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .redLine {
+    top: 25%;
+    left: 50%;
+    width: 1px;
+    height: 50%;
+  }
+
+  .feature1, .feature2, .feature3 {
+    width: 50%;
+  }
+
+  .feature2, .feature3 {
+    margin-top: 30px;
+  }
+
+  .name1, .name2, .name3 {
+    font-size: 20px;
+    line-height: 24px;
+    left: calc(-90% - 20px);
+    bottom: 50%;
+    max-width: 100px;
+  }
+
+  .name3 {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .text, .listTitle, .list {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .example {
+    margin-top: 30px;
+  }
+
+  .connector::before {
+    top: -5%;
+    left: -7px;
+    width: 15px;
+    height: 15px;
+  }
+  
+  .name1, .name2, .name3 {
+    font-size: 14px;
+    line-height: 20px;
+    left: calc(-90% - 22px);
+  }
+}
+
+@media (max-width: 370px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .text, .listTitle, .list {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .example {
+    margin-top: 25px;
+  }
+
+  .boiler {
+    width: 65%;
+  }
+
+  .connector::before {
+    top: -5%;
+    left: -6px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .feature2, .feature3 {
+    margin-top: 20px;
+  }
+
+  .name1, .name2, .name3 {
+    font-size: 12px;
+    line-height: 18px;
+  }
 }

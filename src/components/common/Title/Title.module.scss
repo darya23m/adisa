@@ -15,6 +15,13 @@
       }
     }
   }
+
+  &Wide {
+    .title {
+    max-width: 564px;
+    text-align: center;
+    }
+  }
 }
 
 .number {
@@ -44,17 +51,21 @@
 }
 
 .title {
-  max-width: 562px;
   font-weight: 600;
   font-size: 28px;
   line-height: 38px;
-  text-align: center;
 }
 
 @media (max-width: 768px) {
   .container {
     display: block;
     text-align: center;
+    
+    &Wide {
+      .title {
+      margin: 16px auto 0;
+      }
+    }
   }
 
   .number {
