@@ -6,6 +6,7 @@ import Header from 'components/common/Header/Header';
 import Home from 'components/pages/Home/Home';
 import locales from 'content/locales';
 import Footer from 'components/common/Footer/Footer';
+import Info from 'components/pages/Info/Info';
 
 function Nav() {
   const renderMainRoutes = (data, locale) => {
@@ -20,7 +21,7 @@ function Nav() {
             <div>Equipment</div>
           </Route>
           <Route path={`${locale}/info`}>
-            <div>Info</div>
+            <Info data={data.info}/>
           </Route>
           <Route path={`${locale}/offices`}>
             <div>Offices</div>

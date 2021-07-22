@@ -1,0 +1,116 @@
+.content {
+  max-width: 885px;
+  margin: 55px auto 0;
+}
+
+.caption {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 44px;
+}
+
+.list {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.download, .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 4%;
+}
+
+.downloadLink, .commonLink {
+  width: 82%;
+  text-decoration: none;
+}
+
+.downloadLink {
+  color: #313336;
+}
+
+.commonLink {
+  color: #0077E4;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.line {
+  background-color: #d6d6d7;
+  width: 90%;
+  height: 1px;
+  margin-top: 55px;
+}
+
+@media (max-width: 1024px) {
+  .line {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .caption {
+    text-align: center;
+  }
+
+  .icon {
+    width: 8%;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    margin-top: 35px;
+  }
+
+  .caption {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  .list {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .icon {
+    width: 10%;
+  }
+
+  .line {
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 370px) {
+  .content {
+    margin-top: 30px;
+  }
+
+  .caption {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 25px;
+  }
+
+  .list {
+    line-height: 14px;
+  }
+
+  .line {
+    margin-top: 30px;
+  }
+
+  .download, .link  {
+    margin-bottom: 15px;
+  }
+}
