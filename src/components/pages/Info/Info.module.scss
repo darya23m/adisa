@@ -1,0 +1,78 @@
+.container {
+  padding-bottom: 185px;
+}
+
+.header {
+  background-image: url(./img/Background_Sertificates.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 41px;
+  padding-top: 52px;
+  padding-bottom: 52px;
+  padding-left: 10%;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 130px;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 0 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-bottom: 110px;
+  }
+
+  .content {
+    padding: 0 30px;
+  }
+
+  .header {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    padding: 46px 0;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-bottom: 75px;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .header {
+    font-size: 22px;
+    line-height: 24px;
+    padding: 35px 0;
+  }
+}
+
+@media (max-width: 370px) {
+  .container {
+    padding-bottom: 55px;
+  }
+
+  .content {
+    padding: 0 15px;
+  }
+
+  .header {
+    line-height: 30px;
+    padding: 30px 10px;
+  }
+}
