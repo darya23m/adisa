@@ -7,6 +7,7 @@ import Home from 'components/pages/Home/Home';
 import locales from 'content/locales';
 import Footer from 'components/common/Footer/Footer';
 import Info from 'components/pages/Info/Info';
+import Contacts from 'components/pages/Contacts/Contacts';
 
 function Nav() {
   const renderMainRoutes = (data, locale) => {
@@ -27,7 +28,7 @@ function Nav() {
             <div>Offices</div>
           </Route>
           <Route path={`${locale}/contacts`}>
-            <div>Contacts</div>
+            <Contacts data={data.contacts} />
           </Route>
         </Switch>
         <Footer locale={locale} data={data.footer} />
