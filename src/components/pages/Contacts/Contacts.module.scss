@@ -1,0 +1,223 @@
+.container {
+  padding-bottom: 85px;
+}
+
+.header {
+  background-image: url(./img/Background_Contacts.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 41px;
+  padding-top: 52px;
+  padding-bottom: 52px;
+  padding-left: 10%;
+}
+
+.content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #313336;
+  margin-top: 48px;
+}
+
+.offices {
+  color: #0077E4;
+}
+
+.orText {
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #313336;
+  margin: 22px 0;
+}
+
+.contactUs {
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 29px;
+  text-align: center;
+  color: #313336;
+  margin-bottom: 28px;
+}
+
+.form {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.name, .contact, .message {
+  margin-bottom: 28px;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 28px;
+  color: #313336;
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  line-height: 36px;
+  color: #313336;
+  border: 1px solid #0077E4;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 216px;
+  font-size: 16px;
+  line-height: 28px;
+  color: #313336;
+  border: 1px solid #0077E4;
+}
+
+.buttonContact {
+  position: relative;
+  width: 97%;
+  height: 60px;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+  background-color: #0077E4;
+  border: none;
+  margin-left: 5px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -7px;
+    left: -6px;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    border: 1px solid rgba(0, 119, 228, 0.5)
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-bottom: 55px;
+  }
+
+  .content {
+    padding: 0 30px;
+  }
+
+  .header {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    padding: 46px 0;
+    margin: 0 auto;
+  }
+
+  .description {
+    margin-top: 38px;
+  }
+
+  .orText {
+    margin: 18px 0;
+  }
+
+  .contactUs, .name, .contact, .message {
+    margin-bottom: 20px;
+  }
+
+  .textarea {
+    min-height: 186px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-bottom: 75px;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .header {
+    font-size: 22px;
+    line-height: 24px;
+    padding: 35px 0;
+  }
+
+  .description, .orText {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .description {
+    margin-top: 28px;
+  }
+
+  .orText {
+    margin: 16px 0;
+  }
+
+  .contactUs, .name, .contact, .message {
+    margin-bottom: 18px;
+  }
+
+  .textarea {
+    min-height: 158px;
+  }
+}
+
+@media (max-width: 370px) {
+  .container {
+    padding-bottom: 55px;
+  }
+
+  .content {
+    padding: 0 16px;
+  }
+
+  .header {
+    line-height: 30px;
+    padding: 30px 10px;
+  }
+
+  .description, .orText {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .description {
+    margin-top: 20px;
+  }
+
+  .orText {
+    margin: 14px 0;
+  }
+
+  .contactUs {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .contactUs, .name, .contact, .message {
+    margin-bottom: 14px;
+  }
+
+  .textarea {
+    min-height: 120px;
+  }
+
+  .buttonContact {
+    width: 96%;
+  }
+}
