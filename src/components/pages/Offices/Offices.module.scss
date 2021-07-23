@@ -1,0 +1,74 @@
+.container {
+  padding-bottom: 135px;
+}
+
+.header {
+  background-image: url(./img/Background_Contacts.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 41px;
+  padding-top: 52px;
+  padding-bottom: 52px;
+  padding-left: 10%;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 72px 138px 0;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-bottom: 100px;
+  }
+
+  .content {
+    padding: 60px 50px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-bottom: 85px;
+  }
+
+  .header {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    padding: 46px 0;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-bottom: 75px;
+  }
+
+  .header {
+    font-size: 22px;
+    line-height: 24px;
+    padding: 35px 0;
+  }
+}
+
+@media (max-width: 370px) {
+  .container {
+    padding-bottom: 55px;
+  }
+
+  .header {
+    line-height: 30px;
+    padding: 30px 10px;
+  }
+
+  .content {
+    padding: 40px 15px 0;
+  }
+}
