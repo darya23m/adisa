@@ -1,0 +1,104 @@
+.caption {
+  display: flex;
+  align-items: center;
+  max-width: 1040px;
+  border-bottom: 1px solid #E2E2E2;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #313336;
+
+  &Opened {
+    display: flex;
+    align-items: center;
+    max-width: 1040px;
+    background-color: #0077E4;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #fff;
+  }
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fbfbfb;
+  border-bottom: 1px solid #E2E2E2;
+  padding-left: 6%;
+  padding-top: 32px;
+  padding-bottom: 40px;
+  margin: 0;
+}
+
+.listItem {
+  width: 30%;
+  color: #0077E4;
+}
+
+.listItemBlock {
+  color: #313336;
+}
+
+.contactsItem, .address {
+  font-size: 16px;
+  line-height: 32px;
+  color: #313336;
+}
+
+.address {
+  font-weight: 600;
+}
+
+.contact {
+  color: #0077E4;
+}
+
+@media (max-width: 768px) {
+  .contactsItem {
+    font-size: 14px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 650px) {
+  .list {
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 0;
+  }
+
+  .listItem {
+    width: 42%;
+    margin-bottom: 20px;
+  }
+
+  .contactsItem {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .list {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20%;
+  }
+
+  .listItem {
+    width: 80%;
+    margin-bottom: 18px;
+  }
+
+  .contactsItem, .address {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 370px) {
+  .list {
+    padding-left: 15%;
+  }
+}
