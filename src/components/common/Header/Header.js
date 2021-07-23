@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import cx from 'classnames';
 
@@ -8,13 +8,18 @@ import styles from './Header.module.scss';
 
 function Header({ data, locale }) {
   const [ isMobMenuOpen, setIsMobMenuOpen ] = useState(false);
-  const pathname = useLocation().pathname;
+  const location = useLocation();
+  const { pathname } = location;
 
   const getPathWithNextLocale = (nextLocale) => {
     if (!/\/.*\//.test(pathname)) return `/${nextLocale}`;
 
     return pathname.replace(/(\/.*?)(\/.*)/, `/${nextLocale}$2`);
   };
+
+  useEffect(() => {
+    setIsMobMenuOpen(false);
+  }, [location]);
 
   const renderLinks = () =>
     Object.keys(data.links).map((currKey, index) =>
