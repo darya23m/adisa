@@ -9,6 +9,7 @@ import Footer from 'components/common/Footer/Footer';
 import Info from 'components/pages/Info/Info';
 import Contacts from 'components/pages/Contacts/Contacts';
 import Offices from 'components/pages/Offices/Offices';
+import Equipment from 'components/pages/Equipment/Equipment';
 
 function Nav() {
   const location = useLocation();
@@ -26,7 +27,7 @@ function Nav() {
             <Home data={data.home} />
           </Route>
           <Route path={`${locale}/equipment`}>
-            <div>Equipment</div>
+            <Equipment data={data.equipment} />
           </Route>
           <Route path={`${locale}/info`}>
             <Info data={data.info}/>
