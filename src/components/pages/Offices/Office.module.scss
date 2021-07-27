@@ -1,23 +1,17 @@
+.element {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
 .caption {
   display: flex;
   align-items: center;
-  max-width: 1040px;
-  border-bottom: 1px solid #E2E2E2;
+  background-color: #0077E4;
   font-weight: 600;
   font-size: 18px;
   line-height: 25px;
-  color: #313336;
-
-  &Opened {
-    display: flex;
-    align-items: center;
-    max-width: 1040px;
-    background-color: #0077E4;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
-    color: #fff;
-  }
+  color: #fff;
+  text-decoration: none;
 }
 
 .list {
