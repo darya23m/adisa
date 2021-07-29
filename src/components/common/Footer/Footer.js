@@ -1,12 +1,14 @@
 import React from 'react';
 
  import styles from './Footer.module.scss';
- import background from './img/background.png';
+ import background from './img/background.jpg';
+ import { ReactComponent as Eclipse } from './img/eclipse.svg';
 
  const Footer = ({ data }) => {
 
    return (
      <div className={styles.container} style={{ backgroundImage: `url(${background})` }}>
+       <Eclipse className={styles.eclipse} />
        <div className={styles.content}>
          <h2 className={styles.header}>{data.title}</h2>
          <div className={styles.text}>

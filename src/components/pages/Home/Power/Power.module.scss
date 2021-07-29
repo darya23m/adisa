@@ -5,8 +5,8 @@
 
 .content {
   max-width: 1200px;
-  background: url(./img/ant.png) bottom right no-repeat #FFFFFF;
-  background-size: 35%;
+  background: url(./img/ant.jpg) bottom right no-repeat #FFFFFF;
+  background-size: 34%;
   border-radius: 20px;
   box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
   padding: 70px 0 45px;
@@ -34,44 +34,53 @@
   margin-top: 40px;
 }
 
-.plan {
-  margin-top: 46px;
-  margin-left: 50px;
-}
-
 .subTitle {
   font-weight: 600;
   font-size: 16px;
   line-height: 28px;
-  margin-left: 68px;
+  margin-left: 9%;
+  margin-top: 46px;
 }
 
-.planNames {
+.plan {
   display: flex;
-  justify-content: left;
-  margin-left: 68px;
-  margin-top: 40px;
+  margin-top: 86px;
+  margin-left: 50px;
+}
+
+.planItemFirst, .planItemSecond {
+  position: relative;
+}
+
+.planItemFirst {
+  width: 30%;
+}
+
+.planItemSecond {
+  width: 32%;
+  margin-left: 3%;
+}
+
+
+.planImg {
+  width: 100%;
+  height: auto;
 }
 
 .picNameFirst, .picNameSecond {
-  max-width: 311px;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 9%;
   font-size: 16px;
   line-height: 28px;
 }
 
+.picNameFirst {
+  left: 16%;
+}
+
 .picNameSecond {
   color: #0077E4;
-  margin-left: 21%;
-}
-
-.plansImg {
-  position: relative;
-  width: 60%;
-}
-
-.plans {
-  width: 100%;
-  height: auto;
 }
 
 .blueRect {
@@ -102,6 +111,16 @@
 
   .textFirst, .textSecond {
     margin-right: 20px;
+  }
+
+  .subTitle {
+    margin-left: 10%;
+    margin-top: 36px;
+  }
+
+  .picNameFirst, .picNameSecond {
+    font-size: 14px;
+    line-height: 24px;
   }
   
   .blueRect {
@@ -134,14 +153,20 @@
   }
 
   .plan {
-    margin-top: 35px;
-    margin-left: 30px;
+    margin-top: 50px;
+    margin-left: 0;
   }
 
   .subTitle {
     font-size: 14px;
     line-height: 26px;
-    margin-left: 20px;
+    margin-left: 5%;
+    margin-top: 36px;
+  }
+
+  .picNameFirst, .picNameSecond {
+    font-size: 10px;
+    line-height: 18px;
   }
   
   .blueRect {
@@ -149,10 +174,6 @@
     line-height: 10px;
     padding: 3px 3px;
   }
-
-  // .plansImg {
-  //   display: none;
-  // }
 
   .info {
     line-height: 20px;
@@ -180,22 +201,44 @@
   }
 
   .subTitle {
-    font-size: 12px;
+    max-width: 200px;
+    text-align: center;
+    font-size: 16px;
     line-height: 20px;
-    margin-left: 10px;
+    margin: 30px auto 0;
   }
 
-  .plansImg {
-    display: none;
+  .plan {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .planItemFirst {
+    width: 50%;
+    margin-bottom: 12%;
+  }
+  
+  .planItemSecond {
+    width: 52%;
+    margin-left: 0;
+  }
+
+  .picNameFirst, .picNameSecond {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .picNameFirst {
+    left: 6%;
   }
 
   .info {
-    line-height: 14px;
-    margin-left: 25px;
+    margin-left: 30%;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 370px) {
   .textFirst, .textSecond {
     font-size: 12px;
     line-height: 16px;
@@ -208,5 +251,29 @@
 
   .textSecond {
     margin-top: 15px;
+  }
+
+  .subTitle {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 25px;
+  }
+
+  .planItemFirst {
+    width: 60%;
+    margin-bottom: 16%;
+  }
+  
+  .planItemSecond {
+    width: 62%;
+  }
+
+  .picNameFirst, .picNameSecond {
+    font-size: 10px;
+    line-height: 18px;
+  }
+
+  .picNameFirst {
+    left: 6%;
   }
 }

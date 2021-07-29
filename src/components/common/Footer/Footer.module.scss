@@ -1,11 +1,20 @@
 .container {
+  position: relative;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 0 50vw rgba(0, 119, 228, 0.85);
   color: #fff;
   padding: 113px 30px 26px;
+}
+
+.eclipse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 24px;
 }
 
 .content {
