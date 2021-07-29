@@ -2,7 +2,7 @@ import React from 'react';
 
 import Title from 'components/common/Title/Title';
 import styles from './Quality.module.scss';
-import siemens from './img/Siemens.jpg';
+import siemens from './img/Siemens.png';
 import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 
 const Quality = ({ data }) => {
