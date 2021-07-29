@@ -1,5 +1,5 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Switch, Route, useLocation } from 'react-router-dom';
 
 import DataProvider from 'components/layouts/DataProvider/DataProvider';
 import Header from 'components/common/Header/Header';
@@ -11,6 +11,12 @@ import Contacts from 'components/pages/Contacts/Contacts';
 import Offices from 'components/pages/Offices/Offices';
 
 function Nav() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   const renderMainRoutes = (data, locale) => {
     return (
       <>
