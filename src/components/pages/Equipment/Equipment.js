@@ -1,33 +1,53 @@
-import React from 'react';
-import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Switch, Route, Link, useRouteMatch, useLocation } from 'react-router-dom';
 import cx from 'classnames';
 
 import styles from './Equipment.module.scss';
 import EquipmentItem from './EquipmentItem';
+import { ReactComponent as ArrowLeft } from './img/arrow_left.svg';
 
-const EquipmentLink = ({ children, to, exact }) => {
+const EquipmentLink = ({ children, to, exact, alwaysActive }) => {
   const match = useRouteMatch({ path: to, exact });
+  const isActive = match && !alwaysActive;
 
   return (
     <div className={styles.link}>
-      <Link to={to} className={cx(styles.linkPage, {[styles.linkPageActive]: match})}>{children}</Link>
-      <div className={match ? styles.arrow : {display: 'none'}}></div>
+      <Link to={to} className={cx(styles.linkPage, {[styles.linkPageActive]: isActive})}>{children}</Link>
+      <div className={isActive ? styles.arrow : {display: 'none'}}></div>
     </div> 
   );
 }
 
 const Equipment = ({ data }) => {
   const { path, url } = useRouteMatch();
+  const [ isContentShown, setIsContentShown ] = useState(true);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsContentShown(true);
+  }, [location]);
 
   const equipmentLinks = (list) => list.map((item) => (
-    <EquipmentLink to={`${url}/${item.path}`}>{item.name}</EquipmentLink>
+    <EquipmentLink to={`${url}/${item.path}`} alwaysActive={ !isContentShown }>{item.name}</EquipmentLink>
   )) 
 
   const equipmentRoutes = (list) => list.map((item) => (
     <Route path={`${path}/${item.path}`}>
       <EquipmentItem data={item} />
     </Route>
-  )) 
+  ));
+
+  const renderContent = () => (
+    <>
+      <div className={styles.toList} onClick={() => setIsContentShown(!isContentShown)}>
+        <ArrowLeft className={styles.arrowLeft}/>
+        <a className={styles.linkToList}>К списку оборудования</a>
+      </div>
+      <Switch>
+        { equipmentRoutes(data) }
+      </Switch>
+    </>
+  );
 
   return (
     <>
@@ -35,9 +55,7 @@ const Equipment = ({ data }) => {
         <div className={styles.linksList}>
           {equipmentLinks(data)}
         </div>
-        <Switch>
-          {equipmentRoutes(data)}
-        </Switch>
+        { isContentShown && renderContent() }
       </div>
     </>
   );

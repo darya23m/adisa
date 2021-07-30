@@ -54,9 +54,14 @@ export default [
             width: '198'
           },
           {
-            path: '/img/adilt2.jpg',
+            path: '/img/adilt3.jpg',
             alt: '',
-            width: '502'
+            width: '200'
+          },
+          {
+            path: '/img/adilt4.jpg',
+            alt: '',
+            width: '208'
           }
         ]
       }
@@ -117,9 +122,14 @@ export default [
             width: '198'
           },
           {
-            path: '/img/adilt2.jpg',
+            path: '/img/adilt3.jpg',
             alt: '',
-            width: '502'
+            width: '200'
+          },
+          {
+            path: '/img/adilt4.jpg',
+            alt: '',
+            width: '208'
           }
         ]
       }
@@ -177,7 +187,7 @@ export default [
           {
             path: '/img/adimega1.jpg',
             alt:'',
-            width: '318'
+            width: '308'
           },
           {
             path: '/img/adimega2.jpg',
@@ -256,7 +266,7 @@ export default [
             description: 'Пример каскада из котлов Condexa Pro',
             path: '/img/condexaPro.jpg',
             alt: '',
-            width: '822'
+            width: '90%'
           }
         ]
       }

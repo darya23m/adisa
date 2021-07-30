@@ -12,25 +12,25 @@ const EquipmentItem = ({ data }) => {
   const features = data.features.map((curr, index) => <div key={index}>{curr}</div>);
 
   const tableCell = (row) => row.map((curr, index) => 
-  <div key={index} className={styles.tableCell}>{curr}</div>)
+    <td key={index} className={styles.tableCell}>{curr}</td>)
 
   const table = (table) => table.map((curr, index) => 
-  <div key={index} className={styles.tableRow}>
-    {tableCell(curr)}
-  </div>);
+    <tr key={index} className={styles.tableRow}>
+      {tableCell(curr)}
+    </tr>);
   
   const renderImages = (images) => images.map((curr, index) => 
-  <div className={styles.imageItem}>
-    { curr.description && <div className={styles.imgDescr}>{curr.description}</div> }
-    <img key={index} src={curr.path} alt={curr.alt} className={styles.image} width={curr.width} />
-  </div>
-  );
+    <div className={styles.imageItem}>
+      { curr.description && <div className={styles.imgDescr}>{curr.description}</div> }
+      <img key={index} src={curr.path} alt={curr.alt} className={styles.image} width={curr.width} />
+    </div>
+    );
 
   const renderPreview = (list) => list.map((curr, index) => 
-  <div key={index} className={styles.imagesList}>
-      {renderImages(curr.images)}
-  </div>
-  );
+    <div key={index} className={styles.preview}>
+        {renderImages(curr.images)}
+    </div>
+    );
 
   return (
     <>
@@ -42,25 +42,21 @@ const EquipmentItem = ({ data }) => {
           </div>
           <div className={styles.iconEco}><img src={eco} className={styles.eco} /></div>
         </div>
-        <div className={styles.textBlock}>
-          <div className={styles.features}>{features}</div>
-          <div className={styles.docs}>
-            <div className={styles.docsText}>Ссылки и документы:</div>
-            <div className={styles.iconDownload}>
-              <IconDownload className={styles.icon} /> 
-              <a className={styles.download}>Document</a>
-            </div>
-            <div className={styles.iconLink}>
-              <IconLink className={styles.icon} /> 
-              <a className={styles.link}>Link</a>
-            </div>
-          </div>
-        </div>
+        <div className={styles.features}>{features}</div>
         <div className={styles.tableBlock}>
-          {table(data.table)}
+          <table className={styles.table}>{table(data.table)}</table>
         </div >
-        <div className={styles.preview}>
-          {renderPreview(data.preview)}
+        {renderPreview(data.preview)}
+        <div className={styles.docs}>
+          <div className={styles.docsText}>Ссылки и документы:</div>
+          <div className={styles.iconDownload}>
+            <IconDownload className={styles.icon} /> 
+            <a className={styles.download}>Document</a>
+          </div>
+          <div className={styles.iconLink}>
+            <IconLink className={styles.icon} /> 
+            <a className={styles.link}>Link</a>
+          </div>
         </div>
       </div>
     </>
