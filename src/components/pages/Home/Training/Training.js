@@ -1,15 +1,16 @@
 import React from 'react';
 
 import Title from 'components/common/Title/Title';
+import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 import styles from './Training.module.scss';
 
-const Training = ({ data }) => {
+const Training = ({ data: { title, trainingText, watchButtonText }}) => {
   return (
     <div className={styles.container}>
-      <Title title={data.title} number="6" isWhite />
+      <Title title={title} number="6" isWhite />
       <div className={styles.content}>
-        <div className={styles.trainingText}>{data.trainingText}</div>
-        <button className={styles.buttonVideo}>{data.buttonText}</button>
+        <p className={styles.trainingText}>{ parseStrWithBoldElems(trainingText) }</p>
+        <button type="button" className={styles.watchBtn}>{ watchButtonText }</button>
       </div>
     </div>
   );

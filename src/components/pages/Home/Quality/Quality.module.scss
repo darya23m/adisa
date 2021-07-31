@@ -1,39 +1,38 @@
 .container {
   width: 100%;
-  background: url(./img/BackgroundBoiler.jpg) center (top/cover) no-repeat;
+  background: url(./img/boiler-bg.jpg) center (top/cover) no-repeat;
   color: #fff;
   padding: 90px 30px 115px;
   margin-top: -120px;
 }
 
 .content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.description {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 92px;
+  max-width: 1200px;
+  margin: 92px auto 0;
 }
 
-.qualityText {
+.descriptionWrap {
   width: 56%;
+}
+
+.description {
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
+
+  &:not(:first-child) {
+    margin-top: 28px;
+  }
 }
 
-.qualityTextP2, .qualityTextP3 {
-  margin-top: 28px;
-}
-
-.siemensImg {
+.siemensImgWrap {
   width: 34%;
 }
 
-.siemens {
+.siemensImg {
   width: 100%;
   height: auto;
 }
@@ -44,15 +43,15 @@
     margin-top: -100px;
   }
 
-  .description {
+  .content {
     margin-top: 60px;
   }
 
-  .qualityText {
+  .descriptionWrap {
     width: 55%;
   }
 
-  .siemensImg {
+  .siemensImgWrap {
     width: 40%;
   }
 }
@@ -63,19 +62,18 @@
     margin-top: 50px;
   }
 
-  .description {
-    flex-direction: column;
-    justify-content: center;
+  .content {
+    display: block;
     margin-top: 40px;
   }
 
-  .qualityText {
+  .descriptionWrap {
     width: 100%;
   }
 
-  .siemensImg {
+  .siemensImgWrap {
     width: 60%;
-    margin-top: 20px;;
+    margin: 20px auto 0;
   }
 }
 
@@ -85,17 +83,17 @@
     margin-top: 30px;
   }
 
-  .description {
+  .content {
     margin-top: 25px;
   }
-  
-  .qualityText {
+
+  .description {
     font-size: 14px;
     line-height: 20px;
-  }
-  
-  .qualityTextP2, .qualityTextP3 {
-    margin-top: 20px;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
   }
 }
 
@@ -104,16 +102,16 @@
     padding: 40px 20px 45px;
   }
 
-  .description {
+  .content {
     margin-top: 20px;
   }
-  
-  .qualityText {
+
+  .description {
     font-size: 12px;
     line-height: 16px;
-  }
-  
-  .qualityTextP2, .qualityTextP3 {
-    margin-top: 15px;
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
   }
 }

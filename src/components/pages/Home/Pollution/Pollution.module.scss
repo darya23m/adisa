@@ -7,23 +7,23 @@
   margin: 0 auto;
 }
 
-.pollutionSubtitle {
+.eco {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 48px;
 }
 
-.ecoImg {
+.ecoImgWrap {
   width: 18%
 }
 
-.eco {
+.ecoImg {
   width: 100%;
   height: auto;
 }
 
-.pollutionSubtitleText {
+.ecoDescription {
   width: 60%;
   height: auto;
   font-size: 16px;
@@ -31,36 +31,36 @@
   text-align: center;
   background-color: #def8d5;
   border-radius: 42px;
-  padding: 22px 0;
+  padding: 22px 20px;
 }
 
-.pollutionChart {
+.pollutionCharts {
   display: flex;
   justify-content: center;
   margin-top: 65px;
 }
 
-.goodChart, .badChart {
+.chartWrap {
   width: 48%;
 }
 
-.good, .bad {
+.chart {
   width: 100%;
   height: auto;
 }
 
-.chartNameOne, .chartNameTwo {
+.chartName {
   text-align: center;
   font-size: 16px;
   line-height: 28px;
   margin-top: 23px;
+
+  &Blue {
+    color: #0077E4;
+  }
 }
 
-.chartNameOne {
-  color: #0077E4;
-}
-
-.pollutionDescr {
+.pollutionDescription {
   font-size: 16px;
   line-height: 28px;
   text-align: center;
@@ -68,8 +68,8 @@
 }
 
 @media (max-width: 1024px) {
-  .pollutionSubtitleText {
-    width: 70%;
+  .ecoDescription {
+    width: auto;
   }
 }
 
@@ -78,43 +78,50 @@
     padding: 50px 30px 65px;
   }
 
-  .ecoImg {
-    width: 25%
+  .eco {
+    display: block;
+    margin-top: 35px;
   }
 
-  .pollutionSubtitleText {
-    padding: 18px 5px;
+  .ecoImgWrap {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  .ecoDescription {
     line-height: 24px;
+    padding: 18px 20px;
+    margin: 10px auto 0;
   }
 }
 
 @media (max-width: 480px) {
-  .ecoImg {
+  .ecoImgWrap {
     width: 35%;
   }
 
-  .pollutionSubtitleText {
+  .ecoDescription {
     padding: 16px 5px;
     font-size: 14px;
     line-height: 20px;
     border-radius: 35px;
   }
 
-  .pollutionChart {
+  .pollutionCharts {
     flex-direction: column-reverse;
   }
 
-  .goodChart, .badChart {
+  .chartWrap {
     width: 100%;
   }
-  
-  .chartNameOne, .chartNameTwo {
+
+  .chartName {
     font-size: 14px;
     line-height: 22px;
     margin-top: 18px;
   }
-  
-  .pollutionDescr {
+
+  .pollutionDescription {
     font-size: 14px;
     line-height: 22px;
     margin-top: 40px;
@@ -126,21 +133,16 @@
     padding: 40px 20px 50px;
   }
 
-  .pollutionSubtitle {
-    flex-direction: column;
-    margin-top: 35px;
-  }
-
-  .ecoImg {
+  .ecoImgWrap {
     width: 50%;
   }
 
-  .pollutionSubtitleText {
+  .ecoDescription {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
-  .pollutionChart {
+  .pollutionCharts {
     margin-top: 50px;
   }
 }

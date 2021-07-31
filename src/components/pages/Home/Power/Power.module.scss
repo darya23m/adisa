@@ -9,29 +9,21 @@
   background-size: 34%;
   border-radius: 20px;
   box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
-  padding: 70px 0 45px;
+  padding: 70px 30px 45px;
   margin: 0 auto;
 }
 
-.title {
-  max-width: 620px;
-}
-
-.textFirst, .textSecond {
+.description {
   max-width: 863px;
   text-align: left;
-  font-weight: 400;
   font-size: 16px;
   line-height: 28px;
   margin-left: 52px;
-}
+  margin-top: 30px;
 
-.textFirst {
-  margin-top: 62px;
-}
-
-.textSecond {
-  margin-top: 40px;
+  &:first-child {
+    margin-top: 60px;
+  }
 }
 
 .subTitle {
@@ -109,7 +101,7 @@
     display: none;
   }
 
-  .textFirst, .textSecond {
+  .description {
     margin-right: 20px;
   }
 
@@ -132,24 +124,20 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 20px;
     margin: 60px 0;
   }
 
   .content {
-    padding: 55px 10px 40px 10px;
+    padding: 55px 30px 40px;
   }
 
-  .textFirst, .textSecond {
+  .description {
     margin-left: 10px;
-  }
-
-  .textFirst {
-    margin-top: 50px;
-  }
-
-  .textSecond {
     margin-top: 30px;
+
+    &:first-child {
+      margin-top: 50px;
+    }
   }
 
   .plan {
@@ -184,20 +172,18 @@
 @media (max-width: 480px) {
   .content {
     background-image: none;
+    padding: 55px 20px 40px;
   }
-  
-  .textFirst, .textSecond {
+
+  .description {
     font-size: 14px;
     line-height: 22px;
-    margin-left: 10px;
-  }
-
-  .textFirst {
-    margin-top: 30px;
-  }
-
-  .textSecond {
+    margin-left: 0;
     margin-top: 20px;
+
+    &:first-child {
+      margin-top: 30px;
+    }
   }
 
   .subTitle {
@@ -239,18 +225,18 @@
 }
 
 @media (max-width: 370px) {
-  .textFirst, .textSecond {
+  .container {
+    padding: 0 20px;
+  }
+
+  .description {
     font-size: 12px;
     line-height: 16px;
-    margin-left: 10px;
-  }
-
-  .textFirst {
-    margin-top: 25px;
-  }
-
-  .textSecond {
     margin-top: 15px;
+
+    &:first-child {
+      margin-top: 25px;
+    }
   }
 
   .subTitle {
