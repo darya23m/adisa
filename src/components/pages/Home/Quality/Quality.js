@@ -2,21 +2,24 @@ import React from 'react';
 
 import Title from 'components/common/Title/Title';
 import styles from './Quality.module.scss';
-import siemens from './img/Siemens.png';
+import siemens from './img/siemens.png';
 import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 
-const Quality = ({ data }) => {
+const Quality = ({ data: { title, description, siemensAlt }}) => {
+  const renderDescription = () =>
+    description.map((curr, index) =>
+      <p key={index} className={styles.description}>{ parseStrWithBoldElems(curr) }</p>
+    )
+
   return (
     <div className={styles.container}>
-      <Title title={data.title} number="4" isWhite />
-      <div className={styles.content}> 
-        <div className={styles.description}>
-          <div className={styles.qualityText}>
-            <p className={styles.qualityTextP1}>{ parseStrWithBoldElems(data.qualityTextP1) }</p>
-            <p className={styles.qualityTextP2}>{ parseStrWithBoldElems(data.qualityTextP2) }</p>
-            <p className={styles.qualityTextP3}>{ parseStrWithBoldElems(data.qualityTextP3) }</p>
-          </div>
-          <div className={styles.siemensImg}><img src={siemens} alt={data.siemensAlt} className={styles.siemens} /></div>
+      <Title title={title} number="4" isWhite />
+      <div className={styles.content}>
+        <div className={styles.descriptionWrap}>
+          { renderDescription() }
+        </div>
+        <div className={styles.siemensImgWrap}>
+          <img src={siemens} alt={siemensAlt} className={styles.siemensImg} />
         </div>
       </div>
     </div>
