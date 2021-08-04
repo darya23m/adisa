@@ -1,5 +1,3 @@
-import React from 'react';
-
 function DataProvider({ children, locale }) {
   const data = require(`content/${locale}`).default;
 
