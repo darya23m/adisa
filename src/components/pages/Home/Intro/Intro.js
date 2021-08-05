@@ -8,7 +8,7 @@ import styles from './Intro.module.scss';
 const Intro = ({ data }) => {
   return (
     <div className={styles.container}>
-      <div className="commonContentContainer">
+      <div className={styles.commonContentContainer}>
         <img className={styles.logo} src={logo} alt={data.logoAlt} />
         <h1 className={styles.title}>{ data.title }</h1>
         <div className={styles.description}>
