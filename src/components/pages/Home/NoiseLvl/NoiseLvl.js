@@ -37,17 +37,17 @@ const NoiseLvl = ({ data: {
           </div>
           <div className={styles.features}>
             <div className={styles.redLine} />
-            <div className={styles.feature1}>
+            <div className={styles.feature}>
               <div className={styles.name1}>{ featureName1 }</div>
-              <img src={feature1} alt={featureAlt1} className={styles.imageFeature} />
+              <div><img src={feature1} alt={featureAlt1} className={styles.imageFeature} /></div>              
             </div>
-            <div className={styles.feature2}>
+            <div className={styles.feature}>
               <div className={styles.name2}>{ featureName2 }</div>
-              <img src={feature2} alt={featureAlt2} className={styles.imageFeature} />
+              <div><img src={feature2} alt={featureAlt2} className={styles.imageFeature} /></div>
             </div>
-            <div className={styles.feature3}>
+            <div className={styles.feature}>
               <div className={styles.name3}>{ featureName3 }</div>
-              <img src={feature3} alt={featureAlt3} className={styles.imageFeature} />
+              <div><img src={feature3} alt={featureAlt3} className={styles.imageFeature} /></div>
             </div>
           </div>
         </div>
