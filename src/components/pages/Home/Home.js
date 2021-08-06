@@ -11,6 +11,7 @@ import Training from './Training/Training';
 import Repairs from './Repairs/Repairs';
 import ButtonCalculate from 'components/common/ButtonCalculate/ButtonCalculate';
 import Popup from 'components/common/Popup/Popup';
+import CalculateForm from 'components/common/CalculateForm/CalculateForm';
 
 function Home({ data }) {
   const [isPopupShown, setIsPopupShown] = useState(false);
@@ -38,7 +39,9 @@ function Home({ data }) {
       <Training data={data.training} />
       <Repairs data={data.repairs} />
       { !isPopupShown ? <ButtonCalculate type="button" onClick={() => setIsPopupShown(true)} /> :
-        <Popup closePopup={handleClosePopup} isPopupFadeOutActive={isPopupFadeOutActive} />
+        <Popup closePopup={handleClosePopup} isPopupFadeOutActive={isPopupFadeOutActive}>
+          <CalculateForm />
+        </Popup>
       }
     </>
   )
