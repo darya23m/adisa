@@ -1,0 +1,154 @@
+.title {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 38px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.inputWraper {
+ margin-bottom: 24px;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  border: 1px solid #adadaf;
+}
+
+.input:focus {
+  border-color: #0077E4;
+}
+
+.calculate {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  background-color: #0077E4;
+  border: 7px solid #fff;
+  margin-top: 22px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -7px;
+    left: -7px;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    border: 1px solid rgba(0, 119, 228, 0.5);
+  }
+  &Disabled {
+    background-color: #eee;
+    &::after {
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+.success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  font-size: 14px;
+  padding: 7px 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;  
+}
+
+.errors {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  font-size: 14px;
+  padding: 7px 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;  
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 16px;
+  }
+  
+  .description {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 24px;
+  }
+  
+  .inputWraper {
+   margin-bottom: 16px;
+  }
+  
+  .label {
+    font-size: 12px;
+    line-height: 24px;
+  }
+  
+  .input {
+    height: 40px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .calculate {
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 370px) {
+  .title {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  
+  .description {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 18px;
+  }
+  
+  .inputWraper {
+   margin-bottom: 12px;
+  }
+  
+  .label {
+    font-size: 10px;
+    line-height: 20px;
+  }
+  
+  .input {
+    height: 36px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .calculate {
+    height: 60px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 16px;
+  }
+}
