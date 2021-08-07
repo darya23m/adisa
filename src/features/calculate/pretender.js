@@ -1,5 +1,4 @@
 import config from 'config/app';
-// import mock from './mock';
 
 export default function () {
   this.post(`${config.API_BASE_URL}/calculate`, (req) => {
