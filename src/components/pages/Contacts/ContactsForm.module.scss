@@ -1,0 +1,117 @@
+.form {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.inputWraper {
+  margin-bottom: 28px;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  line-height: 36px;
+  border: 1px solid #adadaf;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 216px;
+  font-size: 16px;
+  line-height: 28px;
+  border: 1px solid #adadaf;
+}
+
+.input:focus, .textarea:focus {
+  border-color: #0077E4;
+}
+
+.buttonContact {
+  position: relative;
+  width: 97%;
+  height: 60px;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+  background-color: #0077E4;
+  border: none;
+  margin-left: 5px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -7px;
+    left: -6px;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    border: 1px solid rgba(0, 119, 228, 0.5)
+  }
+
+  &Disabled {
+    background-color: #eee;
+    &::after {
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+.success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  font-size: 14px;
+  padding: 7px 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;  
+}
+
+.errors {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  font-size: 14px;
+  padding: 7px 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;  
+}
+
+@media (max-width: 768px) {
+  .inputWraper {
+    margin-bottom: 20px;
+  }
+
+  .textarea {
+    min-height: 186px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inputWraper {
+    margin-bottom: 18px;
+  }
+
+  .textarea {
+    min-height: 158px;
+  }
+}
+
+@media (max-width: 370px) {
+  .inputWraper {
+    margin-bottom: 14px;
+  }
+
+  .textarea {
+    min-height: 120px;
+  }
+
+  .buttonContact {
+    width: 96%;
+  }
+}
