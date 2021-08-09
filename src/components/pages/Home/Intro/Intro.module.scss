@@ -69,7 +69,7 @@
   }
 
   .title {
-    max-width: 260px;
+    max-width: 280px;
     font-size: 27px;
     line-height: 37px;
     margin: 0 0 40px;
@@ -87,7 +87,8 @@
 
 @media (max-width: 480px) {
   .container {
-    padding: 132px 28px 130px;
+    background-image: url("./img/intro_bg_mobile.jpg");
+    padding: 132px 24px 130px;
   }
 
   .description {
