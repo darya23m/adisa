@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 
 import styles from './ContactsForm.module.scss';
-import { calculate } from 'features/calculate/utils';
+import { postContact } from 'features/contact/utils';
 
 const ContactsForm = ({ data }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +12,7 @@ const ContactsForm = ({ data }) => {
   // Form fields
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
-  const [messages, setMessages] = useState("");
+  const [message, setMessage] = useState("");
 
   // Form handlers
   const validateForm = () => {
@@ -20,6 +20,7 @@ const ContactsForm = ({ data }) => {
 
     if (name.length === 0) validationErrors.push("Имя не указано");
     if (contact.length === 0) validationErrors.push("Номер телефона или e-mail не указан");
+    if (message.length === 0) validationErrors.push("Сообщение не может быть пустым");
 
     return validationErrors;
   };
@@ -27,7 +28,7 @@ const ContactsForm = ({ data }) => {
   const clearForm = () => {
     setName("");
     setContact("");
-    setMessages("");
+    setMessage("");
   };
 
   const handleResult = (result) => {
@@ -50,7 +51,7 @@ const ContactsForm = ({ data }) => {
     } else {
       setErrors([]);
       setIsLoading(true);
-      const result = await calculate({ name, contact, messages });
+      const result = await postContact({ name, contact, message });
       handleResult(result);
       setIsLoading(false);
     }
@@ -107,8 +108,8 @@ const ContactsForm = ({ data }) => {
           type="text"
           name="message"
           maxlength="300"
-          value={messages}
-          onChange={e => setMessages(e.target.value)}
+          value={message}
+          onChange={e => setMessage(e.target.value)}
           disabled={isLoading}
         />
       </div>
