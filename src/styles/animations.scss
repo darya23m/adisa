@@ -30,6 +30,16 @@
   100% { transform: translateX(0); }
 }
 
+@keyframes moveRight {
+  0%   { transform: translateX(-50vw) }
+  100% { transform: translateX(0) }
+}
+
+@keyframes moveRightMob {
+  0%   { transform: translateX(-100vw) }
+  100% { transform: translateX(0) }
+}
+
 @keyframes rotate3d {
   0%   { transform: rotate3d(1, 0, 0, 90deg); }
   100% { transform: rotate3d(1, 0, 0, 0deg); }

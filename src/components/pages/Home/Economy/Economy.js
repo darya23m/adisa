@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 
 import Title from 'components/common/Title/Title';
 import styles from './Economy.module.scss';
 import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
+import FirstTimeSeen from 'components/common/FirstTimeSeen/FirstTimeSeen';
 
 function Economy({ data }) {
+  const [isArrowVisible, setIsArrowVisible] = useState(false);
+  const [isArrowInitiallyVisible, setIsArrowInitiallyVisible] = useState(false);
   const renderScaleItems = () =>
     data.scaleItems.map((curr, index) =>
       <div key={index} className={styles.scaleItem}>{ curr }</div>
@@ -14,22 +17,30 @@ function Economy({ data }) {
   return (
     <div className={cx("commonContentContainer", styles.container)}>
       <Title title={data.title} number="1" />
-      <div className={styles.subtitle}>{ parseStrWithBoldElems(data.subtitle) }</div>
+      <div className={styles.subtitle}>{JSON.stringify(isArrowInitiallyVisible)} { parseStrWithBoldElems(data.subtitle) }</div>
       <div className={styles.calculator}>
         <div className={styles.labelWrap}>
-          <div className={styles.label}>{ parseStrWithBoldElems(data.label) }</div>
-          <div className={styles.arrow} />
+          <div className={cx(styles.label, {
+              [styles.labelAnimate]: isArrowVisible, 
+              [styles.labelInitVisible]: isArrowInitiallyVisible
+            })}>{ parseStrWithBoldElems(data.label) }</div>
+          <div className={cx(styles.arrow, {
+              [styles.arrowAnimate]: isArrowVisible,
+              [styles.arrowInitVisible]: isArrowInitiallyVisible
+            })} />
         </div>
         <div className={styles.content}>
-          <div className={styles.form}>
-            <div className={styles.spacer} />
-            <input type='text' className={styles.field} />
-            <div className={styles.unitMob}>{ data.unit }</div>
-            <div className={styles.right}>
-              <div className={styles.unit}>{ data.unit }</div>
-              <button type="button" className={styles.calcBtn}>{ data.calcButton }</button>
+          <FirstTimeSeen onEncounter={setIsArrowVisible} initiallyVisible={setIsArrowInitiallyVisible}>
+            <div className={styles.form}>
+              <div className={styles.spacer} />
+              <input type='text' className={styles.field} />
+              <div className={styles.unitMob}>{ data.unit }</div>
+              <div className={styles.right}>
+                <div className={styles.unit}>{ data.unit }</div>
+                <button type="button" className={styles.calcBtn}>{ data.calcButton }</button>
+              </div>
             </div>
-          </div>
+          </FirstTimeSeen>
           <div className={styles.chartDescription}>{ parseStrWithBoldElems(data.chartDescription) }</div>
           <div className={styles.chart}>
             <div className={styles.gridFirst} />
