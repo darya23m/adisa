@@ -232,13 +232,17 @@
 
   .arrow {
     width: 100vw;
-    animation-name: moveRightMob;
+    transform: translateX(-100vw);
 
     &:after {
       border-top: 34px solid transparent;
       border-bottom: 34px solid transparent;
       border-left: 20px solid #0077E4;
     }
+  }
+
+  .arrowAnimate {
+    animation-name: moveRightMob;
   }
 
   .calculator {
