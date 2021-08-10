@@ -1,65 +1,56 @@
 import React, { useEffect, useState } from 'react';
-import { Switch, Route, Link, useRouteMatch, useLocation } from 'react-router-dom';
-import cx from 'classnames';
+import {Switch, Route, useRouteMatch, useLocation, Redirect} from 'react-router-dom';
 
 import styles from './Equipment.module.scss';
-import EquipmentItem from './EquipmentItem';
-import { ReactComponent as ArrowLeft } from './img/arrow_left.svg';
+import Item from './Item/Item';
+import Nav from './Nav/Nav';
+import { ReactComponent as ArrowLeft } from './img/arrow-left.svg';
 
-const EquipmentLink = ({ children, to, exact, alwaysActive }) => {
-  const match = useRouteMatch({ path: to, exact });
-  const isActive = match && !alwaysActive;
-
-  return (
-    <div className={styles.link}>
-      <Link to={to} className={cx(styles.linkPage, {[styles.linkPageActive]: isActive})}>{children}</Link>
-      <div className={isActive ? styles.arrow : {display: 'none'}}></div>
-    </div> 
-  );
-}
-
-const Equipment = ({ data }) => {
-  const { path, url } = useRouteMatch();
+function Equipment({ data }) {
+  const { isExact, path} = useRouteMatch();
   const [ isContentShown, setIsContentShown ] = useState(true);
+  const [ isAnimationFadeoutActive, setIsAnimationFadeoutActive ] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     setIsContentShown(true);
+    setIsAnimationFadeoutActive(false);
   }, [location]);
 
-  const equipmentLinks = (list) => list.map((item) => (
-    <EquipmentLink to={`${url}/${item.path}`} alwaysActive={ !isContentShown }>{item.name}</EquipmentLink>
-  )) 
-
-  const equipmentRoutes = (list) => list.map((item) => (
-    <Route path={`${path}/${item.path}`}>
-      <EquipmentItem data={item} />
-    </Route>
-  ));
+  const equipmentRoutes = (list) =>
+    list.map((item, index) =>
+      <Route key={index} path={`${path}/${item.path}`}>
+        <Item data={item} isAnimationFadeoutActive={isAnimationFadeoutActive} />
+      </Route>
+    )
 
   const renderContent = () => (
     <>
-      <div className={styles.toList} onClick={() => setIsContentShown(!isContentShown)}>
-        <ArrowLeft className={styles.arrowLeft}/>
-        <a className={styles.linkToList}>К списку оборудования</a>
-      </div>
+      <button type="button" className={styles.toListBtn} onClick={() => setIsContentShown(false)}>
+        <ArrowLeft className={styles.arrowLeftIcon} />
+        К списку оборудования
+      </button>
       <Switch>
         { equipmentRoutes(data) }
       </Switch>
     </>
   );
 
-  return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.linksList}>
-          {equipmentLinks(data)}
-        </div>
-        { isContentShown && renderContent() }
-      </div>
-    </>
-  );
+  const renderPage = () =>
+    <div className={styles.container}>
+      <Nav data={data}
+           isContentShown={isContentShown}
+           isAnimationFadeoutActive={isAnimationFadeoutActive}
+           setIsAnimationFadeoutActive={setIsAnimationFadeoutActive}
+      />
+      { isContentShown && renderContent() }
+    </div>
 
-};
+  return (
+    isExact
+      ? <Redirect to={`${path}/${data[0].path}`} />
+      : renderPage()
+  );
+}
 
 export default Equipment;

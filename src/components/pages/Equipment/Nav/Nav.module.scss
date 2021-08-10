@@ -1,0 +1,29 @@
+@keyframes moveRightAll {
+  0%   { transform: translateX(calc(-50vw - 20px)); }
+  100% { transform: translateX(0); }
+}
+
+.nav {
+  width: 20%;
+  border-right: 1px solid #E2E2E2;
+  animation: moveRightAll 0.4s ease-out 0.3s both;
+  padding-top: 95px;
+}
+
+.links {
+  position: sticky;
+  top: 100px;
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    order: 72;
+    width: 100%;
+    border-right: none;
+    padding-top: 50px;
+  }
+
+  .links {
+    border-top: 1px solid #E2E2E2;
+  }
+}
