@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Title from 'components/common/Title/Title';
 import { ReactComponent as Service } from './img/service.svg';
@@ -15,7 +16,7 @@ const Repairs = ({ data: { title, description, serviceLinkText }}) => {
         </div>
         <div className={styles.text}>
           { parseStrWithBoldElems(description) }
-          <a href='#Services' className={styles.serviceLink}>{ serviceLinkText }</a>
+          <Link to="offices" className={styles.serviceLink}>{ serviceLinkText }</Link>
         </div>
       </div>
     </div>
