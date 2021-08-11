@@ -1,4 +1,9 @@
 export default {
+  meta: {
+    title: "Offices page",
+    description: "descrip",
+    keywords: "keyw"
+  },
   title: 'Представительства ADISA в Украине',
   offices: [
     // ========== Днепр ==========

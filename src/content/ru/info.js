@@ -1,4 +1,9 @@
 export default {
+  meta: {
+    title: "Info page",
+    description: "descrip",
+    keywords: "keyw"
+  },
   title: 'Сертификаты и документация',
   info: [
     // ========== List1 ==========

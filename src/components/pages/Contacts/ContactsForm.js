@@ -107,7 +107,7 @@ const ContactsForm = ({ data }) => {
           className={styles.textarea}
           type="text"
           name="message"
-          maxlength="1000"
+          maxLength="1000"
           value={message}
           onChange={e => setMessage(e.target.value)}
           disabled={isLoading}

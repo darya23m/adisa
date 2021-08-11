@@ -1,4 +1,10 @@
-export default [
+export default {
+  meta: {
+    title: "Equipment page",
+    description: "descrip",
+    keywords: "keyw"
+  },
+  data: [
   // ========== adi-lt ==========
    {
     name: "ADI LT",
@@ -309,4 +315,5 @@ export default [
     ]
   }
   // ========== Add+ ==========
-];
+]
+}

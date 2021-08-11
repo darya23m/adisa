@@ -1,4 +1,9 @@
 export default {
+  meta: {
+    title: "Home page",
+    description: "descrip",
+    keywords: "keyw"
+  },
   // ========== Intro ==========
   intro: {
     logoAlt: "Логотип ADISA",
