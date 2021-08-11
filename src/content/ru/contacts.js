@@ -1,4 +1,9 @@
 export default {
+  meta: {
+    title: "Contacts page",
+    description: "descrip",
+    keywords: "keyw"
+  },
   header: 'Обратная связь',
   description: [
     'Для получения информации по проектированию, монтажу и поставке оборудования ADISA вы можете обратиться в одно из наших ',

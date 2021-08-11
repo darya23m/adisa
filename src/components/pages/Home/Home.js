@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 import Intro from './Intro/Intro';
 import Tagline from './Tagline/Tagline';
@@ -13,7 +14,7 @@ import ButtonCalculate from 'components/common/ButtonCalculate/ButtonCalculate';
 import Popup from 'components/common/Popup/Popup';
 import CalculateForm from 'components/common/CalculateForm/CalculateForm';
 
-function Home({ data }) {
+function Home({ data: { meta }, data }) {
   const [isPopupShown, setIsPopupShown] = useState(false);
   const [isPopupFadeOutActive, setIsPopupFadeOutActive] = useState(false);
 
@@ -29,6 +30,11 @@ function Home({ data }) {
 
   return (
     <>
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
+      </Helmet>
       <Intro data={data.intro} />
       <Tagline data={data.tagline} />
       <Economy data={data.economy} />

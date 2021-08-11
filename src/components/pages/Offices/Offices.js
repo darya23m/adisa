@@ -1,11 +1,12 @@
 import React from 'react';
 import { Switch, Route, Link, useRouteMatch, matchPath, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import styles from './Offices.module.scss';
 import Office from './Office';
 import {ReactComponent as ArrowIcon} from './img/Down.svg';
 
-const Offices = ({ data: { title, offices } }) => {
+const Offices = ({ data: { meta, title, offices } }) => {
   const { pathname } = useLocation();
   const { path, url } = useRouteMatch(); 
 
@@ -28,16 +29,23 @@ const Offices = ({ data: { title, offices } }) => {
   ))
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>{title}</div>
-      <div className={styles.content}>
-        {officeLinks(officesBefore)}
-        <Switch>
-          {officeRoutes(offices)}
-        </Switch>
-        {officeLinks(officesAfter)}
-      </div>
+    <>
+      <div className={styles.container}>
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
+      </Helmet>
+        <div className={styles.header}>{title}</div>
+        <div className={styles.content}>
+          {officeLinks(officesBefore)}
+          <Switch>
+            {officeRoutes(offices)}
+          </Switch>
+          {officeLinks(officesAfter)}
+        </div>
     </div>
+    </>
   );
 };
 

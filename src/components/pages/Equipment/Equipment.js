@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import {Switch, Route, useRouteMatch, useLocation, Redirect} from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import styles from './Equipment.module.scss';
 import Item from './Item/Item';
 import Nav from './Nav/Nav';
 import { ReactComponent as ArrowLeft } from './img/arrow-left.svg';
 
-function Equipment({ data }) {
+function Equipment({ data: { meta , data }}) {
   const { isExact, path} = useRouteMatch();
   const [ isContentShown, setIsContentShown ] = useState(true);
   const [ isAnimationFadeoutActive, setIsAnimationFadeoutActive ] = useState(false);
@@ -38,6 +39,11 @@ function Equipment({ data }) {
 
   const renderPage = () =>
     <div className={styles.container}>
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
+      </Helmet>
       <Nav data={data}
            isContentShown={isContentShown}
            isAnimationFadeoutActive={isAnimationFadeoutActive}
