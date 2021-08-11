@@ -23,10 +23,26 @@ function Item(
       </div>
     )
 
+  const renderPriviewVideo = (video) =>
+    video.map(({ width, height, src, title }, index) =>
+      <div key={index} className={styles.previewVideo}>
+        <iframe
+          className={styles.video}
+          width={width}
+          height={height}
+          src={src}
+          title={title}
+          frameborder={0}
+          allow={"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"}>
+        </iframe>
+      </div>
+    )
+
   const renderPreview = () =>
     preview.map((curr, index) =>
       <div key={index} className={styles.preview}>
         { renderPreviewImages(curr.images) }
+        { curr.video && renderPriviewVideo (curr.video) }
       </div>
     )
 
