@@ -69,14 +69,9 @@ export default {
             width: "198"
           },
           {
-            path: "/img/adilt3.jpg",
+            path: "/img/adilt2.jpg",
             alt: "",
-            width: "200"
-          },
-          {
-            path: "/img/adilt4.jpg",
-            alt: "",
-            width: "208"
+            width: "500"
           }
         ]
       }
@@ -141,19 +136,14 @@ export default {
       {
         images: [
           {
-            path: "/img/adilt1.jpg",
+            path: "/img/adicd1.jpg",
             alt: "",
             width: "198"
           },
           {
-            path: "/img/adilt3.jpg",
+            path: "/img/adicd2.jpg",
             alt: "",
-            width: "200"
-          },
-          {
-            path: "/img/adilt4.jpg",
-            alt: "",
-            width: "208"
+            width: "500"
           }
         ]
       }
@@ -225,12 +215,15 @@ export default {
           {
             path: "/img/adimega2.jpg",
             alt:"",
-            width: "308"
-          },
+            width: "488"
+          }
+        ],
+        video: [
           {
-            path: "/img/adimega3.jpg",
-            alt:"",
-            width: "210"
+            src: 'https://www.youtube.com/embed/DxukPBGlgb8',
+            width: '900',
+            height: '500',
+            title: 'Инструкция по сборке модуля ADISA ADI MEGA'
           }
         ]
       }
