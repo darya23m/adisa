@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import Intro from './Intro/Intro';
@@ -10,24 +10,8 @@ import Quality from './Quality/Quality';
 import Pollution from './Pollution/Pollution';
 import Training from './Training/Training';
 import Repairs from './Repairs/Repairs';
-import ButtonCalculate from 'components/common/ButtonCalculate/ButtonCalculate';
-import Popup from 'components/common/Popup/Popup';
-import CalculateForm from 'components/common/CalculateForm/CalculateForm';
 
 function Home({ data: { meta }, data }) {
-  const [isPopupShown, setIsPopupShown] = useState(false);
-  const [isPopupFadeOutActive, setIsPopupFadeOutActive] = useState(false);
-
-  const handleClosePopup = ({ target: { id } }) => {
-    if(id !== "popup-wrapper" && id !== "popup-close") return;
-    setIsPopupFadeOutActive(true);
-
-    setTimeout(() => {
-      setIsPopupShown(false);
-      setIsPopupFadeOutActive(false);
-    }, 400)
-  }
-
   return (
     <>
       <Helmet>
@@ -44,11 +28,6 @@ function Home({ data: { meta }, data }) {
       <Pollution data={data.pollution} />
       <Training data={data.training} />
       <Repairs data={data.repairs} />
-      { !isPopupShown ? <ButtonCalculate type="button" onClick={() => setIsPopupShown(true)} /> :
-        <Popup closePopup={handleClosePopup} isPopupFadeOutActive={isPopupFadeOutActive}>
-          <CalculateForm />
-        </Popup>
-      }
     </>
   )
 }

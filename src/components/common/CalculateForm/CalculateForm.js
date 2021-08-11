@@ -4,7 +4,7 @@ import cx from 'classnames';
 import styles from './CalculateForm.module.scss';
 import { calculate } from 'features/calculate/utils';
 
-const CalculateForm = () => {
+const CalculateForm = ({ data: { title, description, labelName, labelContact, button } }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -74,14 +74,12 @@ const CalculateForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className={styles.title}>Просчитать котельную</div>
-      <div className={styles.description}>
-        Введите е-мейл или номер телефона, и мы свяжемся с вами удобным для вас способом
-      </div>
+      <div className={styles.title}>{ title }</div>
+      <div className={styles.description}>{ description }</div>
       { success && renderSuccess() }
       { errors.length > 0 && renderErrors() }
       <div className={styles.inputWraper}>
-        <label className={styles.label}>Введите ваше имя</label>
+        <label className={styles.label}>{ labelName }</label>
         <input
           className={styles.input}
           type="text"
@@ -92,7 +90,7 @@ const CalculateForm = () => {
         />
       </div>
       <div className={styles.inputWraper}>
-        <label className={styles.label}>Введите ваш e-mail или номер телефона</label>
+        <label className={styles.label}>{ labelContact }</label>
         <input 
           className={styles.input}
           type="text"
@@ -102,7 +100,7 @@ const CalculateForm = () => {
           disabled={isLoading}
         />
       </div>
-      <button type='submit' className={cx(styles.calculate, {[styles.calculateDisabled]: isLoading})}>Просчитать котельную</button>
+      <button type='submit' className={cx(styles.calculate, {[styles.calculateDisabled]: isLoading})}>{ button }</button>
     </form>
   );
 }
