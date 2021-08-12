@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 
 import styles from './ContactsForm.module.scss';
@@ -77,12 +77,10 @@ const ContactsForm = ({ data }) => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      { success && renderSuccess() }
-      { errors.length > 0 && renderErrors() }
       <div className={styles.inputWraper}>
         <label className={styles.label}>{data.labelName}</label>
         <input
-          className={styles.input}
+          className={cx(styles.input, {[styles.inputError]: errors.length > 0})}
           type="text"
           name="name"
           value={name}
@@ -93,7 +91,7 @@ const ContactsForm = ({ data }) => {
       <div className={styles.inputWraper}>
         <label className={styles.label}>{data.labelContact}</label>
         <input 
-          className={styles.input}
+          className={cx(styles.input, {[styles.inputError]: errors.length > 0})}
           type="text"
           name="contact"
           value={contact}
@@ -104,7 +102,7 @@ const ContactsForm = ({ data }) => {
       <div className={styles.inputWraper}>
         <label className={styles.label}>{data.labelMessage}</label>
         <textarea
-          className={styles.textarea}
+          className={cx(styles.textarea, {[styles.textareaError]: errors.length > 0})}
           type="text"
           name="message"
           maxLength="1000"
@@ -114,6 +112,8 @@ const ContactsForm = ({ data }) => {
         />
       </div>
       <button type='submit' className={cx(styles.buttonContact, {[styles.buttonContactDisabled]: isLoading})}>{data.button}</button>
+      { success && renderSuccess() }
+      { errors.length > 0 && renderErrors() }
     </form>
   );
 }
