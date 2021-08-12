@@ -18,14 +18,23 @@
   font-size: 16px;
   line-height: 36px;
   border: 1px solid #adadaf;
+
+  &Error {
+    border-color: #D21232;
+  }
 }
 
 .textarea {
   width: 100%;
   min-height: 216px;
+  font-family: 'Open Sans', sans-serif;;
   font-size: 16px;
   line-height: 28px;
   border: 1px solid #adadaf;
+
+  &Error {
+    border-color: #D21232;
+  }
 }
 
 .input:focus, .textarea:focus {
@@ -34,24 +43,22 @@
 
 .buttonContact {
   position: relative;
-  width: 97%;
+  width: 100%;
   height: 60px;
   font-size: 18px;
   line-height: 22px;
   color: #FFFFFF;
   background-color: #0077E4;
-  border: none;
-  margin-left: 5px;
+  border: 7px solid #fff;
 
   &::after {
     content: '';
     position: absolute;
-    display: block;
     top: -7px;
-    left: -6px;
-    width: calc(100% + 12px);
-    height: calc(100% + 12px);
-    border: 1px solid rgba(0, 119, 228, 0.5)
+    left: -7px;
+    width: calc(100% + 13px);
+    height: calc(100% + 13px);
+    border: 1px solid rgba(0, 119, 228, 0.5);
   }
 
   &Disabled {
@@ -68,7 +75,7 @@
   color: #155724;
   font-size: 14px;
   padding: 7px 12px;
-  margin-bottom: 20px;
+  margin-top: 20px;
   border-radius: 4px;  
 }
 
@@ -78,7 +85,7 @@
   color: #721c24;
   font-size: 14px;
   padding: 7px 12px;
-  margin-bottom: 20px;
+  margin-top: 20px;
   border-radius: 4px;  
 }
 
