@@ -76,7 +76,7 @@ const ContactsForm = ({ data }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       { success && renderSuccess() }
       { errors.length > 0 && renderErrors() }
       <div className={styles.inputWraper}>
