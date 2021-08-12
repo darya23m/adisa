@@ -250,6 +250,8 @@
     overflow-x: scroll;
     white-space: nowrap;
     padding: 0;
+    scrollbar-color: #e6f1fc #0077E4;
+    scrollbar-width: 10px;
 
     &::-webkit-scrollbar {
       height: 10px;
@@ -258,7 +260,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: #cce4fa;
+      background-color: #0077E4;
       border-radius: 20px;
       border: 2px solid #e6f1fc;
     }
