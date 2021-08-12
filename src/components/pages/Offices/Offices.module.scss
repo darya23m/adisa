@@ -33,6 +33,10 @@
   color: #313336;
   text-decoration: none;
   margin: 0 auto;
+
+  :hover {
+    color: #0077E4;
+  }
 }
 
 @media (max-width: 1024px) {
