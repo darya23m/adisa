@@ -33,7 +33,7 @@ const Popup = ({ closePopup, isPopupFadeOutActive, children }) => {
     <div className={cx(styles.container, {[styles.containerFadeOut]: isPopupFadeOutActive})}>
       <div id="popup-wrapper" className={styles.wraper} onClick={closePopup}>
         <div className={styles.content}>
-          <Close id="popup-close" className={styles.close} onClick={closePopup} />
+          <button type='button' className={styles.closeButton} onClick={closePopup}><Close id="popup-close" className={styles.close} /></button>
           { children }
         </div>
       </div>
