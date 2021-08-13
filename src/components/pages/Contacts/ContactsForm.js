@@ -3,11 +3,25 @@ import cx from 'classnames';
 
 import styles from './ContactsForm.module.scss';
 import { postContact } from 'features/contact/utils';
+import Popup from 'components/common/Popup/Popup';
+import FormSuccessMessage from 'components/common/FormSuccessMessage/FormSuccessMessage';
 
 const ContactsForm = ({ data }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState([]);
+
+  const [isPopupFadeOutActive, setIsPopupFadeOutActive] = useState(false);
+
+  const handleClosePopup = (e) => {
+    if(e && e.target.id !== "popup-wrapper" && e.target.id !== "popup-close") return;
+    setIsPopupFadeOutActive(true);
+
+    setTimeout(() => {
+      setSuccess(false);
+      setIsPopupFadeOutActive(false);
+    }, 400)
+  }
 
   // Form fields
   const [name, setName] = useState("");
@@ -59,13 +73,14 @@ const ContactsForm = ({ data }) => {
 
   // Helpers
 
-  const renderSuccess = () => (
-    <div className={styles.success}>
-      Запрос отправлен.
-      <br />
-      Мы свяжемся с вами в ближайшее время.
-    </div>
-  );
+  const renderSuccess = () => {
+    setTimeout(handleClosePopup, 5000);
+    return (
+      <Popup closePopup={handleClosePopup} isPopupFadeOutActive={isPopupFadeOutActive}>
+        <FormSuccessMessage />
+      </Popup>
+    );
+  };
 
   const renderErrors = () => {
     return (
@@ -80,7 +95,11 @@ const ContactsForm = ({ data }) => {
       <div className={styles.inputWraper}>
         <label className={styles.label}>{data.labelName}</label>
         <input
-          className={cx(styles.input, {[styles.inputError]: errors.length > 0})}
+          className={
+            cx(styles.input, 
+            {[styles.inputError]: errors.length > 0}, 
+            {[styles.inputSuccess]: name.length > 0 })
+          }
           type="text"
           name="name"
           value={name}
@@ -91,7 +110,11 @@ const ContactsForm = ({ data }) => {
       <div className={styles.inputWraper}>
         <label className={styles.label}>{data.labelContact}</label>
         <input 
-          className={cx(styles.input, {[styles.inputError]: errors.length > 0})}
+          className={
+            cx(styles.input, 
+            {[styles.inputError]: errors.length > 0}, 
+            {[styles.inputSuccess]: contact.length > 0 })
+          }
           type="text"
           name="contact"
           value={contact}
@@ -102,7 +125,11 @@ const ContactsForm = ({ data }) => {
       <div className={styles.inputWraper}>
         <label className={styles.label}>{data.labelMessage}</label>
         <textarea
-          className={cx(styles.textarea, {[styles.textareaError]: errors.length > 0})}
+          className={
+            cx(styles.textarea, 
+            {[styles.textareaError]: errors.length > 0}, 
+            {[styles.textareaSuccess]: message.length > 0 })
+          }
           type="text"
           name="message"
           maxLength="1000"
