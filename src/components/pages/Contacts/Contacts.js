@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import cx from 'classnames';
 
 import styles from './Contacts.module.scss';
 import ContactsForm from './ContactsForm';
 
-const Contacts = ({ data: { meta }, data }) => {
+const Contacts = ({ data: { meta }, data, isRerouted }) => {
   const contactsHeaderRef = useRef(null);
 
   return (
@@ -16,7 +17,12 @@ const Contacts = ({ data: { meta }, data }) => {
         <meta name="keywords" content={meta.keywords} />
       </Helmet>
       <div className={styles.container}>
-        <div ref={contactsHeaderRef} className={styles.header}>{data.header}</div>
+        <div
+          ref={contactsHeaderRef}
+          className={cx(styles.header, {[styles.headerNoDelay]: isRerouted})}
+        >
+          {data.header}
+        </div>
         <div className={styles.content}>
           <div className={styles.description}>
             {data.description[0]}

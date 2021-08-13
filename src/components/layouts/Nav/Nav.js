@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 
 import DataProvider from 'components/layouts/DataProvider/DataProvider';
@@ -14,9 +14,11 @@ import Equipment from 'components/pages/Equipment/Equipment';
 
 function Nav() {
   const location = useLocation();
+  const [rerouted, setRerouted] = useState(-1);
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    setRerouted(rerouted + 1);
   }, [location]);
 
   const renderMainRoutes = (data, locale) => {
@@ -33,15 +35,15 @@ function Nav() {
             <CalculatePopup data={data.calculate} />
           </Route>
           <Route path={`${locale}/info`}>
-            <Info data={data.info}/>
+            <Info data={data.info} isRerouted={!!rerouted} />
             <CalculatePopup data={data.calculate} />
           </Route>
           <Route path={`${locale}/offices`}>
-            <Offices data={data.offices} />
+            <Offices data={data.offices} isRerouted={!!rerouted} />
             <CalculatePopup data={data.calculate} />
           </Route>
           <Route path={`${locale}/contacts`}>
-            <Contacts data={data.contacts} />
+            <Contacts data={data.contacts} isRerouted={!!rerouted} />
           </Route>
         </Switch>
         <Footer locale={locale} data={data.footer} />
