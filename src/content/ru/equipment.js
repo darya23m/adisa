@@ -71,7 +71,12 @@ export default {
           {
             path: "/img/adilt2.jpg",
             alt: "",
-            width: "500"
+            width: "216"
+          },
+          {
+            path: "/img/adilt3.jpg",
+            alt: "",
+            width: "218"
           }
         ]
       }
@@ -138,12 +143,17 @@ export default {
           {
             path: "/img/adicd1.jpg",
             alt: "",
-            width: "198"
+            width: "240"
           },
           {
             path: "/img/adicd2.jpg",
             alt: "",
-            width: "500"
+            width: "238"
+          },
+          {
+            path: "/img/adicd3.jpg",
+            alt: "",
+            width: "242"
           }
         ]
       }
@@ -210,12 +220,17 @@ export default {
           {
             path: "/img/adimega1.jpg",
             alt:"",
-            width: "308"
+            width: "318"
           },
           {
             path: "/img/adimega2.jpg",
             alt:"",
-            width: "488"
+            width: "310"
+          },
+          {
+            path: "/img/adimega3.jpg",
+            alt:"",
+            width: "210"
           }
         ],
         video: [
