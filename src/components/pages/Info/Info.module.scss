@@ -1,3 +1,5 @@
+@import "src/styles/animations";
+
 .container {
   padding-bottom: 185px;
 }
@@ -11,9 +13,13 @@
   font-weight: 600;
   font-size: 30px;
   line-height: 41px;
+  animation: moveDown 0.7s ease-out 0.5s both;
   padding-top: 52px;
   padding-bottom: 52px;
   padding-left: 10%;
+  &NoDelay {
+    animation-delay: 0s;
+  }  
 }
 
 .content {

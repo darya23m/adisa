@@ -25,6 +25,11 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes moveDown {
+  0%   { opacity: 0; transform: translateY(-30%); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes moveLeft500 {
   0%   { transform: translateX(500px); }
   100% { transform: translateX(0); }
@@ -37,6 +42,11 @@
 
 @keyframes moveRightMob {
   0%   { transform: translateX(-100vw) }
+  100% { transform: translateX(0) }
+}
+
+@keyframes moveRightHeader {
+  0%   { transform: translateX(-100%) }
   100% { transform: translateX(0) }
 }
 

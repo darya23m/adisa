@@ -1,12 +1,13 @@
 import React from 'react';
 import { Switch, Route, Link, useRouteMatch, matchPath, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import cx from 'classnames';
 
 import styles from './Offices.module.scss';
 import Office from './Office';
 import {ReactComponent as ArrowIcon} from './img/Down.svg';
 
-const Offices = ({ data: { meta, title, offices } }) => {
+const Offices = ({ data: { meta, title, offices }, isRerouted }) => {
   const { pathname } = useLocation();
   const { path, url } = useRouteMatch(); 
 
@@ -36,7 +37,7 @@ const Offices = ({ data: { meta, title, offices } }) => {
         <meta name="description" content={meta.description} />
         <meta name="keywords" content={meta.keywords} />
       </Helmet>
-        <div className={styles.header}>{title}</div>
+        <div className={cx(styles.header, {[styles.headerNoDelay]: isRerouted})}>{title}</div>
         <div className={styles.content}>
           {officeLinks(officesBefore)}
           <Switch>
