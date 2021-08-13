@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 
 import styles from './ContactsForm.module.scss';
@@ -6,7 +6,7 @@ import { postContact } from 'features/contact/utils';
 import Popup from 'components/common/Popup/Popup';
 import FormSuccessMessage from 'components/common/FormSuccessMessage/FormSuccessMessage';
 
-const ContactsForm = ({ data }) => {
+const ContactsForm = ({ data, parentRef }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -83,6 +83,7 @@ const ContactsForm = ({ data }) => {
   };
 
   const renderErrors = () => {
+    parentRef.current.scrollIntoView();
     return (
       <div className={styles.errors}>
         { errors.map((err, index) => <div key={index}>{err}</div>) }
@@ -92,6 +93,8 @@ const ContactsForm = ({ data }) => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
+      { success && renderSuccess() }
+      { errors.length > 0 && renderErrors() }
       <div className={styles.inputWraper}>
         <label className={styles.label}>{data.labelName}</label>
         <input
@@ -139,8 +142,6 @@ const ContactsForm = ({ data }) => {
         />
       </div>
       <button type='submit' className={cx(styles.buttonContact, {[styles.buttonContactDisabled]: isLoading})}>{data.button}</button>
-      { success && renderSuccess() }
-      { errors.length > 0 && renderErrors() }
     </form>
   );
 }
