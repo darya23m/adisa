@@ -4,9 +4,8 @@ import cx from 'classnames';
 import styles from './CalculateForm.module.scss';
 import { calculate } from 'features/calculate/utils';
 
-const CalculateForm = ({ data: { title, description, labelName, labelContact, button } }) => {
+const CalculateForm = ({ data: { title, description, labelName, labelContact, button }, onSuccess }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState([]);
 
   // Form fields
@@ -31,7 +30,7 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
   const handleResult = (result) => {
     if (result === true) {
       clearForm();
-      setSuccess(true);
+      onSuccess(true);
     } else {
       setErrors([result.message]);
     }
@@ -40,8 +39,6 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
-
-    setSuccess(false);
 
     if (validationErrors.length > 0) {
       setErrors(validationErrors);
@@ -56,14 +53,6 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
 
   // Helpers
 
-  const renderSuccess = () => (
-    <div className={styles.success}>
-      Запрос отправлен.
-      <br />
-      Мы свяжемся с вами в ближайшее время.
-    </div>
-  );
-
   const renderErrors = () => {
     return (
       <div className={styles.errors}>
@@ -76,12 +65,15 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
     <form onSubmit={handleSubmit}>
       <div className={styles.title}>{ title }</div>
       <div className={styles.description}>{ description }</div>
-      { success && renderSuccess() }
       { errors.length > 0 && renderErrors() }
       <div className={styles.inputWraper}>
         <label className={styles.label}>{ labelName }</label>
         <input
-          className={styles.input}
+          className={
+            cx(styles.input, 
+            {[styles.inputError]: errors.length > 0}, 
+            {[styles.inputSuccess]: name.length > 0 })
+          }
           type="text"
           name="name"
           value={name}
@@ -92,7 +84,11 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
       <div className={styles.inputWraper}>
         <label className={styles.label}>{ labelContact }</label>
         <input 
-          className={styles.input}
+          className={
+            cx(styles.input, 
+            {[styles.inputError]: errors.length > 0}, 
+            {[styles.inputSuccess]: contact.length > 0 })
+          }
           type="text"
           name="contact"
           value={contact}
