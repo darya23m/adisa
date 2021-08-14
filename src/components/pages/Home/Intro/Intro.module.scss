@@ -1,26 +1,82 @@
 @import 'src/styles/common';
+@import 'src/styles/animations';
 
 .container {
+  overflow: hidden;
   position: relative;
   color: #fff;
-  background-image: url("./img/intro_bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  animation: fadeIn 1s ease-out 0.2s both;
   padding: 70px 120px 130px;
+  z-index: 10;
+}
+
+.bgLayoutWrap {
+  position: absolute;
+  left: -5%;
+  top: -5%;
+  width: 110%;
+  height: 110%;
+  z-index: -1;
+}
+
+.bgLayout {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url("./img/intro-bg.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: scaleAndRotate 35s ease-in-out both infinite;
+  z-index: 10;
+}
+
+.boilers {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 25%;
+  left: 42%;
+  width: 50%;
+  height: 50%;
+  z-index: 20;
+}
+
+.boilerWrap {
+  animation-name: showAndMoveUp30;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.boiler1,
+.boiler2,
+.boiler3 {
+  user-select: none;
+  margin-left: 20px;
 }
 
 .logo {
   display: block;
   height: 83px;
+  animation: scaleAndFadeIn 0.8s ease-out 0.8s both;
+}
+
+.titleWrap {
+  animation: showAndMoveUp30 0.6s ease-out 1.5s both;
+  margin: 35px 0 45px;
 }
 
 .title {
+  transition: all 20ms linear;
   max-width: 468px;
   font-weight: 600;
   font-size: 44px;
   line-height: 60px;
-  margin: 35px 0 45px;
+}
+
+.descriptionWrap {
+  animation: showAndMoveDown30 0.6s ease-out 1.5s both;
 }
 
 .description {

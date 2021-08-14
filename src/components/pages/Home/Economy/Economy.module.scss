@@ -15,8 +15,8 @@
 .calculator {
   position: relative;
   max-width: 1040px;
-  background: rgba(0, 119, 228, 0.1);
-  padding: 42px 30px 55px;
+  background: #e7f1fc;
+  padding: 42px 30px 90px;
   margin: 0 auto;
 }
 
@@ -104,6 +104,10 @@
   flex-grow: 1;
 }
 
+.fieldWrap {
+  position: relative;
+}
+
 .field {
   height: 60px;
   width: 160px;
@@ -115,6 +119,15 @@
   background-color: #fff;
   border: 1px solid #0077E4;
   padding: 12px;
+}
+
+.error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: #0077E4;
+  font-size: 14px;
+  line-height: 28px;
 }
 
 .unitMob {
@@ -144,6 +157,7 @@
   background-color: #0077E4;
   border-radius: 2px;
   padding: 24px;
+  cursor: pointer;
 }
 
 .chartDescription {
@@ -153,54 +167,112 @@
   margin: 46px 0 30px;
 }
 
-.chart {
-  display: grid;
-  grid-template-columns: repeat(45, 16px);
-  grid-template-rows: repeat(22, 16px);
-  background: linear-gradient(#0077E4, transparent 1px), linear-gradient(90deg, #0077E4, transparent 1px);
-  background-size: 16px 16px;
-  background-position: top left;
-  border-right: 1px solid #0077E4;
-  border-bottom: 1px solid #0077E4;
-
-  div {
-    background-color: #0077E4;
-    opacity: 0.2;
-  }
+.chartWrap {
+  position: relative;
 }
 
-.gridFirst {
-  grid-column: 5/12;
-  grid-row: 17/23;
-}
-
-.gridSecond {
-  grid-column: 15/22;
-  grid-row: 13/23;
-}
-
-.gridThird {
-  grid-column: 25/32;
-  grid-row: 8/23;
-}
-
-.gridForth {
-  grid-row: 4/23;
-  grid-column: 35/42;
+.gridWrap {
+  border: 1px solid #cce4fa;
+  animation: clip 0.8s linear 0.5s both;
 }
 
 .scale {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 100px);
-  column-gap: 62px;
-  margin: 0 64px;
+  grid-template-columns: repeat(45, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+}
 
-  &Item {
-    font-size: 16px;
-    line-height: 30px;
-    color: #0077E4;
-    opacity: 0.5;
+.scaleItem {
+  position: relative;
+  animation-name: showAndBounce;
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  transform-origin: bottom;
+
+  &:nth-child(1) {
+    grid-column: 5/12;
+    grid-row: 17/23;
+    animation-delay: 1.4s;
   }
+
+  &:nth-child(2) {
+    grid-column: 15/22;
+    grid-row: 13/23;
+    animation-delay: 1.6s;
+  }
+
+  &:nth-child(3) {
+    grid-column: 25/32;
+    grid-row: 8/23;
+    animation-delay: 1.8s;
+  }
+
+  &:nth-child(4) {
+    grid-row: 4/23;
+    grid-column: 35/42;
+    animation-delay: 2s;
+  }
+}
+
+.rect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transform-origin: bottom;
+  z-index: 10;
+}
+
+.defaultRect {
+  @extend .rect;
+  background-color: #cce4fa;
+}
+
+.resultRect {
+  @extend .rect;
+  background-color: #0280F4;
+}
+
+.resultValue {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 23px;
+  line-height: 48px;
+  font-weight: 600;
+  text-align: center;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transform: translate3d(0, 0, 0);
+  z-index: 5;
+
+  &Shown {
+    opacity: 1;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.scaleLabel {
+  position: absolute;
+  top: calc(100% + 13px);
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  line-height: 22px;
+  color: #80bbf2;
 }
 
 @media (max-width: 1024px) {
