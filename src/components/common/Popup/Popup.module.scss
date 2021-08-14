@@ -39,10 +39,13 @@
   top: 20px;
   right: 20px;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &:hover > .close *{
     stroke: #0077E4;
     opacity: 1;
-    cursor: pointer;
   }
 }
 
