@@ -17,10 +17,10 @@ const Offices = ({ data: { meta, title, offices }, isRerouted }) => {
   const officesAfter = current ? offices.slice(currIndex+1) : [];
 
   const officeLinks = (list) => list.map((item) => (
-    <Link to={`${url}/${item.path}`} className={styles.item}>
-      <ArrowIcon className={styles.arrowIcon}/>
-      <div className={styles.city}>{ item.city }</div>
-    </Link>
+      <Link to={`${url}/${item.path}`} className={styles.item}>
+        <ArrowIcon className={styles.arrowIcon}/>
+        <div className={styles.city}>{ item.city }</div>
+      </Link>
   ));
 
   const officeRoutes = (list) => list.map((item) => (

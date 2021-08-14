@@ -40,8 +40,9 @@
   text-decoration: none;
   margin: 0 auto;
 
-  :hover {
-    color: #0077E4;
+  &:hover {
+    background-color: #e6f2fc;
+    cursor: pointer;
   }
 }
 
