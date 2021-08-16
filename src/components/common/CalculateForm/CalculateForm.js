@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 
+import config from 'config/app';
 import styles from './CalculateForm.module.scss';
 import { calculate } from 'features/calculate/utils';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const CalculateForm = ({ data: { title, description, labelName, labelContact, button }, onSuccess }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -11,6 +13,7 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
   // Form fields
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
+  const [verificationKey, setVerificationKey] = useState();
 
   // Form handlers
   const validateForm = () => {
@@ -45,7 +48,7 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
     } else {
       setErrors([]);
       setIsLoading(true);
-      const result = await calculate({ name, contact });
+      const result = await calculate({ name, contact, verificationKey });
       handleResult(result);
       setIsLoading(false);
     }
@@ -96,6 +99,10 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
           disabled={isLoading}
         />
       </div>
+      <ReCAPTCHA
+        sitekey={config.RECAPTCHA_PUBLIC_KEY}
+        onChange={setVerificationKey}
+      />
       <button type='submit' className={cx(styles.calculate, {[styles.calculateDisabled]: isLoading})}>{ button }</button>
     </form>
   );
