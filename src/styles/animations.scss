@@ -87,10 +87,21 @@
   100% { width: 0; }
 }
 
+@keyframes collapseHorizontal {
+  0%   { height: 100%; }
+  100% { height: 0; }
+}
+
 @keyframes grow {
   0%   { height: 0;    background-color: #313336; }
   50%  { height: 100%; background-color: #313336; }
   100% { height: 100%; background-color: #E2E2E2; }
+}
+
+@keyframes growHorizontal {
+  0%   { width: 0;    background-color: #313336; }
+  50%  { width: 100%; background-color: #313336; }
+  100% { width: 100%; background-color: #E2E2E2; }
 }
 
 @keyframes scaleAndRotate {
