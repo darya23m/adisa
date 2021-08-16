@@ -9,6 +9,8 @@ import FormSuccessMessage from 'components/common/FormSuccessMessage/FormSuccess
 import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactsForm = ({ data, parentRef }) => {
+  const recaptchaRef = React.createRef();
+
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -29,7 +31,7 @@ const ContactsForm = ({ data, parentRef }) => {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
-  const [verificationKey, setVerificationKey] = useState();
+  const [verificationKey, setVerificationKey] = useState(null);
 
   // Form handlers
   const validateForm = () => {
@@ -38,6 +40,7 @@ const ContactsForm = ({ data, parentRef }) => {
     if (name.length === 0) validationErrors.push("Имя не указано");
     if (contact.length === 0) validationErrors.push("Номер телефона или e-mail не указан");
     if (message.length === 0) validationErrors.push("Сообщение не может быть пустым");
+    if (!verificationKey) validationErrors.push("Пройдите проверку reCAPTCHA");
 
     return validationErrors;
   };
@@ -46,6 +49,8 @@ const ContactsForm = ({ data, parentRef }) => {
     setName("");
     setContact("");
     setMessage("");
+    setVerificationKey(null);
+    recaptchaRef.current.reset();
   };
 
   const handleResult = (result) => {
@@ -65,6 +70,8 @@ const ContactsForm = ({ data, parentRef }) => {
 
     if (validationErrors.length > 0) {
       setErrors(validationErrors);
+      setVerificationKey(null);
+      recaptchaRef.current.reset();
     } else {
       setErrors([]);
       setIsLoading(true);
@@ -145,6 +152,7 @@ const ContactsForm = ({ data, parentRef }) => {
         />
       </div>
       <ReCAPTCHA
+        ref={recaptchaRef}
         sitekey={config.RECAPTCHA_PUBLIC_KEY}
         onChange={setVerificationKey}
       />
