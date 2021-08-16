@@ -71,12 +71,12 @@ export default {
           {
             path: "/img/adilt2.jpg",
             alt: "",
-            width: "216"
+            width: "220"
           },
           {
             path: "/img/adilt3.jpg",
             alt: "",
-            width: "218"
+            width: "229"
           }
         ]
       }
@@ -148,12 +148,12 @@ export default {
           {
             path: "/img/adicd2.jpg",
             alt: "",
-            width: "238"
+            width: "243"
           },
           {
             path: "/img/adicd3.jpg",
             alt: "",
-            width: "242"
+            width: "259"
           }
         ]
       }
