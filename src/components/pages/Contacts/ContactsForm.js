@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 
+import config from 'config/app';
 import styles from './ContactsForm.module.scss';
 import { postContact } from 'features/contact/utils';
 import Popup from 'components/common/Popup/Popup';
 import FormSuccessMessage from 'components/common/FormSuccessMessage/FormSuccessMessage';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactsForm = ({ data, parentRef }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -27,6 +29,7 @@ const ContactsForm = ({ data, parentRef }) => {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
+  const [verificationKey, setVerificationKey] = useState();
 
   // Form handlers
   const validateForm = () => {
@@ -65,7 +68,7 @@ const ContactsForm = ({ data, parentRef }) => {
     } else {
       setErrors([]);
       setIsLoading(true);
-      const result = await postContact({ name, contact, message });
+      const result = await postContact({ name, contact, message, verificationKey });
       handleResult(result);
       setIsLoading(false);
     }
@@ -141,7 +144,11 @@ const ContactsForm = ({ data, parentRef }) => {
           disabled={isLoading}
         />
       </div>
-      <button type='submit' className={cx(styles.buttonContact, {[styles.buttonContactDisabled]: isLoading})}>{data.button}</button>
+      <ReCAPTCHA
+        sitekey={config.RECAPTCHA_PUBLIC_KEY}
+        onChange={setVerificationKey}
+      />
+      <button type='submit' className={cx(styles.submitBtn, {[styles.submitBtnDisabled]: isLoading})}>{data.button}</button>
     </form>
   );
 }

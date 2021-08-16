@@ -1,7 +1,7 @@
 import axios from 'axios';
 import config from 'config/app';
 
-export const calculate = async ({...args}) => {
+export const calculate = async ({verificationKey, ...args}) => {
   try {
     await axios({
       method: "post",
@@ -9,7 +9,7 @@ export const calculate = async ({...args}) => {
       url: "/calculate",
       headers: {"Content-Type": "application/json"},
       params: {},
-      data: {...args}
+      data: {verification_key: verificationKey, ...args}
     });
     return true;
   } catch (error) {
