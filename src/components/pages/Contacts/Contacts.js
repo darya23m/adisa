@@ -6,31 +6,28 @@ import cx from 'classnames';
 import styles from './Contacts.module.scss';
 import ContactsForm from './ContactsForm';
 
-const Contacts = ({ data: { meta }, data, isRerouted }) => {
+const Contacts = ({ data, isRerouted }) => {
+  const { meta, header, description, descriptionLinkText, orText, contactUs } = data;
   const contactsHeaderRef = useRef(null);
 
   return (
     <>
       <Helmet>
-        <title>{meta.title}</title>
+        <title>{ meta.title }</title>
         <meta name="description" content={meta.description} />
         <meta name="keywords" content={meta.keywords} />
       </Helmet>
       <div className={styles.container}>
-        <div
-          ref={contactsHeaderRef}
-          className={cx(styles.header, {[styles.headerNoDelay]: isRerouted})}
-        >
-          {data.header}
+        <div ref={contactsHeaderRef} className={cx(styles.header, {[styles.headerNoDelay]: isRerouted})}>
+          { header }
         </div>
         <div className={styles.content}>
           <div className={styles.description}>
-            {data.description[0]}
-            <Link to="offices" className={styles.offices}>{data.description[1]}</Link>
-            {data.description[2]}
+            { description }&ensp;
+            <Link to="offices" className={styles.offices}>{ descriptionLinkText }</Link>.
           </div>
-          <div className={styles.orText}>{data.orText}</div>
-          <div className={styles.contactUs}>{data.contactUs}</div>
+          <div className={styles.orText}>{ orText }</div>
+          <div className={styles.contactUs}>{ contactUs }</div>
           <ContactsForm data={data} parentRef={contactsHeaderRef} />
         </div>
       </div>

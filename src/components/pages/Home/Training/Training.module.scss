@@ -1,25 +1,32 @@
 .container {
-  width: 100%;
-  // TODO: next line: remove linear-gradient(merge into image)!
-  background-image: linear-gradient(rgba(24, 24, 26, 0.8), rgba(24, 24, 26, 0.8)), url(./img/training-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: relative;
   text-align: center;
   color: #fff;
-  padding: 80px 30px 173px;
+}
+
+.video {
+  border: none;
 }
 
 .content {
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  padding: 80px 30px;
 }
 
 .trainingText {
   max-width: 656px;
   font-size: 16px;
   line-height: 28px;
-  text-align: center;
-  margin: 45px auto 163px auto;
+  margin-top: 45px;
 }
 
 .watchBtn {
@@ -31,7 +38,13 @@
   color: #FFFFFF;
   text-transform: uppercase;
   background-color: #0077E4;
+  transition: all 0.2s ease-in-out;
   border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #359AF8;
+  }
 
   &::after {
     content: '';

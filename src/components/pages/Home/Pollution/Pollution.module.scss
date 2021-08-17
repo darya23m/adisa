@@ -110,6 +110,25 @@
   height: auto;
 }
 
+.trees {
+  transform: translateX(40px);
+}
+
+.tree {
+  animation: rotate2 5s ease-in-out 0.5s infinite;
+  transform-origin: bottom left;
+}
+
+.green1 {
+  animation: rotate1 5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.green2 {
+  animation: rotate2 5s ease-in-out infinite;
+  transform-origin: bottom left;
+}
+
 .chartName {
   text-align: center;
   font-size: 16px;
@@ -175,7 +194,7 @@
     padding: 18px 20px;
     margin: 10px auto 0;
   }
-  
+
   .chartWrap {
     &::before {
       width: 32px;

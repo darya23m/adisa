@@ -1,6 +1,11 @@
 .container {
   width: 100%;
-  background: url(./img/boiler-bg.jpg) center (top/cover) no-repeat;
+  background-color: #0078e9;
+  background-image: url(./img/boiler-bg.jpg);
+  background-attachment: fixed;
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: contain;
   color: #fff;
   padding: 90px 30px 115px;
   margin-top: -120px;
