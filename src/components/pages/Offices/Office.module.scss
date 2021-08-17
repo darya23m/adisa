@@ -13,9 +13,9 @@
   color: #fff;
   text-decoration: none;
 
-  :hover {
-    color: #359AF8;
-    opacity: 100%;
+  &:hover {
+    background-color: #359AF8;
+    cursor: pointer;
   }
 }
 

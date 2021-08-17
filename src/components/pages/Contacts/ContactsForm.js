@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 
+import config from 'config/app';
 import styles from './ContactsForm.module.scss';
 import { postContact } from 'features/contact/utils';
 import Popup from 'components/common/Popup/Popup';
 import FormSuccessMessage from 'components/common/FormSuccessMessage/FormSuccessMessage';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactsForm = ({ data, parentRef }) => {
+  const recaptchaRef = React.createRef();
+
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -27,6 +31,7 @@ const ContactsForm = ({ data, parentRef }) => {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
+  const [verificationKey, setVerificationKey] = useState(null);
 
   // Form handlers
   const validateForm = () => {
@@ -35,6 +40,7 @@ const ContactsForm = ({ data, parentRef }) => {
     if (name.length === 0) validationErrors.push("Имя не указано");
     if (contact.length === 0) validationErrors.push("Номер телефона или e-mail не указан");
     if (message.length === 0) validationErrors.push("Сообщение не может быть пустым");
+    if (!verificationKey) validationErrors.push("Пройдите проверку reCAPTCHA");
 
     return validationErrors;
   };
@@ -43,6 +49,8 @@ const ContactsForm = ({ data, parentRef }) => {
     setName("");
     setContact("");
     setMessage("");
+    setVerificationKey(null);
+    recaptchaRef.current.reset();
   };
 
   const handleResult = (result) => {
@@ -62,10 +70,12 @@ const ContactsForm = ({ data, parentRef }) => {
 
     if (validationErrors.length > 0) {
       setErrors(validationErrors);
+      setVerificationKey(null);
+      recaptchaRef.current.reset();
     } else {
       setErrors([]);
       setIsLoading(true);
-      const result = await postContact({ name, contact, message });
+      const result = await postContact({ name, contact, message, verificationKey });
       handleResult(result);
       setIsLoading(false);
     }
@@ -141,7 +151,12 @@ const ContactsForm = ({ data, parentRef }) => {
           disabled={isLoading}
         />
       </div>
-      <button type='submit' className={cx(styles.buttonContact, {[styles.buttonContactDisabled]: isLoading})}>{data.button}</button>
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        sitekey={config.RECAPTCHA_PUBLIC_KEY}
+        onChange={setVerificationKey}
+      />
+      <button type='submit' className={cx(styles.submitBtn, {[styles.submitBtnDisabled]: isLoading})}>{data.button}</button>
     </form>
   );
 }

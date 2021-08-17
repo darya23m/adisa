@@ -30,9 +30,10 @@ const InfoList = ({ data: { list, caption } }) => {
       <h3 className={styles.caption}>{caption}</h3>
       <div className={styles.list}>
         {listItems(list)}
-        <div className={styles.line}></div>
+        <div className={styles.horizontalDividerWrap}>
+          <div className={styles.horizontalDivider}/>
+        </div>
       </div>
-
     </div>
   );
 };

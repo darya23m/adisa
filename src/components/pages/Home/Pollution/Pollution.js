@@ -66,6 +66,9 @@ const Pollution = ({ data: { title, ecoAlt, ecoDescription, chartNameAdisa, char
             <div className={cx(styles.chartName, styles.chartNameBlue)}>{ chartNameAdisa }</div>
           </div>
           <div className={styles.chartWrap}>
+            <div className={styles.firstCircle} />
+            <div className={styles.secondCircle} />
+            <div className={styles.thirdCircle} />
             <svg viewBox="0 0 520 352" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.chart}>
               <g>
                 <path d="M421 91H456L462 351H415L421 91Z" fill="#AA6478"/>

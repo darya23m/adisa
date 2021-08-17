@@ -1,7 +1,7 @@
 import axios from 'axios';
 import config from 'config/app';
 
-export const postContact = async ({...args}) => {
+export const postContact = async ({verificationKey, ...args}) => {
   try {
     await axios({
       method: "post",
@@ -9,7 +9,7 @@ export const postContact = async ({...args}) => {
       url: "/contact",
       headers: {"Content-Type": "application/json"},
       params: {},
-      data: {...args}
+      data: {verification_key: verificationKey, ...args}
     });
     return true;
   } catch (error) {
