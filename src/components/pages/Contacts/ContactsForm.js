@@ -38,10 +38,10 @@ const ContactsForm = ({ data, parentRef }) => {
   const validateForm = () => {
     let validationErrors = new Array();
 
-    if (name.length === 0) validationErrors.push("Введите имя или название организации.");
-    if (contact.length === 0) validationErrors.push("Введите ваш e-mail или номер телефона.");
-    if (message.length === 0) validationErrors.push("Введите сообщение.");
-    if (!verificationKey) validationErrors.push("Пройдите проверку reCAPTCHA");
+    if (name.length === 0) validationErrors.push(data.nameError);
+    if (contact.length === 0) validationErrors.push(data.contactError);
+    if (message.length === 0) validationErrors.push(data.messageError);
+    if (!verificationKey) validationErrors.push(data.captchaError);
 
     return validationErrors;
   };
@@ -97,7 +97,7 @@ const ContactsForm = ({ data, parentRef }) => {
     parentRef.current.scrollIntoView();
     return (
       <div className={styles.errors}>
-        <div className={styles.errorDescription}><Error className={styles.errorSvg} />Пожалуйста, заполните все поля:</div>
+        <div className={styles.errorDescription}><Error className={styles.errorSvg} />{data.titleError}</div>
         { errors.map((err, index) => <div key={index}>{err}</div>) }
       </div>
     );
