@@ -12,12 +12,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   background-color: rgba(0,0,0,0.7);
   padding: 80px 30px;
 }
@@ -27,6 +26,7 @@
   font-size: 16px;
   line-height: 28px;
   margin-top: 45px;
+  margin-bottom: 162px;
 }
 
 .watchBtn {
@@ -40,6 +40,7 @@
   background-color: #0077E4;
   transition: all 0.2s ease-in-out;
   border: none;
+  margin-bottom: 5%;
   cursor: pointer;
 
   &:hover {
@@ -60,44 +61,71 @@
 
 @media (max-width: 768px) {
   .container {
-    padding-bottom: 115px;
+    padding-bottom: 10%;
+  }
+
+  .content {
+    padding: 50px 30px;
   }
 
   .trainingText {
-    margin-bottom: 115px;
+    margin: 45px 0;
+  }
+
+  .watchBtn {
+    font-size: 14px;
+    line-height: 20px;
+    width: 280px;
+    padding: 12px 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding-bottom: 80px;
+  .content {
+    padding: 20px;
   }
 
   .trainingText {
-    margin-bottom: 80px;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 12px 0 20px;
   }
 
   .watchBtn {
-    width: 300px;
-    font-size: 16px;
-    line-height: 20px;
+    width: 180px;
+    height: 36px;
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom: 2%;
+    padding: 6px 10px;
   }
 }
 
-@media (max-width: 370px) {
-  .container {
-    padding: 40px 20px 60px;
+@media (max-width: 425px) {
+  .content {
+    padding: 15px;
   }
 
   .trainingText {
-    font-size: 14px;
-    line-height: 24px;
-    margin-bottom: 60px;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 10px 0 15px;
   }
 
   .watchBtn {
-    width: 260px;
-    font-size: 14px;
-    line-height: 18px;;
+    width: 170px;
+    height: 32px;
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom: 0;
+    padding: 5px 8px;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .trainingText {
+    font-size: 10px;
+    line-height: 12px;
   }
 }
