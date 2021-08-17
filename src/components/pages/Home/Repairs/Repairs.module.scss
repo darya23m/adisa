@@ -1,3 +1,5 @@
+@import "src/styles/animations";
+
 .container {
   padding: 80px 30px 110px;
 }
@@ -29,6 +31,30 @@
 .serviceLink {
   color: #0077E4;
   text-transform: uppercase;
+}
+
+.tape1 {
+  animation: dashOffsetReverse 20s linear infinite;
+}
+
+.tape2 {
+  animation: dashOffset 20s linear infinite;
+}
+
+.largeGear {
+  animation: rotate 20s linear 0.4s infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.smallGearWrap {
+  transform: translate(-6px, 4px);
+}
+
+.smallGear {
+  animation: rotateReverse 20s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
 }
 
 @media (max-width: 1024px) {

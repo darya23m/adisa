@@ -1,3 +1,5 @@
+@import 'src/styles/animations';
+
 .container {
   padding: 65px 30px 80px;
 }
@@ -47,6 +49,25 @@
 .chart {
   width: 100%;
   height: auto;
+}
+
+.trees {
+  transform: translateX(40px);
+}
+
+.tree {
+  animation: rotate2 5s ease-in-out 0.5s infinite;
+  transform-origin: bottom left;
+}
+
+.green1 {
+  animation: rotate1 5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.green2 {
+  animation: rotate2 5s ease-in-out infinite;
+  transform-origin: bottom left;
 }
 
 .chartName {

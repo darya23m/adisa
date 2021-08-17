@@ -1,3 +1,5 @@
+@import 'src/styles/animations';
+
 .container {
   display: flex;
   justify-content: center;
@@ -10,8 +12,10 @@
     .number {
       border: 1px solid #fff;
 
-      &:after {
-        border: 1px solid #fff;
+      .circleIcon {
+        circle {
+          stroke: #fff;
+        }
       }
     }
   }
@@ -29,17 +33,18 @@
   font-size: 32px;
   line-height: 44px;
   border-radius: 50%;
-  border: 1px solid #0077E4;
+  border: 1px solid #cce4fa;
   margin-right: 20px;
+}
 
-  &:after {
-    display: block;
-    position: absolute;
-    content: '';
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    border-radius: 50%;
-    border: 1px solid #0077E4;
+.circleIcon {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  animation: rotate 30s linear infinite;
+
+  circle {
+    stroke: #0077E4;
   }
 }
 

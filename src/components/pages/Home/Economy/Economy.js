@@ -102,7 +102,7 @@ function Economy({ data }) {
           <div className={styles.chartDescription}>{ parseStrWithBoldElems(data.chartDescription) }</div>
           <div className={styles.chartWrap}>
             <div className={styles.gridWrap}>
-              <Grid rows={20} cols={45} borderColor="#cce4fa" borderWidth="1" />
+              <Grid rows={22} cols={45} borderColor="#cce4fa" borderWidth="1" />
             </div>
             <div className={styles.scale}>
               { renderScaleItems() }

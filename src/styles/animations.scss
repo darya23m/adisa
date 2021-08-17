@@ -3,6 +3,28 @@
   100% { opacity: 1; }
 }
 
+@keyframes rotate {
+  0%   { transform: rotate3d(0, 0, 1, 0deg); }
+  100% { transform: rotate3d(0, 0, 1, 360deg); }
+}
+
+@keyframes rotateReverse {
+  0%   { transform: rotate3d(0, 0, 1, 0deg); }
+  100% { transform: rotate3d(0, 0, 1, -360deg); }
+}
+
+@keyframes rotate1 {
+  0%   { transform: rotate3d(0, 0, 1, 1deg); }
+  50% { transform: rotate3d(0, 0, 1, -1deg); }
+  100% { transform: rotate3d(0, 0, 1, 1deg); }
+}
+
+@keyframes rotate2 {
+  0%   { transform: rotate3d(0, 0, 1, 2deg); }
+  50% { transform: rotate3d(0, 0, 1, -2deg); }
+  100% { transform: rotate3d(0, 0, 1, 2deg); }
+}
+
 @keyframes scaleAndFadeIn {
   0%   { opacity: 0; transform: scale3d(0.8, 0.8, 1);}
   100% { opacity: 1; transform: scale3d(1, 1, 1);}
@@ -102,4 +124,14 @@
 @keyframes clip {
   0%   { clip-path: inset(0% 100%); }
   100% { clip-path: inset(0% 0%); }
+}
+
+@keyframes dashOffset {
+  0%   { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 400; }
+}
+
+@keyframes dashOffsetReverse {
+  0%   { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -400; }
 }

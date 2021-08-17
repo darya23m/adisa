@@ -1,276 +1,276 @@
 export default {
   meta: {
-    title: "Offices page",
-    description: "descrip",
-    keywords: "keyw"
+    title: "ADISA | Offices",
+    description: "description",
+    keywords: "ADISA"
   },
-  title: 'Представительства ADISA в Украине',
-  offices: [
+  title: "Представительства ADISA в Украине",
+  offices: [ // resizable
     // ========== Днепр ==========
-    { city: 'Днепр',
-      path: 'dnepr',
-      addresses: [
+    { city: "Днепр",
+      path: "dnepr",
+      addresses: [ // resizable
         // ---------- Олешковская, 24/1 ----------
         { address: "Олешковская, 24/1",
-          tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+          tels: [ // resizable
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
-          emails: [
-            'adisa@dnepr.ua'
+          emails: [ // resizable
+            "adisa@dnepr.ua"
           ],
-          webs: [
-            'adisa.dnepr.ua'
+          webs: [ // resizable
+            "adisa.dnepr.ua"
           ]
         },
         // ---------- Андреевский спуск ----------
         { address: "Андреевский спуск",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@dnepr.ua'
+            "adisa@dnepr.ua"
           ],
           webs: [
-            'adisa.dnepr.ua'
+            "adisa.dnepr.ua"
           ]
         },
         // ---------- Олешковская, 24/1 ----------
         { address: "Олешковская, 24/1",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@dnepr.ua'
+            "adisa@dnepr.ua"
           ]
         }
         // ---------- Add+ ----------
       ]
     },
     // ========== Киев ==========
-    { city: 'Киев',
-      path: 'kiev',
+    { city: "Киев",
+      path: "kiev",
       addresses: [
         // ---------- Олешковская, 24/1 ----------
         { address: "Олешковская, 24/1",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@kiev.ua'
+            "adisa@kiev.ua"
           ],
           webs: [
-            'adisa.kiev.ua'
+            "adisa.kiev.ua"
           ]
         },
         // ---------- Андреевский спуск ----------
         { address: "Андреевский спуск",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@kiev.ua'
+            "adisa@kiev.ua"
           ]
         },
         // ---------- Олешковская, 24/1 ----------
         { address: "Олешковская, 24/1",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@kiev.ua'
+            "adisa@kiev.ua"
           ],
           webs: [
-            'adisa.kiev.ua'
+            "adisa.kiev.ua"
           ]
         }
         // ---------- Add+ ----------
       ]
     },
     // ========== Сумы ==========
-    { city: 'Сумы',
-      path: 'sumy',
+    { city: "Сумы",
+      path: "sumy",
       addresses: [
         // ---------- Олешковская, 24/1 ----------
         { address: "Олешковская, 24/1",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@sumy.ua'
+            "adisa@sumy.ua"
           ],
           webs: [
-            'adisa.sumy.ua'
+            "adisa.sumy.ua"
           ]
         },
         // ---------- Андреевский спуск ----------
         { address: "Андреевский спуск",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@sumy.ua'
+            "adisa@sumy.ua"
           ],
           webs: [
-            'adisa.sumy.ua'
+            "adisa.sumy.ua"
           ]
         },
         // ---------- Олешковская, 24/1 ----------
         { address: "Олешковская, 24/1",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@sumy.ua'
+            "adisa@sumy.ua"
           ],
           webs: [
-            'adisa.sumy.ua'
+            "adisa.sumy.ua"
           ]
         }
         // ---------- Add+ ----------
       ]
     },
     // ========== Николаев ==========
-    { city: 'Николаев',
-      path: 'nikolaev',
+    { city: "Николаев",
+      path: "nikolaev",
       addresses: [
         // ---------- Олешковская, 24/1 ----------
         { address: "Олешковская, 24/1",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@nikolaev.ua'
+            "adisa@nikolaev.ua"
           ],
           webs: [
-            'adisa.nikolaev.ua'
+            "adisa.nikolaev.ua"
           ]
         },
         // ---------- Андреевский спуск ----------
         { address: "Андреевский спуск",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@nikolaev.ua'
+            "adisa@nikolaev.ua"
           ],
           webs: [
-            'adisa.nikolaev.ua'
+            "adisa.nikolaev.ua"
           ]
         },
         // ---------- Олешковская, 24/1 ----------
         { address: "Олешковская, 24/1",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@nikolaev.ua'
+            "adisa@nikolaev.ua"
           ],
           webs: [
-            'adisa.nikolaev.ua'
+            "adisa.nikolaev.ua"
           ]
         }
         // ---------- Add+ ----------
       ]
     },
     // ========== Одесса ==========
-    { city: 'Одесса',
-      path: 'odessa',
+    { city: "Одесса",
+      path: "odessa",
       addresses: [
         // ---------- Олешковская, 24/1 ----------
         { address: "Олешковская, 24/1",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@odessa.ua'
+            "adisa@odessa.ua"
           ],
           webs: [
-            'adisa.odessa.ua'
+            "adisa.odessa.ua"
           ]
         },
         // ---------- Андреевский спуск ----------
         { address: "Андреевский спуск",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@odessa.ua'
+            "adisa@odessa.ua"
           ],
           webs: [
-            'adisa.odessa.ua'
+            "adisa.odessa.ua"
           ]
         },
         // ---------- Олешковская, 24/1 ----------
         { address: "Олешковская, 24/1",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@odessa.ua'
+            "adisa@odessa.ua"
           ],
           webs: [
-            'adisa.odessa.ua'
+            "adisa.odessa.ua"
           ]
         }
         // ---------- Add+ ----------
       ]
     },
     // ========== Ровно ==========
-    { city: 'Ровно',
-      path: 'rovno',
+    { city: "Ровно",
+      path: "rovno",
       addresses: [
         // ---------- Олешковская, 24/1 ----------
         { address: "Олешковская, 24/1",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@rovno.ua'
+            "adisa@rovno.ua"
           ],
           webs: [
-            'adisa.rovno.ua'
+            "adisa.rovno.ua"
           ]
         },
         // ---------- Андреевский спуск ----------
         { address: "Андреевский спуск",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@rovno.ua'
+            "adisa@rovno.ua"
           ],
           webs: [
-            'adisa.rovno.ua'
+            "adisa.rovno.ua"
           ]
         },
         // ---------- Олешковская, 24/1 ----------
         { address: "Олешковская, 24/1",
           tels: [
-            '+3 8 067-86-86',
-            '+3 8 067-86-87'
+            "+3 8 067-86-86",
+            "+3 8 067-86-87"
           ],
           emails: [
-            'adisa@rovno.ua'
+            "adisa@rovno.ua"
           ],
           webs: [
-            'adisa.rovno.ua'
+            "adisa.rovno.ua"
           ]
         }
         // ---------- Add+ ----------
