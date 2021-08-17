@@ -25,6 +25,9 @@ const Pollution = ({ data: { title, ecoAlt, ecoDescription, chartNameAdisa, char
             <div className={cx(styles.chartName, styles.chartNameBlue)}>{ chartNameAdisa }</div>
           </div>
           <div className={styles.chartWrap}>
+            <div className={styles.firstCircle}></div>
+            <div className={styles.secondCircle}></div>
+            <div className={styles.thirdCircle}></div>
             <MorePollutionIcon className={styles.chart} />
             <div className={styles.chartName}>{ chartNameCommon }</div>
           </div>
