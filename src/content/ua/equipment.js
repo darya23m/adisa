@@ -1,59 +1,327 @@
-export default [
-  // ========== adi-lt ==========
-  {
-    name: 'adi-lt-ua',
-    description: 'Конденсационный модульный газовый котел из нержавеющей стали-ua',
-    features: [
-      'In compliance with the efficiency requirements set forth in the Ecodesign Directive  (ErP).-ua',
-      'High efficiency and energy saving.-ua',
-      'EC cerfified.-ua',
-      'Nett efficiencies from 96 to 104% ref. to LCV.-ua',
-      'Boiler heat exchanger in stainless steel.-ua',
-      'No limit of minimum return temperature.-ua',
-      'Power outputs from 104 to 905 kW.-ua',
-      'Modulation starting from 23% of the power.-ua',
-      'Variable speed fan, air-gas premix venturi, modulating gas valve.-ua',
-      'Ecological combustion: NOx class 6.-ua',
-      'Optimized dimensions and weights.-ua'
-    ],
-    links: [
-      '/resources/example1.pdf',
-      '/resources/example2.pdf'
-    ],
-    docs: [
-      '/resources/example1.pdf',
-      '/resources/example2.pdf'
-    ],
-    table: [
-      [
-        'ADI HT / LT-ua', 'Unit', '105', '130', '150', '200', '250', '275', '325', '400', '475', '550', '650', '750', '850', '950'
+export default {
+  meta: {
+    title: "ADISA | Equipment",
+    description: "description",
+    keywords: "ADISA"
+  },
+  data: [ // resizable
+    // ========== adi-lt ==========
+    {
+      name: "ADI LT",
+      path: "adi_lt",
+      description: "Конденсационный модульный газовый котел из нержавеющей стали",
+      features: [ // resizable
+        "・In compliance with the efficiency requirements set forth in the Ecodesign Directive  (ErP).",
+        "・High efficiency and energy saving.",
+        "・EC cerfified.",
+        "・Nett efficiencies from 96 to 104% ref. to LCV.",
+        "・Boiler heat exchanger in stainless steel.",
+        "・No limit of minimum return temperature.",
+        "・Power outputs from 104 to 905 kW.",
+        "・Modulation starting from 23% of the power.",
+        "・Variable speed fan, air-gas premix venturi, modulating gas valve.",
+        "・Ecological combustion: NOx class 6.",
+        "・Optimized dimensions and weights."
       ],
-      [
-        'Макс. мощность (t=70ºC)-ua', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104'
+      links: [ // resizable
+        "/resources/example1.pdf",
+        "/resources/example2.pdf"
       ],
-      [
-        'Макс. мощность (t=70ºC)-ua', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104'
+      docsIntro: "Ссылки и документы:",
+      docs: [ // resizable
+        {
+          type: "doc",
+          text: "Document",
+          link: "resources/example1.pdf"
+        },
+        {
+          type: "link",
+          text: "Link",
+          link: "resources/example1.pdf"
+        }
       ],
-      [
-        'Макс. мощность (t=70ºC)-ua', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104'
-      ],
-      [
-        'Макс. мощность (t=70ºC)-ua', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104'
-      ],
-      [
-        'Макс. мощность (t=70ºC)-ua', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104', 'kW', '104'
-      ]
-    ],
-    preview: [
-      {
-        description: '',
-        images: [
-          '/resources/adi-lt_1.jpg',
-          '/resources/adi-lt_2.jpg',
-          '/resources/adi-lt_3.jpg',
+      table: [ // resizable
+        [
+          "ADI HT / LT", "Unit", "130", "150", "200", "250", "275", "325", "400", "475", "550", "650", "750", "850", "950"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104"
         ]
-      }
-    ]
-  }
-  // ========== Add+ ==========
-];
+      ],
+      preview: [
+        {
+          images: [
+            {
+              path: "/img/adilt1.jpg",
+              alt: "",
+              width: "198"
+            },
+            {
+              path: "/img/adilt2.jpg",
+              alt: "",
+              width: "220"
+            },
+            {
+              path: "/img/adilt3.jpg",
+              alt: "",
+              width: "229"
+            }
+          ]
+        }
+      ]
+    },
+    // ========== adi-cd ==========
+    {
+      name: "ADI CD",
+      path: "adi_cd",
+      description: "Конденсационный модульный газовый котел из нержавеющей стали",
+      features: [
+        "・In compliance with the efficiency requirements set forth in the Ecodesign Directive  (ErP).",
+        "・High efficiency and energy saving.",
+        "・EC cerfified.",
+        "・Nett efficiencies from 96 to 104% ref. to LCV.",
+        "・Boiler heat exchanger in stainless steel.",
+        "・No limit of minimum return temperature.",
+        "・Power outputs from 104 to 905 kW.",
+        "・Modulation starting from 23% of the power.",
+        "・Variable speed fan, air-gas premix venturi, modulating gas valve.",
+        "・Ecological combustion: NOx class 6.",
+        "・Optimized dimensions and weights."
+      ],
+      links: [
+        "/resources/example1.pdf",
+        "/resources/example2.pdf"
+      ],
+      docsIntro: "Ссылки и документы:",
+      docs: [
+        {
+          type: "doc",
+          text: "Document",
+          link: "resources/example1.pdf"
+        },
+        {
+          type: "link",
+          text: "Link",
+          link: "resources/example1.pdf"
+        }
+      ],
+      table: [
+        [
+          "ADI HT / LT", "Unit", "130", "150", "200", "250", "275", "325", "400", "475", "550", "650", "750", "850", "950"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104", "kW", "104"
+        ]
+      ],
+      preview: [
+        {
+          images: [
+            {
+              path: "/img/adicd1.jpg",
+              alt: "",
+              width: "240"
+            },
+            {
+              path: "/img/adicd2.jpg",
+              alt: "",
+              width: "243"
+            },
+            {
+              path: "/img/adicd3.jpg",
+              alt: "",
+              width: "259"
+            }
+          ]
+        }
+      ]
+    },
+    // ========== adi-mega ==========
+    {
+      name: "ADI MEGA",
+      path: "adi_mega",
+      description: "Конденсационный модульный газовый котел из нержавеющей стали",
+      features: [
+        "・In compliance with the efficiency requirements set forth in the Ecodesign Directive  (ErP).",
+        "・High efficiency and energy saving.",
+        "・EC cerfified.",
+        "・Nett efficiencies from 96 to 104% ref. to LCV.",
+        "・Boiler heat exchanger in stainless steel.",
+        "・No limit of minimum return temperature.",
+        "・Power outputs from 104 to 905 kW.",
+        "・Modulation starting from 23% of the power.",
+        "・Variable speed fan, air-gas premix venturi, modulating gas valve.",
+        "・Ecological combustion: NOx class 6.",
+        "・Optimized dimensions and weights."
+      ],
+      links: [
+        "/resources/example1.pdf",
+        "/resources/example2.pdf"
+      ],
+      docsIntro: "Ссылки и документы:",
+      docs: [
+        {
+          type: "doc",
+          text: "Document",
+          link: "resources/example1.pdf"
+        },
+        {
+          type: "link",
+          text: "Link",
+          link: "resources/example1.pdf"
+        }
+      ],
+      table: [
+        [
+          "ADI HT / LT", "Unit", "130", "150"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "104", "kW"
+        ]
+      ],
+      preview: [
+        {
+          images: [
+            {
+              path: "/img/adimega1.jpg",
+              alt:"",
+              width: "318"
+            },
+            {
+              path: "/img/adimega2.jpg",
+              alt:"",
+              width: "310"
+            },
+            {
+              path: "/img/adimega3.jpg",
+              alt:"",
+              width: "210"
+            }
+          ],
+          video: [
+            {
+              src: 'https://www.youtube.com/embed/DxukPBGlgb8',
+              width: '900',
+              height: '500',
+              title: 'Инструкция по сборке модуля ADISA ADI MEGA'
+            }
+          ]
+        }
+      ]
+    },
+    // ========== condensa-pro ==========
+    {
+      name: "Condensa pro",
+      path: "condensa_pro",
+      description: "Конденсационный модульный газовый котел из нержавеющей стали",
+      features: [
+        "・In compliance with the efficiency requirements set forth in the Ecodesign Directive  (ErP).",
+        "・High efficiency and energy saving.",
+        "・EC cerfified.",
+        "・Nett efficiencies from 96 to 104% ref. to LCV.",
+        "・Boiler heat exchanger in stainless steel.",
+        "・No limit of minimum return temperature.",
+        "・Power outputs from 104 to 905 kW.",
+        "・Modulation starting from 23% of the power.",
+        "・Variable speed fan, air-gas premix venturi, modulating gas valve.",
+        "・Ecological combustion: NOx class 6.",
+        "・Optimized dimensions and weights."
+      ],
+      links: [
+        "/resources/example1.pdf",
+        "/resources/example2.pdf"
+      ],
+      docsIntro: "Ссылки и документы:",
+      docs: [
+        {
+          type: "doc",
+          text: "Document",
+          link: "resources/example1.pdf"
+        },
+        {
+          type: "link",
+          text: "Link",
+          link: "resources/example1.pdf"
+        }
+      ],
+      table: [
+        [
+          "ADI HT / LT", "Unit", "Unit", "Unit", "Unit", "Unit", "Unit", "Unit", "Unit", "Unit"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "kW", "kW", "kW", "kW", "kW", "kW", "kW", "kW"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "kW", "kW", "kW", "kW", "kW", "kW", "kW", "kW"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "kW", "kW", "kW", "kW", "kW", "kW", "kW", "kW"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "kW", "kW", "kW", "kW", "kW", "kW", "kW", "kW"
+        ],
+        [
+          "Макс. мощность (t=70ºC)", "kW", "kW", "kW", "kW", "kW", "kW", "kW", "kW", "kW"
+        ]
+      ],
+      preview: [
+        {
+          images: [
+            {
+              path: "/img/condexaBoiler.jpg",
+              alt: "",
+              width: "310"
+            },
+            {
+              path: "/img/condexaDraw.jpg",
+              alt: "",
+              width: "310"
+            },
+            {
+              description: "Пример каскада из котлов Condexa Pro",
+              path: "/img/condexaPro.jpg",
+              alt: "",
+              width: "90%"
+            }
+          ]
+        }
+      ]
+    }
+    // ========== Add+ ==========
+  ]
+}
