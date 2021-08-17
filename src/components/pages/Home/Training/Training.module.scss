@@ -18,15 +18,15 @@
   width: 100%;
   height: auto;
   background-color: rgba(0,0,0,0.7);
-  padding: 80px 30px;
+  padding: 6% 30px;
 }
 
 .trainingText {
   max-width: 656px;
   font-size: 16px;
   line-height: 28px;
-  margin-top: 45px;
-  margin-bottom: 162px;
+  margin-top: 85px;
+  margin-bottom: 164px;
 }
 
 .watchBtn {
@@ -40,7 +40,7 @@
   background-color: #0077E4;
   transition: all 0.2s ease-in-out;
   border: none;
-  margin-bottom: 5%;
+  margin-bottom: 16%;
   cursor: pointer;
 
   &:hover {
@@ -56,6 +56,21 @@
     width: calc(100% + 12px);
     height: calc(100% + 12px);
     border: 1px solid rgba(0, 119, 228, 0.5)
+  }
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 80px 30px;
+  }
+  
+  .trainingText {
+    margin-top: 45px;
+    margin-bottom: 162px;
+  }
+  
+  .watchBtn {
+    margin-bottom: 5%;
   }
 }
 
