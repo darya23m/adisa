@@ -28,7 +28,7 @@ const Contacts = ({ data, isRerouted }) => {
           </div>
           <div className={styles.orText}>{ orText }</div>
           <div className={styles.contactUs}>{ contactUs }</div>
-          <ContactsForm data={data} parentRef={contactsHeaderRef} />
+          <ContactsForm data={data.form} parentRef={contactsHeaderRef} />
         </div>
       </div>
     </>

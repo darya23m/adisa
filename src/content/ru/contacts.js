@@ -9,13 +9,32 @@ export default {
   descriptionLinkText: "представительств",
   orText: "или",
   contactUs: "Связаться с нами",
-  labelName: "Введите ваше имя или название организации",
-  labelContact: "Введите ваш e-mail или номер телефона",
-  labelMessage: "Оставьте сообщение",
-  button: "СВЯЗАТЬСЯ С НАМИ",
-  titleError: "Пожалуйста, заполните все поля: ",
-  nameError: "Введите имя или название организации.",
-  contactError: "Введите е-мейл или номер телефона.",
-  messageError: "Введите сообщение.",
-  captchaError: "Пройдите проверку reCAPTCHA."
+  form: {
+    labels: { 
+      name: "Введите ваше имя или название организации",
+      contact: "Введите ваш e-mail или номер телефона",
+      message: "Оставьте сообщение"
+    },
+    submitBtn: "СВЯЗАТЬСЯ С НАМИ",
+    errors: {
+      title: "Пожалуйста, заполните все поля: ",
+      fields: {
+        name: {
+          cantBeBlank: "Введите имя или название организации."
+        },
+        contact: {
+          cantBeBlank: "Введите е-мейл или номер телефона."
+        },
+        message: {
+          cantBeBlank: "Введите сообщение."
+        },
+        captcha: {
+          cantBeBlank: "Пройдите проверку reCAPTCHA."
+        }
+      }
+    },
+    success: {
+      message: "Ваш запрос успешно отправлен. Мы свяжемся с вами в ближайшее время!"
+    }
+  }
 };

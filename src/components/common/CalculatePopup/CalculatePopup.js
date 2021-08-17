@@ -5,7 +5,7 @@ import Popup from 'components/common/Popup/Popup';
 import CalculateForm from 'components/common/CalculateForm/CalculateForm';
 import FormSuccessMessage from 'components/common/FormSuccessMessage/FormSuccessMessage';
 
-function CalculatePopup({ data: { button, form } }) {
+function CalculatePopup({ data }) {
   const [isPopupShown, setIsPopupShown] = useState(false);
   const [isPopupFadeOutActive, setIsPopupFadeOutActive] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -27,9 +27,9 @@ function CalculatePopup({ data: { button, form } }) {
   }
 
   return !isPopupShown ? 
-      (<ButtonCalculate data={ button } type="button" onClick={() => setIsPopupShown(true)} />) :
+      (<ButtonCalculate data={ data.calculateBtn } type="button" onClick={() => setIsPopupShown(true)} />) :
       (<Popup closePopup={handleClosePopup} isPopupFadeOutActive={isPopupFadeOutActive}>
-        {!success ? <CalculateForm data={ form } onSuccess={onSuccess} /> : <FormSuccessMessage />}
+        {!success ? <CalculateForm data={ data } onSuccess={onSuccess} /> : <FormSuccessMessage data={ data.form.success } />}
       </Popup>);
 }
 

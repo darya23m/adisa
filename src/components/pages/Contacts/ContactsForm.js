@@ -38,10 +38,10 @@ const ContactsForm = ({ data, parentRef }) => {
   const validateForm = () => {
     let validationErrors = new Array();
 
-    if (name.length === 0) validationErrors.push(data.nameError);
-    if (contact.length === 0) validationErrors.push(data.contactError);
-    if (message.length === 0) validationErrors.push(data.messageError);
-    if (!verificationKey) validationErrors.push(data.captchaError);
+    if (name.length === 0) validationErrors.push(data.errors.fields.name.cantBeBlank);
+    if (contact.length === 0) validationErrors.push(data.errors.fields.contact.cantBeBlank);
+    if (message.length === 0) validationErrors.push(data.errors.fields.message.cantBeBlank);
+    if (!verificationKey) validationErrors.push(data.errors.fields.captcha.cantBeBlank);
 
     return validationErrors;
   };
@@ -89,7 +89,7 @@ const ContactsForm = ({ data, parentRef }) => {
     setTimeout(handleClosePopup, 5000);
     return (
       <Popup closePopup={handleClosePopup} isPopupFadeOutActive={isPopupFadeOutActive}>
-        <FormSuccessMessage />
+        <FormSuccessMessage data={data.success} />
       </Popup>
     );
   };
@@ -97,7 +97,7 @@ const ContactsForm = ({ data, parentRef }) => {
   const renderErrors = () => {
     return (
       <div className={styles.errors}>
-        <div className={styles.errorDescription}><Error className={styles.errorSvg} />{data.titleError}</div>
+        <div className={styles.errorDescription}><Error className={styles.errorSvg} />{data.errors.title}</div>
         { errors.map((err, index) => <div key={index}>{err}</div>) }
       </div>
     );
@@ -108,7 +108,7 @@ const ContactsForm = ({ data, parentRef }) => {
       { success && renderSuccess() }
       { errors.length > 0 && renderErrors() }
       <div className={styles.inputWraper}>
-        <label className={styles.label}>{data.labelName}</label>
+        <label className={styles.label}>{data.labels.name}</label>
         <input
           className={
             cx(styles.input, 
@@ -123,7 +123,7 @@ const ContactsForm = ({ data, parentRef }) => {
         />
       </div>
       <div className={styles.inputWraper}>
-        <label className={styles.label}>{data.labelContact}</label>
+        <label className={styles.label}>{data.labels.contact}</label>
         <input 
           className={
             cx(styles.input, 
@@ -138,7 +138,7 @@ const ContactsForm = ({ data, parentRef }) => {
         />
       </div>
       <div className={styles.inputWraper}>
-        <label className={styles.label}>{data.labelMessage}</label>
+        <label className={styles.label}>{data.labels.message}</label>
         <textarea
           className={
             cx(styles.textarea, 
@@ -158,7 +158,7 @@ const ContactsForm = ({ data, parentRef }) => {
         sitekey={config.RECAPTCHA_PUBLIC_KEY}
         onChange={setVerificationKey}
       />
-      <button type='submit' className={cx(styles.submitBtn, {[styles.submitBtnDisabled]: isLoading})}>{data.button}</button>
+      <button type='submit' className={cx(styles.submitBtn, {[styles.submitBtnDisabled]: isLoading})}>{data.submitBtn}</button>
     </form>
   );
 }

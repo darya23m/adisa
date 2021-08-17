@@ -1,9 +1,9 @@
 export default {
   links: {
-    home: 'ADISA',
-    equipment: 'Оборудование-ua',
-    info: 'Проектировщику-ua',
-    offices: 'Представительства-ua',
-    contacts: 'Контакты-ua'
+    home: "ADISA",
+    equipment: "Оборудование",
+    info: "Проектировщику",
+    offices: "Представительства",
+    contacts: "Контакты"
   }
 };

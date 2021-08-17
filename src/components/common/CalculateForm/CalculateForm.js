@@ -7,7 +7,7 @@ import { postCalculate } from 'features/calculate/utils';
 import ReCAPTCHA from "react-google-recaptcha";
 import { ReactComponent as Error } from './img/error.svg';
 
-const CalculateForm = ({ data: { title, description, labelName, labelContact, button, titleError, nameError, contactError, captchaError }, onSuccess }) => {
+const CalculateForm = ({ data, onSuccess }) => {
   const recaptchaRef = React.createRef();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -22,9 +22,9 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
   const validateForm = () => {
     let validationErrors = new Array();
 
-    if (name.length === 0) validationErrors.push(nameError);
-    if (contact.length === 0) validationErrors.push(contactError);
-    if (!verificationKey) validationErrors.push(captchaError);
+    if (name.length === 0) validationErrors.push(data.form.errors.fields.name.cantBeBlank);
+    if (contact.length === 0) validationErrors.push(data.form.errors.fields.contact.cantBeBlank);
+    if (!verificationKey) validationErrors.push(data.form.errors.fields.captcha.cantBeBlank);
 
     return validationErrors;
   };
@@ -66,7 +66,7 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
   const renderErrors = () => {
     return (
       <div className={styles.errors}>
-        <div className={styles.errorDescription}><Error className={styles.errorSvg} />{titleError}</div>
+        <div className={styles.errorDescription}><Error className={styles.errorSvg} />{data.form.errors.title}</div>
         { errors.map((err, index) => <div key={index}>{err}</div>) }
       </div>
     );
@@ -74,11 +74,11 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className={styles.title}>{ title }</div>
-      <div className={styles.description}>{ description }</div>
+      <div className={styles.title}>{ data.title }</div>
+      <div className={styles.description}>{ data.description }</div>
       { errors.length > 0 && renderErrors() }
       <div className={styles.inputWraper}>
-        <label className={styles.label}>{ labelName }</label>
+        <label className={styles.label}>{ data.form.labels.name }</label>
         <input
           className={
             cx(styles.input, 
@@ -93,7 +93,7 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
         />
       </div>
       <div className={styles.inputWraper}>
-        <label className={styles.label}>{ labelContact }</label>
+        <label className={styles.label}>{ data.form.labels.contact }</label>
         <input 
           className={
             cx(styles.input, 
@@ -112,7 +112,7 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
         sitekey={config.RECAPTCHA_PUBLIC_KEY}
         onChange={setVerificationKey}
       />
-      <button type='submit' className={cx(styles.calculate, {[styles.calculateDisabled]: isLoading})}>{ button }</button>
+      <button type='submit' className={cx(styles.calculate, {[styles.calculateDisabled]: isLoading})}>{ data.form.submitBtn }</button>
     </form>
   );
 }
