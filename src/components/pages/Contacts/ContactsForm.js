@@ -50,8 +50,6 @@ const ContactsForm = ({ data, parentRef }) => {
     setName("");
     setContact("");
     setMessage("");
-    setVerificationKey(null);
-    recaptchaRef.current.reset();
   };
 
   const handleResult = (result) => {
@@ -60,19 +58,21 @@ const ContactsForm = ({ data, parentRef }) => {
       setSuccess(true);
     } else {
       setErrors([result.message]);
+      parentRef.current.scrollIntoView();
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    recaptchaRef && recaptchaRef.current && recaptchaRef.current.reset();
+
     const validationErrors = validateForm();
 
     setSuccess(false);
 
     if (validationErrors.length > 0) {
       setErrors(validationErrors);
-      setVerificationKey(null);
-      recaptchaRef.current.reset();
+      parentRef.current.scrollIntoView();
     } else {
       setErrors([]);
       setIsLoading(true);
@@ -80,6 +80,7 @@ const ContactsForm = ({ data, parentRef }) => {
       handleResult(result);
       setIsLoading(false);
     }
+    setVerificationKey(null);
   };
 
   // Helpers
@@ -94,7 +95,6 @@ const ContactsForm = ({ data, parentRef }) => {
   };
 
   const renderErrors = () => {
-    parentRef.current.scrollIntoView();
     return (
       <div className={styles.errors}>
         <div className={styles.errorDescription}><Error className={styles.errorSvg} />Пожалуйста, заполните все поля:</div>

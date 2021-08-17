@@ -32,8 +32,6 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
   const clearForm = () => {
     setName("");
     setContact("");
-    setVerificationKey(null);
-    recaptchaRef.current.reset();
   };
 
   const handleResult = (result) => {
@@ -47,12 +45,12 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    recaptchaRef && recaptchaRef.current && recaptchaRef.current.reset();
+
     const validationErrors = validateForm();
 
     if (validationErrors.length > 0) {
       setErrors(validationErrors);
-      setVerificationKey(null);
-      recaptchaRef.current.reset();
     } else {
       setErrors([]);
       setIsLoading(true);
@@ -60,6 +58,7 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
       handleResult(result);
       setIsLoading(false);
     }
+    setVerificationKey(null);
   };
 
   // Helpers
