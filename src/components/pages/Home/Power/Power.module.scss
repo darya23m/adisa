@@ -194,15 +194,16 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+    padding: 0;
   }
 
   .planItemFirst {
-    width: 50%;
+    width: 70%;
     margin-bottom: 20%;
   }
   
   .planItemSecond {
-    width: 52%;
+    width: 72%;
     margin-left: 0;
   }
 
@@ -216,7 +217,7 @@
   }
 
   .info {
-    margin-left: 30%;
+    margin-left: 20%;
   }
 }
 
@@ -242,12 +243,7 @@
   }
 
   .planItemFirst {
-    width: 60%;
     margin-bottom: 16%;
-  }
-  
-  .planItemSecond {
-    width: 62%;
   }
 
   .picNameFirst, .picNameSecond {
@@ -257,5 +253,10 @@
 
   .picNameFirst {
     left: 6%;
+  }
+
+  .info {
+    font-size: 10px;
+    line-height: 18px;
   }
 }
