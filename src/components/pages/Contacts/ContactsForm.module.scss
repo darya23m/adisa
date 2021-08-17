@@ -89,11 +89,24 @@
 .errors {
   background-color: #f8d7da;
   border: 1px solid #f5c6cb;
-  color: #721c24;
+  color: #D21132;
   font-size: 14px;
-  padding: 7px 12px;
+  line-height: 19px;
+  padding: 8px 12px;
   margin-bottom: 20px;
   border-radius: 4px;  
+}
+
+.errorDescription {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #313336;
+  margin-bottom: 5px;
+}
+
+.errorSvg {
+  margin-right: 5px;
 }
 
 @media (max-width: 768px) {

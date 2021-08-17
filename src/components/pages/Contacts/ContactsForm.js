@@ -7,6 +7,7 @@ import { postContact } from 'features/contact/utils';
 import Popup from 'components/common/Popup/Popup';
 import FormSuccessMessage from 'components/common/FormSuccessMessage/FormSuccessMessage';
 import ReCAPTCHA from "react-google-recaptcha";
+import { ReactComponent as Error } from './img/error.svg';
 
 const ContactsForm = ({ data, parentRef }) => {
   const recaptchaRef = React.createRef();
@@ -37,9 +38,9 @@ const ContactsForm = ({ data, parentRef }) => {
   const validateForm = () => {
     let validationErrors = new Array();
 
-    if (name.length === 0) validationErrors.push("Имя не указано");
-    if (contact.length === 0) validationErrors.push("Номер телефона или e-mail не указан");
-    if (message.length === 0) validationErrors.push("Сообщение не может быть пустым");
+    if (name.length === 0) validationErrors.push("Введите имя или название организации.");
+    if (contact.length === 0) validationErrors.push("Введите ваш e-mail или номер телефона.");
+    if (message.length === 0) validationErrors.push("Введите сообщение.");
     if (!verificationKey) validationErrors.push("Пройдите проверку reCAPTCHA");
 
     return validationErrors;
@@ -96,6 +97,7 @@ const ContactsForm = ({ data, parentRef }) => {
     parentRef.current.scrollIntoView();
     return (
       <div className={styles.errors}>
+        <div className={styles.errorDescription}><Error className={styles.errorSvg} />Пожалуйста, заполните все поля:</div>
         { errors.map((err, index) => <div key={index}>{err}</div>) }
       </div>
     );

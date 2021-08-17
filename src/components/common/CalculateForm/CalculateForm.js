@@ -5,6 +5,7 @@ import config from 'config/app';
 import styles from './CalculateForm.module.scss';
 import { calculate } from 'features/calculate/utils';
 import ReCAPTCHA from "react-google-recaptcha";
+import { ReactComponent as Error } from './img/error.svg';
 
 const CalculateForm = ({ data: { title, description, labelName, labelContact, button }, onSuccess }) => {
   const recaptchaRef = React.createRef();
@@ -21,8 +22,8 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
   const validateForm = () => {
     let validationErrors = new Array();
 
-    if (name.length === 0) validationErrors.push("Имя не указано");
-    if (contact.length === 0) validationErrors.push("Номер телефона или e-mail не указан");
+    if (name.length === 0) validationErrors.push("Введите имя или название организации.");
+    if (contact.length === 0) validationErrors.push("Введите ваш e-mail или номер телефона.");
     if (!verificationKey) validationErrors.push("Пройдите проверку reCAPTCHA");
 
     return validationErrors;
@@ -66,6 +67,7 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
   const renderErrors = () => {
     return (
       <div className={styles.errors}>
+        <div className={styles.errorDescription}><Error className={styles.errorSvg} />Пожалуйста, заполните все поля:</div>
         { errors.map((err, index) => <div key={index}>{err}</div>) }
       </div>
     );
