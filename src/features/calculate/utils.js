@@ -1,7 +1,7 @@
 import axios from 'axios';
 import config from 'config/app';
 
-export const calculate = async ({verificationKey, ...args}) => {
+export const postCalculate = async ({verificationKey, ...args}) => {
   try {
     const result = await axios({
       method: "post",

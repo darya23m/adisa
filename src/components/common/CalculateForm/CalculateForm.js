@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import config from 'config/app';
 import styles from './CalculateForm.module.scss';
-import { calculate } from 'features/calculate/utils';
+import { postCalculate } from 'features/calculate/utils';
 import ReCAPTCHA from "react-google-recaptcha";
 import { ReactComponent as Error } from './img/error.svg';
 
@@ -54,7 +54,7 @@ const CalculateForm = ({ data: { title, description, labelName, labelContact, bu
     } else {
       setErrors([]);
       setIsLoading(true);
-      const result = await calculate({ name, contact, verificationKey });
+      const result = await postCalculate({ name, contact, verificationKey });
       handleResult(result);
       setIsLoading(false);
     }
