@@ -33,10 +33,15 @@
 .downloadLink, .commonLink {
   width: 82%;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .downloadLink {
   color: #313336;
+
+  &:hover {
+    color: #0077E4;
+  }
 }
 
 .commonLink {
