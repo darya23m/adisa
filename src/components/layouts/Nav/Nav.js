@@ -15,10 +15,12 @@ import Equipment from 'components/pages/Equipment/Equipment';
 function Nav() {
   const location = useLocation();
   const [rerouted, setRerouted] = useState(-1);
+  console.log(location);
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
-    setRerouted(rerouted + 1);
+
+    if (rerouted <= 0) setRerouted(rerouted + 1);
   }, [location]);
 
   const renderMainRoutes = (data, locale) => {

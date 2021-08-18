@@ -53,6 +53,25 @@
   color: #0077E4;
 }
 
+.item {
+  position: relative;
+  max-width: 1040px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #313336;
+  text-decoration: none;
+  border-bottom: 1px solid #E2E2E2;
+  margin: 0 auto;
+
+  &:hover {
+    background-color: #e6f2fc;
+    cursor: pointer;
+  }
+}
+
 @media (max-width: 768px) {
   .contactsItem {
     font-size: 14px;
@@ -94,10 +113,18 @@
     font-size: 14px;
     line-height: 24px;
   }
+
+  .item {
+    padding-left: 15%;
+  }
 }
 
 @media (max-width: 370px) {
   .list {
     padding-left: 15%;
+  }
+
+  .item {
+    padding-left: 5%;
   }
 }
