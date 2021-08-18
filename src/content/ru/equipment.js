@@ -38,8 +38,8 @@ export default {
         },
         {
           type: "link",
-          text: "Link",
-          link: "resources/example1.pdf"
+          text: "Инструкция ADISA ADI LT",
+          link: "resources/ADI-LT-Rus.pdf"
         }
       ],
       table: [ // resizable
