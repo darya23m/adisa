@@ -194,16 +194,16 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
-    padding: 0;
+    padding: 0 10px;
   }
 
   .planItemFirst {
-    width: 70%;
+    width: 98%;
     margin-bottom: 20%;
   }
   
   .planItemSecond {
-    width: 72%;
+    width: 100%;
     margin-left: 0;
   }
 
@@ -216,8 +216,14 @@
     left: 6%;
   }
 
+  .blueRect {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 4px 8px;
+  }
+
   .info {
-    margin-left: 20%;
+    margin-left: 40px;
   }
 }
 
@@ -253,6 +259,10 @@
 
   .picNameFirst {
     left: 6%;
+  }
+
+  .blueRect {
+    line-height: 14px;
   }
 
   .info {
