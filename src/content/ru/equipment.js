@@ -27,7 +27,7 @@ export default {
       ],
       links: [ // resizable
         "/resources/example1.pdf",
-        "/resources/example2.pdf"
+        "/resources/ADI-LT-Rus.pdf"
       ],
       docsIntro: "Ссылки и документы:",
       docs: [ // resizable
