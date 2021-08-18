@@ -30,12 +30,12 @@ export default {
         {
           type: "doc",
           text: "Document",
-          link: "resources/example1.pdf"
+          link: "/resources/example1.pdf"
         },
         {
           type: "link",
           text: "Инструкция ADISA ADI LT",
-          link: "resources/ADI-LT-Rus.pdf"
+          link: "/resources/ADI-LT-Rus.pdf"
         }
       ],
       table: [ // resizable
@@ -120,12 +120,12 @@ export default {
         {
           type: "doc",
           text: "Document",
-          link: "resources/example1.pdf"
+          link: "/resources/example1.pdf"
         },
         {
           type: "link",
           text: "Link",
-          link: "resources/example1.pdf"
+          link: "/resources/example1.pdf"
         }
       ],
       table: [ // resizable
@@ -212,12 +212,12 @@ export default {
         {
           type: "doc",
           text: "Document",
-          link: "resources/example1.pdf"
+          link: "/resources/example1.pdf"
         },
         {
           type: "link",
           text: "Link",
-          link: "resources/example1.pdf"
+          link: "/resources/example1.pdf"
         }
       ],
       table: [ // resizable
@@ -311,12 +311,12 @@ export default {
         {
           type: "doc",
           text: "Document",
-          link: "resources/example1.pdf"
+          link: "/resources/example1.pdf"
         },
         {
           type: "link",
           text: "Link",
-          link: "resources/example1.pdf"
+          link: "/resources/example1.pdf"
         }
       ],
       table: [ // resizable
