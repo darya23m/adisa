@@ -65,7 +65,7 @@ function Economy({ data }) {
   return (
     <div className={cx("commonContentContainer", styles.container)}>
       <Title title={data.title} number="1" />
-      <div className={styles.subtitle}>{JSON.stringify(isArrowInitiallyVisible)} { parseStrWithBoldElems(data.subtitle) }</div>
+      <div className={styles.subtitle}> { parseStrWithBoldElems(data.subtitle) }</div>
       <div className={styles.calculator}>
         <div className={styles.labelWrap}>
           <div className={cx(styles.label, {
