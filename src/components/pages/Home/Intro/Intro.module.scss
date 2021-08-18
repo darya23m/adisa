@@ -38,8 +38,8 @@
   align-items: center;
   top: 25%;
   left: 42%;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   z-index: 20;
 }
 
@@ -53,9 +53,9 @@
 .boiler2,
 .boiler3 {
   user-select: none;
-  width: 80%;
+  max-width: 90%;
   height: auto;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 .logo {
