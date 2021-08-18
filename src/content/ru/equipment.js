@@ -25,10 +25,6 @@ export default {
         "・Минимальное потребление электроэнергии, от 14Вт.",
         "・Возможно удаленное управление."
       ],
-      links: [ // resizable
-        "/resources/example1.pdf",
-        "/resources/ADI-LT-Rus.pdf"
-      ],
       docsIntro: "Ссылки и документы:",
       docs: [ // resizable
         {
@@ -77,9 +73,9 @@ export default {
           "Диаметр дымохода", "мм", "150", "150", "150", "150", "175", "175", "250", "250", "250", "350", "350", "350", "350", "350"
         ]
       ],
-      preview: [
+      preview: [ // resizable
         {
-          images: [
+          images: [ // resizable
             {
               path: "/img/adilt1.jpg",
               alt: "",
@@ -119,12 +115,8 @@ export default {
         "・Минимальное потребление электроэнергии, от 5Вт.",
         "・Возможно удаленное управление."
       ],
-      links: [
-        "/resources/example1.pdf",
-        "/resources/example2.pdf"
-      ],
       docsIntro: "Ссылки и документы:",
-      docs: [
+      docs: [ // resizable
         {
           type: "doc",
           text: "Document",
@@ -171,9 +163,9 @@ export default {
           "Диаметр дымохода", "мм", "150", "150", "150", "150", "150", "180", "180", "250", "250", "250", "350", "350", "350", "350", "350"
         ]
       ],
-      preview: [
+      preview: [ // resizable
         {
-          images: [
+          images: [ // resizable
             {
               path: "/img/adicd1.jpg",
               alt: "",
@@ -215,12 +207,8 @@ export default {
         "・Минимальное потребление электроэнергии, от 82.5Вт.",
         "・Возможно удаленное управление."
       ],
-      links: [
-        "/resources/example1.pdf",
-        "/resources/example2.pdf"
-      ],
       docsIntro: "Ссылки и документы:",
-      docs: [
+      docs: [ // resizable
         {
           type: "doc",
           text: "Document",
@@ -232,7 +220,7 @@ export default {
           link: "resources/example1.pdf"
         }
       ],
-      table: [
+      table: [ // resizable
         [
           "ADI MEGA", "Ед.изм.", "1200", "1600", "1800"
         ],
@@ -270,9 +258,9 @@ export default {
           "Диаметр дымохода", "мм", "2х350", "2х350", "2х350"
         ]
       ],
-      preview: [
+      preview: [ // resizable
         {
-          images: [
+          images: [ // resizable
             {
               path: "/img/adimega1.jpg",
               alt:"",
@@ -289,7 +277,7 @@ export default {
               width: "210"
             }
           ],
-          video: [
+          video: [ // resizable
             {
               src: 'https://www.youtube.com/embed/DxukPBGlgb8',
               width: '900',
@@ -305,7 +293,7 @@ export default {
       name: "Condensa PRO",
       path: "condensa_pro",
       description: "Настенный конденсационный газовый котел КПД 108%",
-      features: [
+      features: [ // resizable
         "Condexa PRO — это новое предложение от ADISA, представляющее собой модульную настенную конденсационную систему. Она может иметь открытую или закрытую камеру сгорания, состоять из одиночного котлоагрегата или работать в каскаде общей мощностью 1120 кВт.",
         "・Линейка включает 8 моделей, представленных котельными модулями от 35 до 131 кВт.",
         "・Каждый котлоагрегат оснащен инновационным спиральным теплообменником запатентованной геометрической формы. Он состоит из концентрических гладких труб из нержавеющей стали пятиугольного сечения изнутри и круглого снаружи, увеличивающих теплообменную поверхность и обеспечивающих максимальную стойкость к коррозии.",
@@ -318,12 +306,8 @@ export default {
         "・Возможность использования в качестве аксессуаров (дымоходы, сливы, подводы и пр. элементы обвязки) Украинских производителей.",
         "・Широкий ассортимент принадлежностей поможет упростить и ускорить установку, а также сделать комплектной каскадную систему."
       ],
-      links: [
-        "/resources/example1.pdf",
-        "/resources/example2.pdf"
-      ],
       docsIntro: "Ссылки и документы:",
-      docs: [
+      docs: [ // resizable
         {
           type: "doc",
           text: "Document",
@@ -335,7 +319,7 @@ export default {
           link: "resources/example1.pdf"
         }
       ],
-      table: [
+      table: [ // resizable
         [
           "Condexa PRO", "Ед. изм.", "35P", "50P", "57P", "70P", "90", "100", "115", "135"
         ],
@@ -367,9 +351,9 @@ export default {
           "Вес", "кг", "58", "58", "64", "64", "69", "69", "84", "90"
         ]
       ],
-      preview: [
+      preview: [ // resizable
         {
-          images: [
+          images: [ // resizable
             {
               path: "/img/condexaBoiler.jpg",
               alt: "",
