@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: "ADISA | Equipment",
+    title: "ADISA | Оборудование",
     description: "description",
     keywords: "ADISA"
   },
@@ -9,19 +9,21 @@ export default {
     {
       name: "ADI LT",
       path: "adi_lt",
-      description: "Конденсационный модульный газовый котел из нержавеющей стали",
+      description: "Конденсационный газовый котел из нержавеющей стали КПД 104%",
       features: [ // resizable
-        "・In compliance with the efficiency requirements set forth in the Ecodesign Directive  (ErP).",
-        "・High efficiency and energy saving.",
-        "・EC cerfified.",
-        "・Nett efficiencies from 96 to 104% ref. to LCV.",
-        "・Boiler heat exchanger in stainless steel.",
-        "・No limit of minimum return temperature.",
-        "・Power outputs from 104 to 905 kW.",
-        "・Modulation starting from 23% of the power.",
-        "・Variable speed fan, air-gas premix venturi, modulating gas valve.",
-        "・Ecological combustion: NOx class 6.",
-        "・Optimized dimensions and weights."
+        "・Исключительная эффективность и энергосбережение.",
+        "・EC сертификат, 3 звезды эффективности, от 96 до 104% КПД.",
+        "・Мощность от 104 до 905 кВт.",
+        "・Модуляция горения начиная с 23% мощности, встроенный PID контроллер.",
+        "・Изменяемая скорость вентилятора, газо-воздушное премиксное смешение вентури, модулирующий газовый клапан.",
+        "・Теплообменник котла изготовлен из нержавеющей стали. Отличная устойчивость к коррозии и высокой температуре.",
+        "・Нет лимита по температуре обратной воды.",
+        "・Минимальный уровень шума, от 48.3 dB, встроенные звукопоглащающие панели.",
+        "・Низкие выбросы: класс NOx=5, NOx<10ppm, CO около 47ppm.",
+        "・Огнеупорный сплав сетки премиксной горелки.",
+        "・Компактные размеры и низкий вес.",
+        "・Минимальное потребление электроэнергии, от 14 Вт.",
+        "・Возможно удаленное управление."
       ],
       links: [ // resizable
         "/resources/example1.pdf",
