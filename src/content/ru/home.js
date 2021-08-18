@@ -7,8 +7,8 @@ export default {
   // ========== Intro ==========
   intro: {
     logoAlt: "Логотип ADISA",
-    title: "Официальный предствитель ADISA в Украине",
-    description: "самые компактные котлы" // +b
+    title: "Конденсационные котлы ADISA в Украине",
+    description: "ADISA - TESLA среди котлов" // +b
   },
   // ========== Tagline ==========
   tagline: "Котлы ADISA - это",
