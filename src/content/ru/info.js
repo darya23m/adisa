@@ -6,7 +6,7 @@ export default {
   },
   title: "Сертификаты и документация",
   info: [ // resizable
-    // ========== Инструкции ==========
+    // ========== Инструкции ========== Типы файлов: link и doc
     {
       caption: "Инструкции",
       list: [ // resizable
@@ -68,29 +68,19 @@ export default {
         }
       ]
     },
-    // ========== List2 ==========
+    // ========== Сервисному инженеру ==========
     {
-      caption: "Сертификаты и разрешения",
+      caption: "Сервисному инженеру",
       list: [
         {
-          type: "doc",
-          text: "ADI CD Modulating gas condensing boiler in stainless steel 70-375 кВт. Сертификат соответствия.",
-          link: "resources/example1.pdf"
-        },
-        {
-          type: "doc",
-          text: "ADI HT Very high efficiency 105-400 кВт. Сертификат соответствия.",
-          link: "resources/example1.pdf"
+          type: "link",
+          text: "Просмотр истории ошибок на новом дисплее.",
+          link: "resources/History-error.pdf"
         },
         {
           type: "link",
-          text: "ADI LT Condensing modulating gas boiler in stainless steel 105-400 кВт. Сертификат соответствия.",
-          link: "resources/example1.pdf"
-        },
-        {
-          type: "link",
-          text: "ADI HT Very high efficiency 475-750 кВт. Сертификат соответствия.",
-          link: "resources/example1.pdf"
+          text: "Сброс ошибок на новом дисплее.",
+          link: "resources/Reset-Errors.pdf"
         }
       ]
     }
