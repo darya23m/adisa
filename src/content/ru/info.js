@@ -58,8 +58,8 @@ export default {
         },
         {
           type: "link",
-          text: "ADI HT Very high efficiency 475-750 кВт. Сертификат соответствия.",
-          link: "resources/example1.pdf"
+          text: "Разрешение ADISA.",
+          link: "resources/ADISA-dozvil.pdf"
         }
       ]
     },
