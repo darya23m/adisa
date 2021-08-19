@@ -2,7 +2,6 @@ import React from 'react';
 import cx from 'classnames';
 
 import styles from './Item.module.scss';
-import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 import ecoImg from './img/eco.jpg';
 import { ReactComponent as IconDownload } from './img/Download.svg';
 import { ReactComponent as IconLink } from './img/Link.svg';
@@ -84,7 +83,7 @@ function Item(
 
   const renderFeatures = () =>
     features.map((curr, index) =>
-      <ol key={index}>{ parseStrWithBoldElems(curr) }</ol>
+      <ol key={index} dangerouslySetInnerHTML={{__html: curr}} />
     );
 
   return (
