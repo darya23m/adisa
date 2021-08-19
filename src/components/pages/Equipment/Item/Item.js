@@ -91,7 +91,7 @@ function Item(
       <div className={styles.captionWrap}>
         <div className={styles.caption}>
           <h2 className={styles.name}>{ name }</h2>
-          <h3 className={styles.description}>{ description }</h3>
+          <h3 className={styles.description} dangerouslySetInnerHTML={{__html: description}} />
         </div>
         <img src={ecoImg} alt="Eco Design: ErP ready" className={styles.ecoIcon} />
       </div>
