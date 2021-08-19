@@ -34,6 +34,11 @@ export default {
           type: "link",
           text: "Каскад ADISA Condexa PRO",
           link: "/resources/ADI-Condexa-PRO-Cascade_Rus.pdf"
+        },
+        {
+          type: "link",
+          text: "Инструкция на контроллер Siemens LMS",
+          link: "/resources/LMS-Rus.pdf"
         }
       ],
     },
