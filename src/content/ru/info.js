@@ -6,9 +6,9 @@ export default {
   },
   title: "Сертификаты и документация",
   info: [ // resizable
-    // ========== Инструкции ========== Типы файлов: link и doc
+    // ========== Инструкции на котлы========== Типы файлов: link и doc
     {
-      caption: "Инструкции",
+      caption: "Инструкции на котлы",
       list: [ // resizable
         {
           type: "link",
@@ -34,11 +34,6 @@ export default {
           type: "link",
           text: "Каскад ADISA Condexa PRO",
           link: "/resources/ADI-Condexa-PRO-Cascade_Rus.pdf"
-        },
-        {
-          type: "link",
-          text: "Инструкция на контроллер Siemens LMS",
-          link: "/resources/LMS-Rus.pdf"
         }
       ],
     },
@@ -72,6 +67,11 @@ export default {
     {
       caption: "Сервисному инженеру",
       list: [
+        {
+          type: "link",
+          text: "Полная инструкция на контроллер Siemens LMS",
+          link: "/resources/LMS-Rus.pdf"
+        },
         {
           type: "link",
           text: "Знакомство с контроллером Siemens LMS. Быстрый ввод в эксплуатацию.",
