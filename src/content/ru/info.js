@@ -88,6 +88,37 @@ export default {
           link: "/resources/Reset-Errors.pdf"
         }
       ]
+    },
+    // ========== Проектировщику ==========
+    {
+      caption: "Проектировщику",
+      list: [
+        {
+          type: "doc",
+          text: "REVIT BIM модели ADISA ADI CD",
+          link: "/resources/ADISA_ADI-CD_BIM_engl.zip"
+        },
+        {
+          type: "link",
+          text: "Пример котельной",
+          link: "/resources/LMS-Rus.pdf"
+        },
+        {
+          type: "link",
+          text: "Пример котельной 2.5МВт",
+          link: "/resources/LMS-fast-start.pdf"
+        },
+        {
+          type: "link",
+          text: "Пример котельной 3.2МВт",
+          link: "/resources/History-error.pdf"
+        },
+        {
+          type: "link",
+          text: "Пример котельной 5МВт.",
+          link: "/resources/Reset-Errors.pdf"
+        }
+      ]
     }
     // ========== Add+ ==========
   ]
