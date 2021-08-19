@@ -6,7 +6,7 @@ export default {
   },
   title: "Сертификаты и документация",
   info: [ // resizable
-    // ========== List1 ==========
+    // ========== Инструкции ==========
     {
       caption: "Инструкции",
       list: [ // resizable
@@ -36,6 +36,32 @@ export default {
           link: "/resources/ADI-Condexa-PRO-Cascade_Rus.pdf"
         }
       ],
+    },
+    // ========== Сертификаты и разрешения ==========
+    {
+      caption: "Сертификаты и разрешения",
+      list: [
+        {
+          type: "link",
+          text: "Сертификат соответствия.",
+          link: "resources/UA.024.C.0555-20.pdf"
+        },
+        {
+          type: "link",
+          text: "Сертификат экспертизы типа (до 400кВт). ",
+          link: "resources/UA.TR.012.C.0553-20.pdf"
+        },
+        {
+          type: "link",
+          text: "Сертификат экспертизы типа (более 400кВт).",
+          link: "resources/UA.TR.012.C.0554-20.pdf"
+        },
+        {
+          type: "link",
+          text: "ADI HT Very high efficiency 475-750 кВт. Сертификат соответствия.",
+          link: "resources/example1.pdf"
+        }
+      ]
     },
     // ========== List2 ==========
     {
