@@ -294,14 +294,14 @@ export default {
       docsIntro: "Ссылки и документы:",
       docs: [ // resizable
         {
-          type: "doc",
-          text: "Document",
-          link: "/resources/example1.pdf"
+          type: "link",
+          text: "Инструкция ADISA Condexa PRO",
+          link: "/resources/ADI-Condexa-PRO-Rus.pdf"
         },
         {
           type: "link",
-          text: "Link",
-          link: "/resources/example1.pdf"
+          text: "Каскад ADISA Condexa PRO",
+          link: "/resources/ADI-Condexa-PRO-Cascade_Rus.pdf"
         }
       ],
       table: [ // resizable
