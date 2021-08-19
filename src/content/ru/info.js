@@ -88,6 +88,32 @@ export default {
           link: "/resources/Reset-Errors.pdf"
         }
       ]
+    },
+    // ========== Примеры проектов ==========
+    {
+      caption: "Примеры проектов",
+      list: [
+        {
+          type: "link",
+          text: "Котельная",
+          link: "/resources/LMS-Rus.pdf"
+        },
+        {
+          type: "link",
+          text: "Котельная 2.5МВт",
+          link: "/resources/LMS-fast-start.pdf"
+        },
+        {
+          type: "link",
+          text: "Котельная 3.2МВт",
+          link: "/resources/History-error.pdf"
+        },
+        {
+          type: "link",
+          text: "Котельная 5МВт.",
+          link: "/resources/Reset-Errors.pdf"
+        }
+      ]
     }
     // ========== Add+ ==========
   ]
