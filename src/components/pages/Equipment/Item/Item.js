@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 
 import styles from './Item.module.scss';
+import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 import ecoImg from './img/eco.jpg';
 import { ReactComponent as IconDownload } from './img/Download.svg';
 import { ReactComponent as IconLink } from './img/Link.svg';
@@ -11,25 +12,22 @@ function Item(
 ) {
   const docsAnimationDuration = docs.length * 100;
 
-  const renderPreviewImages = (images) =>
-    images.map((curr, index) =>
-      <div className={styles.previewItem}>
-        { curr.description &&
-          <div className={styles.previewDescription}>
-            { curr.description }
-          </div>
-        }
-        <img key={index} src={curr.path} alt={curr.alt} className={styles.previewImage} width={curr.width} />
-      </div>
-    )
+  const renderPreviewImages = (images) => images.map((curr, index) => (
+    <div className={cx(styles.previewItem, {[styles.previewItemWide]: curr.isWide})}>
+      { curr.description &&
+        <div className={styles.previewDescription}>
+          { curr.description }
+        </div>
+      }
+      <img key={index} src={curr.path} alt={curr.alt} className={styles.previewImage} />
+    </div>
+  ));
 
-  const renderPriviewVideo = (video) =>
-    video.map(({ width, height, src, title }, index) =>
+  const renderPreviewVideo = (videos) =>
+    videos.map(({ src, title }, index) =>
       <div key={index} className={styles.previewVideo}>
         <iframe
           className={styles.video}
-          width={width}
-          height={height}
           src={src}
           title={title}
           frameborder={0}
@@ -38,11 +36,14 @@ function Item(
       </div>
     )
 
+  const isImagesPresent = (images) => images && images.length > 0;
+  const isVideosPresent = (videos) => videos.filter((v) => v && v.src).length > 0;
+
   const renderPreview = () =>
     preview.map((curr, index) =>
       <div key={index} className={styles.preview}>
-        { renderPreviewImages(curr.images) }
-        { curr.video && renderPriviewVideo (curr.video) }
+        { isImagesPresent(curr.images) && renderPreviewImages(curr.images) }
+        { isVideosPresent(curr.videos) && renderPreviewVideo(curr.videos) }
       </div>
     )
 
@@ -73,6 +74,7 @@ function Item(
           }
           <a download={isDownloadable}
              href={curr.link}
+             target="_blank"
              className={cx(styles.docLink, {[styles.docLinkDownloadable]: isDownloadable})}>
             { curr.text }
           </a>
@@ -82,7 +84,7 @@ function Item(
 
   const renderFeatures = () =>
     features.map((curr, index) =>
-      <ol key={index}>{ curr }</ol>
+      <ol key={index}>{ parseStrWithBoldElems(curr) }</ol>
     );
 
   return (
