@@ -99,20 +99,20 @@
   width: 30%;
 }
 
-.name1, .name2, .name3 {
+.nameWrap {
   position: absolute;
-  border-top-left-radius: 0;
   bottom: calc(100% + 14px);
   left: 0;
-  font-size: 20px;
-  line-height: 28px;
+  max-width: 255px;
+  width: 100%;
   text-align: center;
-  color: #922033;
 }
 
-.name3 {
-  bottom: calc(100% + 14px);
-  left: 20%;
+.name1, .name2, .name3 {
+  display: block;
+  font-size: 20px;
+  line-height: 28px;
+  color: #922033;
 }
 
 .imageFeature {
@@ -133,10 +133,6 @@
   
   .list {
     padding-left: 20px;
-  }
-
-  .name3 {
-    left: 12%;
   }
 }
 
@@ -209,17 +205,16 @@
     margin-top: 30px;
   }
 
-  .name1, .name2, .name3 {
-    font-size: 20px;
-    line-height: 24px;
+  .nameWrap {
     max-width: 150px;
     text-align: right;
     bottom: 50%;
     left: calc(-90% - 30px);
   }
 
-  .name3 {
-    left: calc(-90% - 8px);
+  .name1, .name2, .name3 {
+    font-size: 20px;
+    line-height: 24px;
   }
 }
 
@@ -260,18 +255,16 @@
   .feature {
     width: 80%;
   }
-  
-  .name1, .name2, .name3 {
+
+  .nameWrap {
     max-width: 110px;
-    font-size: 16px;
-    line-height: 22px;
     bottom: 40%;
     left: calc(-65% - 20px);
   }
-
-  .name3 {
-    bottom: 48%;
-    left: calc(-69% - 5px);
+  
+  .name1, .name2, .name3 {
+    font-size: 16px;
+    line-height: 22px;
   }
 }
 
@@ -297,15 +290,13 @@
     margin-top: 20px;
   }
 
-  .name1, .name2, .name3 {
-    font-size: 12px;
-    line-height: 18px;
+  .nameWrap {
     bottom: 40%;
     left: calc(-74% - 20px);
   }
 
-  .name3 {
-    bottom: 48%;
-    left: calc(-60% - 5px);
+  .name1, .name2, .name3 {
+    font-size: 12px;
+    line-height: 18px;
   }
 }
