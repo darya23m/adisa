@@ -28,11 +28,6 @@ export default {
       docsIntro: "Ссылки и документы:",
       docs: [ // resizable
         {
-          type: "doc",
-          text: "Document",
-          link: "/resources/example1.pdf"
-        },
-        {
           type: "link",
           text: "Инструкция ADISA ADI LT",
           link: "/resources/ADI-LT-Rus.pdf"
@@ -118,14 +113,9 @@ export default {
       docsIntro: "Ссылки и документы:",
       docs: [ // resizable
         {
-          type: "doc",
-          text: "Document",
-          link: "/resources/example1.pdf"
-        },
-        {
           type: "link",
-          text: "Link",
-          link: "/resources/example1.pdf"
+          text: "Инструкция ADISA ADI CD",
+          link: "/resources/ADI-CD-Rus.pdf"
         }
       ],
       table: [ // resizable
@@ -210,14 +200,9 @@ export default {
       docsIntro: "Ссылки и документы:",
       docs: [ // resizable
         {
-          type: "doc",
-          text: "Document",
-          link: "/resources/example1.pdf"
-        },
-        {
           type: "link",
-          text: "Link",
-          link: "/resources/example1.pdf"
+          text: "Инструкция ADISA ADI MEGA",
+          link: "/resources/ADI-MEGA-CD-Rus.pdf"
         }
       ],
       table: [ // resizable
