@@ -49,22 +49,22 @@ export default {
         {
           type: "link",
           text: "Сертификат соответствия.",
-          link: "resources/UA024C0555-20.pdf"
+          link: "/resources/UA024C0555-20.pdf"
         },
         {
           type: "link",
           text: "Сертификат экспертизы типа (до 400кВт). ",
-          link: "resources/UATR012C0553-20.pdf"
+          link: "/resources/UATR012C0553-20.pdf"
         },
         {
           type: "link",
           text: "Сертификат экспертизы типа (более 400кВт).",
-          link: "resources/UATR012C0554-20.pdf"
+          link: "/resources/UATR012C0554-20.pdf"
         },
         {
           type: "link",
           text: "Разрешение ADISA.",
-          link: "resources/ADISA-dozvil.pdf"
+          link: "/resources/ADISA-dozvil.pdf"
         }
       ]
     },
