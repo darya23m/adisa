@@ -75,17 +75,17 @@ export default {
         {
           type: "link",
           text: "Знакомство с контроллером Siemens LMS. Быстрый ввод в эксплуатацию.",
-          link: "resources/LMS-fast-start.pdf"
+          link: "/resources/LMS-fast-start.pdf"
         },
         {
           type: "link",
           text: "Просмотр истории ошибок на новом дисплее.",
-          link: "resources/History-error.pdf"
+          link: "/resources/History-error.pdf"
         },
         {
           type: "link",
           text: "Сброс ошибок на новом дисплее.",
-          link: "resources/Reset-Errors.pdf"
+          link: "/resources/Reset-Errors.pdf"
         }
       ]
     }
