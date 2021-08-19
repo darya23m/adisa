@@ -121,8 +121,23 @@
 
 .tableWrap {
   width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+  scrollbar-color: #0077E4 #e6f1fc;
+  scrollbar-width: auto;
   margin-top: 30px;
   padding-right: 30px;
+
+  &::-webkit-scrollbar {
+    height: 10px;
+    background-color: #e6f1fc;
+    border-radius: 20px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #0077E4;
+    border-radius: 20px;
+    border: 2px solid #e6f1fc;
+  }
 }
 
 .table {
@@ -181,11 +196,12 @@
 .preview {
   width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 60px;
 }
+
 
 .previewDescription {
   font-weight: 600;
@@ -194,7 +210,18 @@
   margin-top: 64px;
 }
 
+.previewItem {
+  width: 100%;
+  max-width: 33%;
+  padding: 0 30px;
+
+  &Wide {
+    max-width: 100%;
+  }
+}
+
 .previewImage {
+  width: 100%;
   height: auto;
 }
 

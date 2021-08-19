@@ -72,19 +72,28 @@ export default {
         {
           images: [ // resizable
             {
+              description: "",
               path: "/img/adilt1.jpg",
               alt: "",
-              width: "198"
+              isWide: false
             },
             {
+              description: "",
               path: "/img/adilt2.jpg",
               alt: "",
-              width: "220"
+              isWide: false
             },
             {
+              description: "",
               path: "/img/adilt3.jpg",
               alt: "",
-              width: "229"
+              isWide: false
+            }
+          ],
+          videos: [ // resizable
+            {
+              src: "",
+              title: ""
             }
           ]
         }
@@ -157,19 +166,28 @@ export default {
         {
           images: [ // resizable
             {
+              description: "",
               path: "/img/adicd1.jpg",
               alt: "",
-              width: "240"
+              isWide: false
             },
             {
+              description: "",
               path: "/img/adicd2.jpg",
               alt: "",
-              width: "243"
+              isWide: false
             },
             {
+              description: "",
               path: "/img/adicd3.jpg",
               alt: "",
-              width: "259"
+              isWide: false
+            }
+          ],
+          videos: [ // resizable
+            {
+              src: "",
+              title: ""
             }
           ]
         }
@@ -247,26 +265,27 @@ export default {
         {
           images: [ // resizable
             {
+              description: "",
               path: "/img/adimega1.jpg",
-              alt:"",
-              width: "318"
+              alt: "",
+              isWide: false
             },
             {
+              description: "",
               path: "/img/adimega2.jpg",
-              alt:"",
-              width: "310"
+              alt: "",
+              isWide: false
             },
             {
+              description: "",
               path: "/img/adimega3.jpg",
-              alt:"",
-              width: "210"
+              alt: "",
+              isWide: false
             }
           ],
-          video: [ // resizable
+          videos: [ // resizable
             {
               src: 'https://www.youtube.com/embed/DxukPBGlgb8',
-              width: '900',
-              height: '500',
               title: 'Инструкция по сборке модуля ADISA ADI MEGA'
             }
           ]
@@ -340,20 +359,28 @@ export default {
         {
           images: [ // resizable
             {
+              description: "",
               path: "/img/condexaBoiler.jpg",
               alt: "",
-              width: "310"
+              isWide: false
             },
             {
+              description: "",
               path: "/img/condexaDraw.jpg",
               alt: "",
-              width: "310"
+              isWide: false
             },
             {
               description: "Пример каскада из котлов Condexa Pro",
               path: "/img/condexaPro.jpg",
               alt: "",
-              width: "90%"
+              isWide: true
+            }
+          ],
+          videos: [ // resizable
+            {
+              src: "",
+              title: ""
             }
           ]
         }
