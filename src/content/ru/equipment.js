@@ -31,6 +31,26 @@ export default {
           type: "link",
           text: "Инструкция ADISA ADI LT",
           link: "/resources/ADI-LT-Rus.pdf"
+        },
+        {
+          type: "link",
+          text: "Сертификат соответствия.",
+          link: "/resources/UA024C0555-20.pdf"
+        },
+        {
+          type: "link",
+          text: "Сертификат экспертизы типа (до 400кВт). ",
+          link: "/resources/UATR012C0553-20.pdf"
+        },
+        {
+          type: "link",
+          text: "Сертификат экспертизы типа (более 400кВт).",
+          link: "/resources/UATR012C0554-20.pdf"
+        },
+        {
+          type: "link",
+          text: "Разрешение ADISA.",
+          link: "/resources/ADISA-dozvil.pdf"
         }
       ],
       table: [ // resizable
@@ -125,6 +145,26 @@ export default {
           type: "link",
           text: "Инструкция ADISA ADI CD",
           link: "/resources/ADI-CD-Rus.pdf"
+        },
+        {
+          type: "link",
+          text: "Сертификат соответствия.",
+          link: "/resources/UA024C0555-20.pdf"
+        },
+        {
+          type: "link",
+          text: "Сертификат экспертизы типа (до 400кВт). ",
+          link: "/resources/UATR012C0553-20.pdf"
+        },
+        {
+          type: "link",
+          text: "Сертификат экспертизы типа (более 400кВт).",
+          link: "/resources/UATR012C0554-20.pdf"
+        },
+        {
+          type: "link",
+          text: "Разрешение ADISA.",
+          link: "/resources/ADISA-dozvil.pdf"
         }
       ],
       table: [ // resizable
@@ -221,6 +261,26 @@ export default {
           type: "link",
           text: "Инструкция ADISA ADI MEGA",
           link: "/resources/ADI-MEGA-CD-Rus.pdf"
+        },
+        {
+          type: "link",
+          text: "Сертификат соответствия.",
+          link: "/resources/UA024C0555-20.pdf"
+        },
+        {
+          type: "link",
+          text: "Сертификат экспертизы типа (до 400кВт). ",
+          link: "/resources/UATR012C0553-20.pdf"
+        },
+        {
+          type: "link",
+          text: "Сертификат экспертизы типа (более 400кВт).",
+          link: "/resources/UATR012C0554-20.pdf"
+        },
+        {
+          type: "link",
+          text: "Разрешение ADISA.",
+          link: "/resources/ADISA-dozvil.pdf"
         }
       ],
       table: [ // resizable
