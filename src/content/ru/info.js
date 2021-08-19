@@ -12,27 +12,27 @@ export default {
       list: [ // resizable
         {
           type: "link",
-          text: "Инструкция ADISA ADI LT",
+          text: "Инструкция ADISA ADI LT.",
           link: "/resources/ADI-LT-Rus.pdf"
         },
         {
           type: "link",
-          text: "Инструкция ADISA ADI CD",
+          text: "Инструкция ADISA ADI CD.",
           link: "/resources/ADI-CD-Rus.pdf"
         },
         {
           type: "link",
-          text: "Инструкция ADISA ADI MEGA",
+          text: "Инструкция ADISA ADI MEGA.",
           link: "/resources/ADI-MEGA-CD-Rus.pdf"
         },
         {
           type: "link",
-          text: "Инструкция ADISA Condexa PRO",
+          text: "Инструкция ADISA Condexa PRO.",
           link: "/resources/ADI-Condexa-PRO-Rus.pdf"
         },
         {
           type: "link",
-          text: "Каскад ADISA Condexa PRO",
+          text: "Каскад ADISA Condexa PRO.",
           link: "/resources/ADI-Condexa-PRO-Cascade_Rus.pdf"
         }
       ],
@@ -48,7 +48,7 @@ export default {
         },
         {
           type: "link",
-          text: "Сертификат экспертизы типа (до 400кВт). ",
+          text: "Сертификат экспертизы типа (до 400кВт).",
           link: "/resources/UATR012C0553-20.pdf"
         },
         {
@@ -69,7 +69,7 @@ export default {
       list: [
         {
           type: "link",
-          text: "Полная инструкция на контроллер Siemens LMS",
+          text: "Полная инструкция на контроллер Siemens LMS.",
           link: "/resources/LMS-Rus.pdf"
         },
         {
@@ -95,22 +95,22 @@ export default {
       list: [
         {
           type: "doc",
-          text: "REVIT BIM модели ADISA ADI CD",
+          text: "REVIT BIM модели ADISA ADI CD.",
           link: "/resources/ADISA_ADI-CD_BIM_engl.zip"
         },
         {
           type: "link",
-          text: "Пример котельной",
+          text: "Пример котельной.",
           link: "/resources/LMS-Rus.pdf"
         },
         {
           type: "link",
-          text: "Пример котельной 2.5МВт",
+          text: "Пример котельной 2.5МВт.",
           link: "/resources/LMS-fast-start.pdf"
         },
         {
           type: "link",
-          text: "Пример котельной 3.2МВт",
+          text: "Пример котельной 3.2МВт.",
           link: "/resources/History-error.pdf"
         },
         {
