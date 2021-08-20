@@ -131,7 +131,7 @@ export default {
         {
           type: "link",
           text: "Расход газа приведенный к каллорийности 8000ккал/м3.",
-          link: "/resources/rashod-gaza.jpeg"
+          link: "/resources/rashod-gaza.jpg"
         },
         {
           type: "link",
