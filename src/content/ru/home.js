@@ -82,10 +82,10 @@ export default {
   pollution: {
     title: "Низкие выбросы в окружающую среду",
     ecoAlt: 'ECO',
-    ecoDescription: "Конденсационные котлы ADISA бережно относятся к окружающей среде.", // +b
+    ecoDescription: "NOx: менее 10ppm. CO: менее 50ppm. <b>Высота и затраты на дымоход в разы меньше.</b>", // +b
     chartNameAdisa: "Конденсационный котел ADISA",
     chartNameCommon: "Обычный котел",
-    pollutionDescription: "NOx: менее 10ppm. CO: менее 50ppm. <b>Высота и затраты на дымоход в разы меньше.</b>" // +b
+    pollutionDescription: " " // +b
   },
   // ========== Training section ==========
   training: {
