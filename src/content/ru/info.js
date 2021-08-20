@@ -104,6 +104,11 @@ export default {
           link: "/resources/rashod-gaza.jpeg"
         },
         {
+          type: "doc",
+          text: "Площадь поверхности теплообмена котлов ADISA.",
+          link: "/resources/poverhnost-teploobmena.pdf"
+        },
+        {
           type: "link",
           text: "Пример котельной 478кВт.",
           link: "/resources/proekt-478kwt.pdf"
