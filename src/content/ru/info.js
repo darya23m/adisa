@@ -140,6 +140,11 @@ export default {
         },
         {
           type: "link",
+          text: "Уровень шума котлов ADISA.",
+          link: "/resources/noise-level-adisa.pdf"
+        },
+        {
+          type: "link",
           text: "Пример котельной 478кВт.",
           link: "/resources/proekt-478kwt.pdf"
         },
