@@ -23,16 +23,16 @@ export default {
     chartDescription: "Ваша <b>экономия газа</b> в сравнении с обычным котлом составит:", // +b
     scaleItems: [
       { label: "За год",
-        mod: 1.22
+        mod: 32
       },
       { label: "За 5 лет",
-        mod: 1.22 * 5
+        mod: 32 * 5
       },
       { label: "За 10 лет",
-        mod: 1.22 * 10
+        mod: 32 * 10
       },
       { label: "За 20 лет",
-        mod: 1.22 * 20
+        mod: 32 * 20
       }
     ]
   },
