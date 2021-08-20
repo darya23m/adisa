@@ -99,12 +99,12 @@ export default {
           link: "/resources/ADISA_ADI-CD_BIM_engl.zip"
         },
         {
-          type: "doc",
+          type: "link",
           text: "Расход газа приведенный к каллорийности 8000ккал/м3.",
           link: "/resources/rashod-gaza.jpeg"
         },
         {
-          type: "doc",
+          type: "link",
           text: "Площадь поверхности теплообмена котлов ADISA.",
           link: "/resources/poverhnost-teploobmena.pdf"
         },
