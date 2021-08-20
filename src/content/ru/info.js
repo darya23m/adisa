@@ -111,12 +111,12 @@ export default {
         {
           type: "link",
           text: "Пример котельной 3.2МВт.",
-          link: "/resources/History-error.pdf"
+          link: "/resources/proekt-3.2mwt.pdf"
         },
         {
           type: "link",
           text: "Пример котельной 5МВт.",
-          link: "/resources/Reset-Errors.pdf"
+          link: "/resources/proekt-5mwt.pdf"
         }
       ]
     }
