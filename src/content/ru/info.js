@@ -100,13 +100,18 @@ export default {
         },
         {
           type: "link",
-          text: "Пример котельной.",
-          link: "/resources/LMS-Rus.pdf"
+          text: "Пример котельной 478кВт.",
+          link: "/resources/proekt-478kwt.pdf"
         },
         {
           type: "link",
-          text: "Пример котельной 2.5МВт.",
-          link: "/resources/LMS-fast-start.pdf"
+          text: "Пример котельной 1090кВт.",
+          link: "/resources/proekt-1090kwt.pdf"
+        },
+        {
+          type: "link",
+          text: "Пример котельной 1.3МВт.",
+          link: "/resources/proekt-1.3mwt.pdf"
         },
         {
           type: "link",
