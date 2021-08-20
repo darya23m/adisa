@@ -86,6 +86,36 @@ export default {
           type: "link",
           text: "Сброс ошибок на новом дисплее.",
           link: "/resources/Reset-Errors.pdf"
+        },
+        {
+          type: "link",
+          text: "Взрывная схема котлов ADISA ADI 70-105.",
+          link: "/resources/shema_ADI-70-105.pdf"
+        },
+        {
+          type: "link",
+          text: "Взрывная схема котлов ADISA ADI 130-200.",
+          link: "/resources/shema_ADI-130-200.pdf"
+        },
+        {
+          type: "link",
+          text: "Взрывная схема котлов ADISA ADI 250-275.",
+          link: "/resources/shema_ADI-250-275.pdf"
+        },
+        {
+          type: "link",
+          text: "Взрывная схема котлов ADISA ADI 325-475.",
+          link: "/resources/shema_ADI-325-475.pdf"
+        },
+        {
+          type: "link",
+          text: "Взрывная схема котлов ADISA ADI 550-750.",
+          link: "/resources/shema_ADI-550-750.pdf"
+        },
+        {
+          type: "link",
+          text: "Взрывная схема котлов ADISA ADI 850-950.",
+          link: "/resources/shema_ADI-850-950.pdf"
         }
       ]
     },
