@@ -80,7 +80,7 @@ export default {
   },
   // ========== Pollution section ==========
   pollution: {
-    title: "Низкие выбросы",
+    title: "Низкие выбросы в окружающую среду",
     ecoAlt: 'ECO',
     ecoDescription: "Конденсационные котлы ADISA бережно относятся к окружающей среде.", // +b
     chartNameAdisa: "Конденсационный котел ADISA",
