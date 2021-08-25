@@ -100,6 +100,7 @@
 }
 
 .docLink {
+  width: 84%;
   font-size: 16px;
   line-height: 22px;
   color: #0077E4;
@@ -117,6 +118,10 @@
       text-decoration: none;
     }
   }
+}
+
+.downloadIcon, .linkIcon {
+  width: 16%;
 }
 
 .tableWrap {
@@ -269,6 +274,14 @@
     margin-top: 32px;
     padding-top: 18px;
     padding-left: 0;
+  }
+
+  .docLink {
+    width: 88%;
+  }
+  
+  .downloadIcon, .linkIcon {
+    width: 12%;
   }
 
   .tableWrap {
