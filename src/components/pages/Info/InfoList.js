@@ -12,14 +12,14 @@ const InfoList = ({ data: { list, caption } }) => {
         return (
           <div key={index} className={styles.download}>
             <IconDownload className={styles.icon} /> 
-            <a href={link} download className={styles.downloadLink}>{text}</a>
+            <a href={link} download className={styles.downloadLink} target="_blank">{text}</a>
           </div>
         );
       case "link":
         return (
           <div key={index} className={styles.link}>
             <IconLink className={styles.icon} />  
-            <a href={link} className={styles.commonLink}>{text}</a>
+            <a href={link} className={styles.commonLink} target="_blank">{text}</a>
           </div>
         )
     }
