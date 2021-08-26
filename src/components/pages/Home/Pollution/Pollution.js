@@ -118,7 +118,6 @@ const Pollution = ({ data: { title, ecoAlt, ecoDescription, chartNameAdisa, char
             <div className={styles.chartName}>{ chartNameCommon }</div>
           </div>
         </div>
-        <div className={styles.pollutionDescription}>{ parseStrWithBoldElems(pollutionDescription) }</div>
       </div>
     </div>
   );

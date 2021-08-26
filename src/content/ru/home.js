@@ -84,8 +84,7 @@ export default {
     ecoAlt: 'ECO',
     ecoDescription: "NOx: менее 10ppm. CO: менее 50ppm. <b>Высота и затраты на дымоход в разы меньше.</b>", // +b
     chartNameAdisa: "Конденсационный котел ADISA",
-    chartNameCommon: "Обычный котел",
-    pollutionDescription: " " // +b
+    chartNameCommon: "Обычный котел"
   },
   // ========== Training section ==========
   training: {
