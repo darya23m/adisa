@@ -140,7 +140,7 @@ export default {
         },
         {
           type: "link",
-          text: "Рівень шуму котлівADISA.",
+          text: "Рівень шуму котлів ADISA.",
           link: "/resources/noise-level-adisa.pdf"
         },
         {
