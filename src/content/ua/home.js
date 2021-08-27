@@ -20,7 +20,7 @@ export default {
     unit: "кВт",
     error: "Введіть значення",
     calcButton: "Порахувати",
-    chartDescription: "Ваша <b> економія газу </ b> в порівнянні зі звичайним котлом складе:", // +b
+    chartDescription: "Ваша <b> економія газу </b> в порівнянні зі звичайним котлом складе:", // +b
     scaleItems: [
       { label: "За рік",
         mod: 31.94
