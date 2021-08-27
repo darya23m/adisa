@@ -1,33 +1,33 @@
 export default {
   meta: {
-    title: "ADISA | Документация",
+    title: "ADISA | Документація",
     description: "description",
     keywords: "ADISA"
   },
-  title: "Сертификаты и документация",
+  title: "Сертифікати та документація",
   info: [ // resizable
     // ========== Инструкции на котлы========== Типы файлов: link и doc
     {
-      caption: "Инструкции на котлы",
+      caption: "Інструкції на котли",
       list: [ // resizable
         {
           type: "link",
-          text: "Инструкция ADISA ADI LT.",
+          text: "Інструкція ADISA ADI LT.",
           link: "/resources/ADI-LT-Rus.pdf"
         },
         {
           type: "link",
-          text: "Инструкция ADISA ADI CD.",
+          text: "Інструкція ADISA ADI CD.",
           link: "/resources/ADI-CD-Rus.pdf"
         },
         {
           type: "link",
-          text: "Инструкция ADISA ADI MEGA.",
+          text: "Інструкція ADISA ADI MEGA.",
           link: "/resources/ADI-MEGA-CD-Rus.pdf"
         },
         {
           type: "link",
-          text: "Инструкция ADISA Condexa PRO.",
+          text: "Інструкція ADISA Condexa PRO.",
           link: "/resources/ADI-Condexa-PRO-Rus.pdf"
         },
         {
@@ -39,133 +39,133 @@ export default {
     },
     // ========== Сертификаты и разрешения ==========
     {
-      caption: "Сертификаты и разрешения",
+      caption: "Сертифікати і дозволи",
       list: [
         {
           type: "link",
-          text: "Сертификат соответствия.",
+          text: "Сертифікат відповідності.",
           link: "/resources/UA024C0555-20.pdf"
         },
         {
           type: "link",
-          text: "Сертификат экспертизы типа (до 400кВт).",
+          text: "Сертифікат експертизи типу (до 400кВт).",
           link: "/resources/UATR012C0553-20.pdf"
         },
         {
           type: "link",
-          text: "Сертификат экспертизы типа (более 400кВт).",
+          text: "Сертифікат експертизи типу (понад 400кВт).",
           link: "/resources/UATR012C0554-20.pdf"
         },
         {
           type: "link",
-          text: "Разрешение ADISA.",
+          text: "Дозвіл ADISA.",
           link: "/resources/ADISA-dozvil.pdf"
         }
       ]
     },
     // ========== Сервисному инженеру ==========
     {
-      caption: "Сервисному инженеру",
+      caption: "Сервісному інженеру",
       list: [
         {
           type: "link",
-          text: "Полная инструкция на контроллер Siemens LMS.",
+          text: "Повна інструкція на контролер Siemens LMS.",
           link: "/resources/LMS-Rus.pdf"
         },
         {
           type: "link",
-          text: "Знакомство с контроллером Siemens LMS. Быстрый ввод в эксплуатацию.",
+          text: "Знайомство з контролером Siemens LMS. Швидке введення в експлуатацію.",
           link: "/resources/LMS-fast-start.pdf"
         },
         {
           type: "link",
-          text: "Просмотр истории ошибок на новом дисплее.",
+          text: "Перегляд історії помилок на новому дисплеї.",
           link: "/resources/History-error.pdf"
         },
         {
           type: "link",
-          text: "Сброс ошибок на новом дисплее.",
+          text: "Скидання помилок на новому дисплеї.",
           link: "/resources/Reset-Errors.pdf"
         },
         {
           type: "link",
-          text: "Взрывная схема котлов ADISA ADI 70-105.",
+          text: "Вибухова схема котлів ADISA ADI 70-105.",
           link: "/resources/shema_ADI-70-105.pdf"
         },
         {
           type: "link",
-          text: "Взрывная схема котлов ADISA ADI 130-200.",
+          text: "Вибухова схема котлів ADISA ADI 130-200.",
           link: "/resources/shema_ADI-130-200.pdf"
         },
         {
           type: "link",
-          text: "Взрывная схема котлов ADISA ADI 250-275.",
+          text: "Вибухова схема котлів ADISA ADI 250-275.",
           link: "/resources/shema_ADI-250-275.pdf"
         },
         {
           type: "link",
-          text: "Взрывная схема котлов ADISA ADI 325-475.",
+          text: "Вибухова схема котлів ADISA ADI 325-475.",
           link: "/resources/shema_ADI-325-475.pdf"
         },
         {
           type: "link",
-          text: "Взрывная схема котлов ADISA ADI 550-750.",
+          text: "Вибухова схема котлів ADISA ADI 550-750.",
           link: "/resources/shema_ADI-550-750.pdf"
         },
         {
           type: "link",
-          text: "Взрывная схема котлов ADISA ADI 850-950.",
+          text: "Вибухова схема котлів ADISA ADI 850-950.",
           link: "/resources/shema_ADI-850-950.pdf"
         }
       ]
     },
     // ========== Проектировщику ==========
     {
-      caption: "Проектировщику",
+      caption: "Проектувальнику",
       list: [
         {
           type: "doc",
-          text: "REVIT BIM модели ADISA ADI CD.",
+          text: "REVIT BIM моделі ADISA ADI CD.",
           link: "/resources/ADISA_ADI-CD_BIM_engl.zip"
         },
         {
           type: "link",
-          text: "Расход газа приведенный к каллорийности 8000ккал/м3.",
+          text: "Витрата газу наведений до калорійності 8000ккал/м3.",
           link: "/resources/rashod-gaza.jpg"
         },
         {
           type: "link",
-          text: "Площадь поверхности теплообмена котлов ADISA.",
+          text: "Площа поверхні теплообміну котлів ADISA.",
           link: "/resources/poverhnost-teploobmena.pdf"
         },
         {
           type: "link",
-          text: "Уровень шума котлов ADISA.",
+          text: "Рівень шуму котлівADISA.",
           link: "/resources/noise-level-adisa.pdf"
         },
         {
           type: "link",
-          text: "Пример котельной 478кВт.",
+          text: "Приклад котельні 478кВт.",
           link: "/resources/proekt-478kwt.pdf"
         },
         {
           type: "link",
-          text: "Пример котельной 1090кВт.",
+          text: "Приклад котельні 1090кВт.",
           link: "/resources/proekt-1090kwt.pdf"
         },
         {
           type: "link",
-          text: "Пример котельной 1.3МВт.",
+          text: "Приклад котельні 1.3МВт.",
           link: "/resources/proekt-1.3mwt.pdf"
         },
         {
           type: "link",
-          text: "Пример котельной 3.2МВт.",
+          text: "Приклад котельні 3.2МВт.",
           link: "/resources/proekt-3.2mwt.pdf"
         },
         {
           type: "link",
-          text: "Пример котельной 5МВт.",
+          text: "Приклад котельні 5МВт.",
           link: "/resources/proekt-5mwt.pdf"
         }
       ]
