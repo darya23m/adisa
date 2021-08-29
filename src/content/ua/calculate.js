@@ -16,7 +16,8 @@ export default {
           cantBeBlank: "Введіть ім'я або назва організації."
         },
         contact: {
-          cantBeBlank: "Введіть е-мейл або номер телефону."
+          cantBeBlank: "Введіть e-mail або номер телефону.",
+          invalidInput: "E-mail або номер телефону введений не вірно."
         },
         captcha: {
           cantBeBlank: "Пройдіть перевірку reCAPTCHA."
