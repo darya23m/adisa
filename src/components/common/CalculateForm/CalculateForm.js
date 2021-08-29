@@ -99,7 +99,6 @@ const CalculateForm = ({ data, onSuccess }) => {
       setRequestErrors([result.message]);
     }
   };
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
     recaptchaRef && recaptchaRef.current && recaptchaRef.current.reset();
@@ -136,8 +135,8 @@ const CalculateForm = ({ data, onSuccess }) => {
         <input
           className={
             cx(styles.input, 
-              {[styles.inputError]: !!nameErrors.length}, 
-              {[styles.inputSuccess]: isNameValid})
+            {[styles.inputError]: !!nameErrors.length}, 
+            {[styles.inputSuccess]: isNameValid})
           }
           type="text"
           name="name"
@@ -152,9 +151,9 @@ const CalculateForm = ({ data, onSuccess }) => {
         <input 
           className={
             cx(styles.input, 
-              {[styles.inputError]: !!contactErrors.length}, 
-              {[styles.inputSuccess]: isContactValid})
-            }
+            {[styles.inputError]: !!contactErrors.length}, 
+            {[styles.inputSuccess]: isContactValid})
+          }
           type="text"
           name="contact"
           value={contact}
