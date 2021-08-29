@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import cx from 'classnames';
 
 import styles from './Contacts.module.scss';
-import ContactsForm from './ContactsForm';
+import ContactsForm from './ContactsForm/ContactsForm';
 
 const Contacts = ({ data, isRerouted }) => {
   const { meta, header, description, descriptionLinkText, orText, contactUs } = data;

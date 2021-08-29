@@ -21,13 +21,18 @@
   font-size: 16px;
   line-height: 36px;
   border: 1px solid #adadaf;
+  padding-left: 8px;
 
   &Error {
     border-color: #D21232;
   }
 
   &Success {
-    border-color: #0077E4;
+    border-color: #adadaf;
+    background-image: url(./img/Done.svg);
+    background-position: 98%;
+    background-repeat: no-repeat;
+    padding-right: 10%;
   }
 }
 
@@ -38,13 +43,14 @@
   font-size: 16px;
   line-height: 28px;
   border: 1px solid #adadaf;
+  padding: 8px;
 
   &Error {
     border-color: #D21232;
   }
 
   &Success {
-    border-color: #0077E4;
+    border-color: #adadaf;
   }
 }
 

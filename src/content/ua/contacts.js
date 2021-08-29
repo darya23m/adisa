@@ -23,7 +23,8 @@ export default {
           cantBeBlank: "Введите имя или название организации."
         },
         contact: {
-          cantBeBlank: "Введите е-мейл или номер телефона."
+          cantBeBlank: "Введите е-мейл или номер телефона.",
+          invalidInput: "E-mail или номер телефона введён не верно."
         },
         message: {
           cantBeBlank: "Введите сообщение."

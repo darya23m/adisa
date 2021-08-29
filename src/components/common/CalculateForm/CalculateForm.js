@@ -11,48 +11,102 @@ const CalculateForm = ({ data, onSuccess }) => {
   const recaptchaRef = React.createRef();
 
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState([]);
+  const [requestErrors, setRequestErrors] = useState([]);
 
   // Form fields
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [verificationKey, setVerificationKey] = useState(null);
 
+   // Form validations
+   const [isNameValid, setIsNameValid] = useState(false);
+   const [isContactValid, setIsContactValid] = useState(false);
+   const [nameErrors, setNameErrors] = useState([]);
+   const [contactErrors, setContactErrors] = useState([]);
+   const [captchaErrors, setCaptchaErrors] = useState([]);
+ 
+   const validateName = () => {
+     let errors = [];
+     if (name.length === 0) errors.push(data.form.errors.fields.name.cantBeBlank);
+     if (!errors.length) setIsNameValid(true);
+     setNameErrors(errors);
+     return errors;
+   }
+ 
+   const validateContact = () => {
+     let errors = [];
+     const emailRegEx = /^[A-Za-z0-9][A-Za-z0-9-+_.]*[A-Za-z0-9]@[A-Za-z0-9][A-Za-z0-9-_.]+[A-Za-z0-9]$/im;
+     const phoneRegEx = /^[\+]?[0-9\s]{0,4}[(]?[0-9]{2,3}[)]?[-\s0-9]+$/im;
+ 
+     if (contact.length === 0) errors.push(data.form.errors.fields.contact.cantBeBlank)
+     else if (
+         !emailRegEx.test(contact) &&
+         !(phoneRegEx.test(contact) && contact.length >= 10)
+     ) errors.push(data.form.errors.fields.contact.invalidInput);
+ 
+     if (!errors.length) setIsContactValid(true);
+     setContactErrors(errors);
+     return errors;
+   }
+ 
+   const validateCaptcha = () => {
+     let errors = [];
+     if (!verificationKey) errors.push(data.form.errors.fields.captcha.cantBeBlank);
+     setCaptchaErrors(errors);
+     return errors;
+   }
+ 
+   const validateForm = () => {
+     const validations = [
+       validateName(),
+       validateContact(),
+       validateCaptcha()
+     ];
+     return validations.flat().length === 0;
+   };
+ 
+   const clearForm = () => {
+     setName("");
+     setContact("");
+   };
+ 
+   const allErrors = () => [
+     requestErrors,
+     nameErrors,
+     contactErrors,
+     captchaErrors
+   ];
+ 
+   const resetAllErrors = () => {
+     setRequestErrors([]);
+     setNameErrors([]);
+     setContactErrors([]);
+     setCaptchaErrors([]);
+ 
+     setIsNameValid(false);
+     setIsContactValid(false);
+   }
+ 
+   const hasErrors = () => allErrors().flat().length > 0;
+
   // Form handlers
-  const validateForm = () => {
-    let validationErrors = new Array();
-
-    if (name.length === 0) validationErrors.push(data.form.errors.fields.name.cantBeBlank);
-    if (contact.length === 0) validationErrors.push(data.form.errors.fields.contact.cantBeBlank);
-    if (!verificationKey) validationErrors.push(data.form.errors.fields.captcha.cantBeBlank);
-
-    return validationErrors;
-  };
-
-  const clearForm = () => {
-    setName("");
-    setContact("");
-  };
 
   const handleResult = (result) => {
     if (result === true) {
       clearForm();
       onSuccess(true);
     } else {
-      setErrors([result.message]);
+      setRequestErrors([result.message]);
     }
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     recaptchaRef && recaptchaRef.current && recaptchaRef.current.reset();
+    const isFormValid = validateForm();
 
-    const validationErrors = validateForm();
-
-    if (validationErrors.length > 0) {
-      setErrors(validationErrors);
-    } else {
-      setErrors([]);
+    if (isFormValid) {
+      resetAllErrors();
       setIsLoading(true);
       const result = await postCalculate({ name, contact, verificationKey });
       handleResult(result);
@@ -67,7 +121,7 @@ const CalculateForm = ({ data, onSuccess }) => {
     return (
       <div className={styles.errors}>
         <div className={styles.errorDescription}><Error className={styles.errorSvg} />{data.form.errors.title}</div>
-        { errors.map((err, index) => <div key={index}>{err}</div>) }
+        { allErrors().flat().map((err, index) => <div key={index}>{err}</div>) }
       </div>
     );
   }
@@ -76,19 +130,20 @@ const CalculateForm = ({ data, onSuccess }) => {
     <form onSubmit={handleSubmit}>
       <div className={styles.title}>{ data.title }</div>
       <div className={styles.description}>{ data.description }</div>
-      { errors.length > 0 && renderErrors() }
+      { hasErrors() && renderErrors() }
       <div className={styles.inputWraper}>
         <label className={styles.label}>{ data.form.labels.name }</label>
         <input
           className={
             cx(styles.input, 
-            {[styles.inputError]: errors.length > 0}, 
-            {[styles.inputSuccess]: name.length > 0 })
+              {[styles.inputError]: !!nameErrors.length}, 
+              {[styles.inputSuccess]: isNameValid})
           }
           type="text"
           name="name"
           value={name}
           onChange={e => setName(e.target.value)}
+          onBlur={validateName}
           disabled={isLoading}
         />
       </div>
@@ -97,13 +152,14 @@ const CalculateForm = ({ data, onSuccess }) => {
         <input 
           className={
             cx(styles.input, 
-            {[styles.inputError]: errors.length > 0}, 
-            {[styles.inputSuccess]: contact.length > 0 })
-          }
+              {[styles.inputError]: !!contactErrors.length}, 
+              {[styles.inputSuccess]: isContactValid})
+            }
           type="text"
           name="contact"
           value={contact}
           onChange={e => setContact(e.target.value)}
+          onBlur={validateContact}
           disabled={isLoading}
         />
       </div>
