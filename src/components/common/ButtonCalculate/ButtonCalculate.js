@@ -2,11 +2,11 @@ import React from 'react';
 
 import styles from './ButtonCalculate.module.scss';
 
-const ButtonCalculate = (props) => {
+const ButtonCalculate = ({ data, onClick}) => {
   return (
     <>
-      <button className={styles.calculate} onClick={props.onClick}>
-        ПРОСЧИТАТЬ КОТЕЛЬНУЮ
+      <button className={styles.calculate} onClick={onClick}>
+        {data}
       </button>
     </>
   );
