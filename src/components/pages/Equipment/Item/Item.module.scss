@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   transition: opacity 0.3s ease-in-out;
-  padding-left: 40px;
+  padding: 0 40px;
 
   &Hidden {
     opacity: 0;
@@ -126,7 +126,7 @@
 
 .tableWrap {
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
   white-space: nowrap;
   scrollbar-color: #0077E4 #e6f1fc;
   scrollbar-width: auto;
@@ -335,11 +335,14 @@
     margin-top: 12px;
   }
 
+  .tableWrap {
+    overflow-x: scroll;
+  }
   .preview {
     margin-top: 20px;
   }
 
-  .previewImage {
+  .previewItem {
     max-width: 95%;
   }
 }
