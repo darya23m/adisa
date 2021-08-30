@@ -34,3 +34,9 @@
     display: flex;
   }
 }
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1880px;
+  }
+}
