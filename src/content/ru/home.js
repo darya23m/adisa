@@ -90,6 +90,7 @@ export default {
   training: {
     title: "Бесплатное обучение на заводе в Барселоне",
     trainingText: "Обслуживающий персонал наших постоянных клиентов проходит бесплатное обучение на заводе-изготовителе в Барселоне.", // +b
+    videoUrl: "https://www.youtube.com/watch?v=duTKXOmA3Po",
     watchButtonText: "Посмотреть полное видео"
   },
   // ========== Repairs section ==========
