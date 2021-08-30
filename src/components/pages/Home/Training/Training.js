@@ -5,10 +5,10 @@ import Title from 'components/common/Title/Title';
 import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 import styles from './Training.module.scss';
 
-const Training = ({ data: { title, trainingText, watchButtonText }}) => {
+const Training = ({ data: { title, trainingText, videoUrl, watchButtonText }}) => {
   return (
     <div className={styles.container}>
-      <video width="100%" autoPlay controls={false} loop muted={true}>
+      <video width="100%" autoPlay controls={false} loop muted={true} className={styles.video}>
         <source src={factoryPath} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -17,7 +17,7 @@ const Training = ({ data: { title, trainingText, watchButtonText }}) => {
           <Title title={title} number="6" isWhite />
           <p className={styles.trainingText}>{ parseStrWithBoldElems(trainingText) }</p>
         </div>
-        <button type="button" className={styles.watchBtn}>{ watchButtonText }</button>
+          <a href={videoUrl} className={styles.watchBtn} target="_blank">{ watchButtonText }</a>
         <div />
       </div>
     </div>
