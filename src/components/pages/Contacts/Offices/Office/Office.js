@@ -22,7 +22,8 @@ const Office = ({ data: { city, addresses, path }, parentUrl }) => {
   const renderAddresses = () => addresses.map((curr, index) => (
       <li key={index} className={styles.listItem}>
         <div className={styles.listItemBlock}>
-          <div key={index} className={styles.address}>{ curr.address }</div>
+          <div className={styles.officeName}>{ curr.officeName }</div>
+          { curr.address && <div key={index} className={styles.address}>Адрес: { curr.address }</div>}
           { curr.tels && renderContactsItem(curr.tels, 'Тел.', 'tel') }
           { curr.emails && renderContactsItem(curr.emails, 'E-mail', 'email') }
           { curr.webs && renderContactsItem(curr.webs, 'Web', 'web') }

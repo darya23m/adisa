@@ -72,7 +72,7 @@ const Repairs = ({ data: { title, description, serviceLinkText }}) => {
         </div>
         <div className={styles.text}>
           { parseStrWithBoldElems(description) }
-          <Link to="offices" className={styles.serviceLink}>{ serviceLinkText }</Link>
+          <Link to="contacts" className={styles.serviceLink}>{ serviceLinkText }</Link>
         </div>
       </div>
     </div>

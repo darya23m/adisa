@@ -1,0 +1,54 @@
+@import "src/styles/animations";
+.content {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-top: 72px;
+  margin-bottom: 92px;
+}
+
+.horizontalDividerWrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 38px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  white-space: nowrap;
+  margin-right: 8px;
+}
+
+.horizontalDivider {
+  flex-grow: 1;
+  width: 100%;
+  height: 1px;
+  background-color: #E2E2E2;
+  margin-top: 3px;
+}
+
+.officeWrap {
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 60px 30px;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .content {
+    padding: 40px 0;
+  }
+}
