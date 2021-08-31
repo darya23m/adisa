@@ -3,7 +3,6 @@ export default {
     home: "ADISA",
     equipment: "Оборудование",
     info: "Документация",
-    offices: "Представительства",
     contacts: "Контакты"
   }
 };

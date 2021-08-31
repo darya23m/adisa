@@ -1,8 +1,29 @@
-@import "src/styles/animations";
+.content {
+  max-width: 1040px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 21px rgba(150, 157, 196, 0.5);
+  border-radius: 20px;
+  padding: 64px 0 90px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 54px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.description {
+  max-width: 444px;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  margin: 0 auto 44px;
+}
 
 .form {
   max-width: 480px;
-  animation: showAndMoveDown 0.8s ease-out 2s both;
   margin: 0 auto;
 }
 
@@ -116,6 +137,10 @@
 }
 
 @media (max-width: 768px) {
+  .content {
+    padding: 50px 30px 60px;
+  }
+
   .inputWraper {
     margin-bottom: 20px;
   }
@@ -126,8 +151,28 @@
 }
 
 @media (max-width: 480px) {
+  .content {
+    padding: 40px 30px 45px;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 46px;
+  }
+  
+  .description {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 34px;
+  }
+
   .inputWraper {
     margin-bottom: 18px;
+  }
+
+  .label {
+    font-size: 12px;
+    line-height: 20px;
   }
 
   .textarea {
@@ -138,6 +183,16 @@
 @media (max-width: 370px) {
   .inputWraper {
     margin-bottom: 14px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .description {
+    font-size: 12px;
+    line-height: 18px;
   }
 
   .textarea {

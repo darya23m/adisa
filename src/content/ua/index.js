@@ -4,7 +4,6 @@ import calculate from './calculate';
 import home from './home';
 import equipment from './equipment';
 import info from './info';
-import offices from './offices';
 import contacts from './contacts';
 
 export default {
@@ -14,6 +13,5 @@ export default {
   home,
   equipment,
   info,
-  offices,
   contacts
 };

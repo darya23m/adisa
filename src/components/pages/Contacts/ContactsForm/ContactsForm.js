@@ -173,7 +173,9 @@ const ContactsForm = ({ data, parentRef }) => {
   }
 
   return (
-    <>
+    <div className={styles.content}>
+      <div className={styles.title}>{data.title}</div>
+      <div className={styles.description}>{data.description}</div>
       { success && renderSuccess() }
       <form onSubmit={handleSubmit} className={styles.form}>
         { hasErrors() && renderErrors() }
@@ -233,7 +235,7 @@ const ContactsForm = ({ data, parentRef }) => {
         />
         <button type='submit' className={cx(styles.submitBtn, {[styles.submitBtnDisabled]: isLoading})}>{data.submitBtn}</button>
       </form>
-    </>
+    </div>
   );
 }
 

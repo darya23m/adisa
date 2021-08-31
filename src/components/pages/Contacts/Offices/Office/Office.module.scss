@@ -45,7 +45,7 @@
   color: #313336;
 }
 
-.address {
+.officeName {
   font-weight: 600;
 }
 
@@ -113,18 +113,10 @@
     font-size: 14px;
     line-height: 24px;
   }
-
-  .item {
-    padding-left: 15%;
-  }
 }
 
 @media (max-width: 370px) {
   .list {
     padding-left: 15%;
-  }
-
-  .item {
-    padding-left: 5%;
   }
 }

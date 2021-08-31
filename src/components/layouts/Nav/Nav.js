@@ -9,7 +9,6 @@ import CalculatePopup from 'components/common/CalculatePopup/CalculatePopup';
 import Home from 'components/pages/Home/Home';
 import Info from 'components/pages/Info/Info';
 import Contacts from 'components/pages/Contacts/Contacts';
-import Offices from 'components/pages/Offices/Offices';
 import Equipment from 'components/pages/Equipment/Equipment';
 
 function Nav() {
@@ -38,10 +37,6 @@ function Nav() {
           </Route>
           <Route path={`${locale}/info`}>
             <Info data={data.info} isRerouted={!!rerouted} />
-            <CalculatePopup data={data.calculate} />
-          </Route>
-          <Route path={`${locale}/offices`}>
-            <Offices data={data.offices} isRerouted={!!rerouted} />
             <CalculatePopup data={data.calculate} />
           </Route>
           <Route path={`${locale}/contacts`}>
