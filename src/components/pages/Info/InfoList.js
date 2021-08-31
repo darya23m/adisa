@@ -5,6 +5,9 @@ import { ReactComponent as IconDownload } from './img/Download.svg';
 import { ReactComponent as IconLink } from './img/Link.svg';
 
 const InfoList = ({ data: { list, caption } }) => {
+  const list1 = list.length > 4 ? list.slice(0, Math.ceil(list.length / 2)) : list.slice(0, 3);
+  const list2 = list.length > 4 ? list.slice(Math.ceil(list.length / 2)) : list.slice(3);
+
   const listItems = (list) => list.map(listItem);
   const listItem = ({ type, text, link }, index) => {
     switch (type) {
@@ -27,12 +30,13 @@ const InfoList = ({ data: { list, caption } }) => {
 
   return (
     <div className={styles.content}>
-      <h3 className={styles.caption}>{caption}</h3>
+      <div className={styles.horizontalDividerWrap}>
+        <h3 className={styles.caption}>{caption}</h3>
+        <div className={styles.horizontalDivider}/>
+      </div>
       <div className={styles.list}>
-        {listItems(list)}
-        <div className={styles.horizontalDividerWrap}>
-          <div className={styles.horizontalDivider}/>
-        </div>
+        <div className={styles.listItems}>{listItems(list1)}</div>
+        <div className={styles.listItems}>{listItems(list2)}</div>
       </div>
     </div>
   );
