@@ -39,7 +39,7 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding-right: 30px;
+  padding-right: 200px;
 }
 
 .navLink {
@@ -208,6 +208,12 @@
         transform: translateY(0) rotate(135deg);
       }
     }
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    padding-right: 100px;
   }
 }
 
