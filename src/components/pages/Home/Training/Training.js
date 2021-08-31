@@ -1,6 +1,7 @@
 import React from 'react';
 
 import factoryPath from './video/factory.mp4';
+import factoryPathMob from './video/Adisa_Mobile.mp4';
 import Title from 'components/common/Title/Title';
 import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 import styles from './Training.module.scss';
@@ -8,8 +9,12 @@ import styles from './Training.module.scss';
 const Training = ({ data: { title, trainingText, videoUrl, watchButtonText }}) => {
   return (
     <div className={styles.container}>
-      <video width="100%" autoPlay controls={false} loop muted={true} className={styles.video}>
+      <video width="100%" autoPlay controls={false} loop muted={true} className={styles.videoDesc}>
         <source src={factoryPath} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <video width="100%" autoPlay controls={false} loop muted={true} className={styles.videoMob}>
+        <source src={factoryPathMob} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className={styles.content}>

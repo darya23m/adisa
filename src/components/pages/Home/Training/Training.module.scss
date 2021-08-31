@@ -4,8 +4,12 @@
   color: #fff;
 }
 
-.video {
+.videoDesc {
   border: none;
+}
+
+.videoMob {
+  display: none;
 }
 
 .content {
@@ -63,32 +67,38 @@
 
 @media (max-width: 768px) {
   .container {
-    padding-bottom: 115px;
+    padding-bottom: 0px;
   }
 
   .trainingText {
-    margin-bottom: 115px;
+    margin-bottom: 75px;
+  }
+
+  .watchBtn {
+    padding-bottom: 19px;
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    display: flex;
-    flex-direction: column-reverse;
-    padding-bottom: 80px;
+    padding-bottom: 0px;
   }
 
   .content {
-    position: static;
-    z-index: 100;
+    padding: 50px 30px;
   }
 
-  .video {
-    position: absolute;
+  .videoDesc {
+    display: none;
+  }
+
+  .videoMob {
+    display: block;
+    border: none;
   }
 
   .trainingText {
-    margin-bottom: 150px;
+    margin-bottom: 70px;
   }
 
   .watchBtn {
@@ -102,6 +112,7 @@
   .trainingText {
     font-size: 14px;
     line-height: 24px;
+    margin: 28px 0;
   }
 
   .watchBtn {
