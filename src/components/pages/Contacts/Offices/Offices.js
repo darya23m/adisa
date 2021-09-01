@@ -1,17 +1,16 @@
-import React from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import React, { useState } from 'react';
 
 import Office from './Office/Office';
 import MainOffice from './MainOffice/MainOffice';
 import styles from './Offices.module.scss';
 
 const Offices = ({ data: { mainOffice, listOffices } }) => {
-  const { url } = useRouteMatch();
+  const [active, setActive] = useState();
 
   const renderOffices = () =>
   listOffices.list.map((item, index) => (
       <div key={index} className={styles.officeWrap} style={{animationDelay: `${index * 100 + 1000}ms`}}>
-        <Office data={item} parentUrl={url} />
+        <Office data={item} onClick={() => setActive(active === index ? false : index)} active={active === index} />
       </div>
     ));
 
