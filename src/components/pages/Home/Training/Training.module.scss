@@ -8,10 +8,6 @@
   border: none;
 }
 
-.videoMob {
-  display: none;
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -81,20 +77,19 @@
 
 @media (max-width: 480px) {
   .container {
+    background-image: url(./gif/mobile_gif.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding-bottom: 0px;
   }
 
   .content {
+    position: static;
     padding: 50px 30px;
   }
 
   .videoDesc {
     display: none;
-  }
-
-  .videoMob {
-    display: block;
-    border: none;
   }
 
   .trainingText {
