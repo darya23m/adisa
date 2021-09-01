@@ -1,14 +1,9 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
 
 import styles from './Office.module.scss';
-import { ReactComponent as ArrowDownIcon } from './img/Down.svg';
-import { ReactComponent as ArrowUpIcon } from './img/Up.svg';
+import cx from 'classnames';
 
-const Office = ({ data: { city, addresses, path }, parentUrl }) => {
-  const location = useLocation();
-  const currOfficePath = `${parentUrl}/${path}`;
-
+const Office = ({ data: { city, addresses }, active, onClick }) => {
   const renderContactsItem = (list, label, type) => 
     list.map((curr, index) => (
       <div key={index} className={styles.contactsItem}>
@@ -32,26 +27,21 @@ const Office = ({ data: { city, addresses, path }, parentUrl }) => {
     ));
 
   const renderCurrOffice = () =>
-    <div className={styles.element}>
-      <Link className={styles.caption} to={parentUrl}>
-        <ArrowUpIcon className={styles.arrowIcon} />
+    <div className={cx(styles.element, {[styles.elementActive]: active})}>
+      <div className={styles.item} onClick={onClick}>
         <div className={styles.city}>{ city }</div>
-      </Link>
+      </div>
       <ul className={styles.list}>
         { renderAddresses() }
       </ul>
     </div>
 
-  const renderCurrOfficeLink = () =>
-    <Link to={{ pathname: currOfficePath, state: { prevLocation: 'offices' }}} className={styles.item}>
-      <ArrowDownIcon />
-      <div>{ city }</div>
-    </Link>
+  
 
   return (
-    location.pathname === currOfficePath
-      ? renderCurrOffice()
-      : renderCurrOfficeLink()
+    <>
+      {renderCurrOffice()}
+    </>
   );
 };
 
