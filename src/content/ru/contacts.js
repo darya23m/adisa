@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: "ADISA | Contacts",
+    title: "ADISA | Контакты",
     description: "description",
     keywords: "ADISA"
   },
@@ -9,17 +9,17 @@ export default {
     mainOffice: {
       title: "Головной офис:",
       office: { 
-        address: "Адрес: ул. Котеева, 25/3",
+        address: "Адрес: ул. Академика королева, 5/4",
         tels: [ // resizable
-          "+3 8 067-86-86"
+          "+38(050)333-88-77"
         ],
         emails: [ // resizable
-          "adisa@kiev.ua"
+          "ovkprom@gmail.com"
         ]
       }
     },
     listOffices: {
-      title: 'Представительства:',
+      title: 'Региональные представительства:',
       list: [ // resizable
         // ========== Днепр ==========
         { city: "Днепр",
