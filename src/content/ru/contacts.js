@@ -49,7 +49,7 @@ export default {
                 "info@grandenergy.com.ua"
               ],
               webs: [
-                "grandenergy.com.ua"
+                "www.grandenergy.com.ua"
               ]
             }
             // ---------- Add+ ----------
