@@ -4,14 +4,15 @@ export default {
     description: "description",
     keywords: "ADISA"
   },
-  header: "Обратная связь",
+  header: "Региональные представительства",
   offices: {
     mainOffice: {
       title: "Головной офис:",
       office: { 
         address: "Адрес: ул. Академика королева, 5/4",
         tels: [ // resizable
-          "+38(050)333-88-77"
+          "+38(050)333-88-77",
+          "+38(050)333-88-83",
         ],
         emails: [ // resizable
           "ovkprom@gmail.com"
@@ -212,21 +213,17 @@ export default {
           ]
         },
         // ========== Одесса ==========
-        { city: "Одесса",
+        { city: "Одесская область",
           path: "odessa",
           addresses: [
-            // ---------- Олешковская, 24/1 ----------
-            { officeName: "“Альфа терм”",
-              address: "Олешковская, 24/1",
+            // ---------- ТМ Інжиніринг ----------
+            { officeName: "ТОВ “ТМ Інжиніринг”",
+              address: "г.Раздельная, ул.Тираспольская, дом 35Д",
               tels: [
-                "+3 8 067-86-86",
-                "+3 8 067-86-87"
+                "+38(050)333-65-08"
               ],
               emails: [
-                "adisa@odessa.ua"
-              ],
-              webs: [
-                "adisa.odessa.ua"
+                "ovkprom@gmail.com"
               ]
             },
             // ---------- Андреевский спуск ----------
