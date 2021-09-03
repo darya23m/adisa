@@ -86,6 +86,17 @@ export default {
               emails: [
                 "abelitplus@ukr.net"
               ]
+            },
+            // ---------- Енерго Консалт Груп ----------
+            { officeName: "ТОВ “Енерго Консалт Груп”",
+              address: "г.Львов, проспект Шевченка, дом 11",
+              tels: [
+                "+38(093)489-51-91"
+              ],
+              emails: [
+                "ssslviv@gmail.com",
+                "ssslviv@ukr.net"
+              ]
             }
             // ---------- Add+ ----------
           ]
