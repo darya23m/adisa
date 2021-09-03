@@ -15,7 +15,7 @@ export default {
           "+38(050)333-88-83",
         ],
         emails: [ // resizable
-          "ovkprom@gmail.com"
+          "adisa.ua@ukr.net"
         ]
       }
     },
