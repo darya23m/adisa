@@ -1,0 +1,7 @@
+.container {
+  transition: opacity 0.28s ease-in-out;
+
+  &Hidden {
+    opacity: 0;
+  }
+}

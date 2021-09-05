@@ -6,7 +6,7 @@ import { ReactComponent as Logo } from './img/logo.svg';
 import locales from 'content/locales';
 import styles from './Header.module.scss';
 
-function Header({ data, locale }) {
+function Header({ data, locale, handleAppFaded, isHeaderFaded }) {
   const [ isMobMenuOpen, setIsMobMenuOpen ] = useState(false);
   const location = useLocation();
   const { pathname } = location;
@@ -21,40 +21,74 @@ function Header({ data, locale }) {
     setIsMobMenuOpen(false);
   }, [location]);
 
+  const handleLinkClick = (ev, nextLocation, options = {}) => {
+    ev.preventDefault();
+
+    handleAppFaded(nextLocation, options.isLang);
+  }
+
+  const checkIsActive = ({ url, exact }) => {
+    if (exact) return location.pathname === url;
+
+    const regex = new RegExp(`^${url}`);
+
+    return regex.test(location.pathname);
+  }
+
   const renderLinks = () =>
-    Object.keys(data.links).map((currKey, index) =>
-      <NavLink key={currKey}
-               exact={!index}
-               to={`${locale}/${index ? currKey : ''}`}
-               style={isMobMenuOpen
-                 ? {animationDelay: `${index * 150 + 200}ms`}
-                 : {animationDelay: `${index * 150 + 800}ms`}
-               }
-               className={cx(styles.navLink, {[styles.navLinkWithMobAnimation]: isMobMenuOpen})}
-               activeClassName={styles.navLinkActive}
-      >
-        { data.links[currKey] }
-      </NavLink>
-    );
+    Object.keys(data.links).map((currKey, index) => {
+      const url = `${locale}${index ? '/' + currKey : ''}`;
+
+      return (
+        <a key={currKey}
+           onClick={ev => handleLinkClick(ev, url)}
+           href={url}
+           style={
+             isHeaderFaded
+              ? {animationDelay: "0s"}
+              : isMobMenuOpen
+                ? {animationDelay: `${index * 150 + 200}ms`}
+                : {animationDelay: `${index * 150 + 800}ms`}
+           }
+           className={cx(
+             styles.navLink,
+             { [styles.navLinkWithMobAnimation]: isMobMenuOpen,
+               [styles.navLinkActive]: checkIsActive({url, exact: !index})
+             }
+           )}
+        >
+          { data.links[currKey] }
+        </a>
+      );
+    });
 
   const renderLangLinks = ({ isMob } = {}) =>
-    locales.map((curr, index) =>
-      <NavLink key={index}
-               to={getPathWithNextLocale(curr.uri)}
-               className={cx(styles.langLink, {[styles.langLinkMob]: isMob})}
-               style={isMobMenuOpen
-                 ? {animationDelay: `${index * 150 + 1200}ms`}
-                 : {animationDelay: `${index * 150 + 2100}ms`}
-               }
-               activeClassName={styles.langLinkActive}
-      >
-        { curr.text }
-      </NavLink>
-    );
+    locales.map((curr, index) => {
+      const url = getPathWithNextLocale(curr.uri);
+
+      return (
+        <a key={index}
+           onClick={ev => handleLinkClick(ev, url, {isLang: true})}
+           href={url}
+           className={cx(
+             styles.langLink,
+             { [styles.langLinkMob]: isMob,
+               [styles.langLinkActive]: checkIsActive({url})
+             }
+           )}
+           style={isMobMenuOpen
+             ? {animationDelay: `${index * 150 + 1200}ms`}
+             : {animationDelay: `${index * 150 + 2100}ms`}
+           }
+        >
+          { curr.text }
+        </a>
+      );
+    });
 
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
+      <div className={cx(styles.content, {[styles.contentHidden]: isHeaderFaded})}>
         <Link className={styles.logoMob} to={`${locale}`}>
           <Logo />
         </Link>

@@ -3,11 +3,10 @@
 .content {
   position: relative;
   max-width: 885px;
-  animation-name: showAndMoveDown;
-  animation-duration: 0.7s;
+  animation-name: showAndMoveDown30;
+  animation-duration: 0.3s;
   animation-fill-mode: both;
-  animation-timing-function: ease-in-out;
-  animation-delay: 1.5s;
+  animation-timing-function: linear;
   margin: 55px auto 0;
 }
 

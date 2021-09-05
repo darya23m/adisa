@@ -22,6 +22,25 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+
+  &Hidden {
+    .navLink {
+      animation-name: fadeAndMoveUp;
+      animation-timing-function: linear;
+      animation-duration: 0.28s;
+    }
+
+    .leftBar {
+      animation: fadeAndMoveFromBaseToRight100 0.28s linear both;
+    }
+
+    .logoMob,
+    .langMob {
+      transition: opacity 0.28s linear;
+      animation: none;
+      opacity: 0;
+    }
+  }
 }
 
 .logoMob {

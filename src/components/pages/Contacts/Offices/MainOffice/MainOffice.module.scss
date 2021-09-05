@@ -1,4 +1,7 @@
-.content {
+@import "src/styles/animations";
+
+.container {
+  animation: showAndMoveDown30 0.3s linear 0.5s both;
   margin-bottom: 50px;
 }
 

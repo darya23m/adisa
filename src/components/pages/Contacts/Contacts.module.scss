@@ -13,18 +13,28 @@
   font-weight: 600;
   font-size: 30px;
   line-height: 41px;
-  animation: moveDown 0.7s ease-out 0.5s both;
+  animation: moveDown 0.4s ease-out 0.5s both;
   padding-top: 52px;
   padding-bottom: 52px;
   padding-left: 10%;
+
   &NoDelay {
-    animation-delay: 0s;
-  }  
+    animation-delay: 0.2s;
+  }
+
+  &Hidden {
+    animation: moveUp 0.28s ease-in-out 0s both;
+  }
 }
 
 .content {
   max-width: 1040px;
+  transition: opacity 0.28s ease-in-out;
   margin: 0 auto;
+
+  &Hidden {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 1024px) {

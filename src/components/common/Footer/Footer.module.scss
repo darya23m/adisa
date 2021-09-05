@@ -7,7 +7,12 @@
   background-position: center;
   background-attachment: fixed;
   color: #fff;
+  transition: opacity 0.28s ease-in-out;
   padding: 113px 30px 26px;
+
+  &Hidden {
+    opacity: 0;
+  }
 }
 
 .eclipse {

@@ -218,7 +218,6 @@ const ContactsForm = ({ data, parentRef }) => {
               {[styles.textareaError]: !!messageErrors.length},
               {[styles.textareaSuccess]: isMessageValid})
             }
-            type="text"
             name="message"
             maxLength="1000"
             value={message}

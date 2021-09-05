@@ -1,3 +1,5 @@
+@import "src/styles/animations";
+
 .calculate {
   position: fixed;
   bottom: 50px;
@@ -10,13 +12,19 @@
   line-height: 21px;
   color: #FFFFFF;
   background-color: #0077E4;
-  transition: all 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
   z-index: 10000;
+  animation: fadeIn 0.5s ease-in-out 0.2s both;
   filter: drop-shadow(0px 4px 19px rgba(40, 65, 130, 0.34));
   cursor: pointer;
 
   &:hover {
     background-color: #359AF8;
+  }
+
+  &Hidden {
+    animation: fadeOut 0.28s ease-in-out both;
+    pointer-events: none;
   }
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Switch, Route, useLocation } from 'react-router-dom';
+import { Switch, Route, useLocation, useHistory } from 'react-router-dom';
 
 import DataProvider from 'components/layouts/DataProvider/DataProvider';
 import locales from 'content/locales';
@@ -13,8 +13,24 @@ import Equipment from 'components/pages/Equipment/Equipment';
 
 function Nav() {
   const location = useLocation();
+  const history = useHistory();
   const [rerouted, setRerouted] = useState(-1);
-  console.log(location);
+  const [isAppFaded, setIsAppFaded] = useState(false);
+  const [isHeaderFaded, setIsHeaderFaded] = useState(false);
+
+  const handleAppFaded = (newLocation, isLang) => {
+    if (isAppFaded) return;
+
+    setIsAppFaded(true);
+    if (isLang) setIsHeaderFaded(true);
+
+    setTimeout(() => {
+      setIsAppFaded(false);
+      if (isLang) setIsHeaderFaded(false);
+
+      history.push(newLocation);
+    }, 300);
+  }
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -25,25 +41,25 @@ function Nav() {
   const renderMainRoutes = (data, locale) => {
     return (
       <>
-        <Header locale={locale} data={data.header} />
+        <Header locale={locale} data={data.header} handleAppFaded={handleAppFaded} isHeaderFaded={isHeaderFaded} />
         <Switch>
           <Route exact path={locale}>
-            <Home data={data.home} />
-            <CalculatePopup data={data.calculate} />
+            <Home data={data.home} isAppFaded={isAppFaded} />
           </Route>
           <Route path={`${locale}/equipment`}>
-            <Equipment data={data.equipment} />
-            <CalculatePopup data={data.calculate} />
+            <Equipment data={data.equipment} isAppFaded={isAppFaded} />
           </Route>
           <Route path={`${locale}/info`}>
-            <Info data={data.info} isRerouted={!!rerouted} />
-            <CalculatePopup data={data.calculate} />
+            <Info data={data.info} isRerouted={!!rerouted} isAppFaded={isAppFaded} />
           </Route>
           <Route path={`${locale}/contacts`}>
-            <Contacts data={data.contacts} isRerouted={!!rerouted} />
+            <Contacts data={data.contacts} isRerouted={!!rerouted} isAppFaded={isAppFaded} />
           </Route>
         </Switch>
-        <Footer locale={locale} data={data.footer} />
+        <CalculatePopup data={data.calculate}
+                        isHidden={location.pathname === `${locale}/contacts` || isHeaderFaded}
+        />
+        <Footer locale={locale} data={data.footer} isAppFaded={isAppFaded} />
       </>
     );
   };

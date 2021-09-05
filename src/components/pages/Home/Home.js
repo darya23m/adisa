@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
+import cx from 'classnames';
 
 import Intro from './Intro/Intro';
 import Tagline from './Tagline/Tagline';
@@ -10,8 +11,9 @@ import Quality from './Quality/Quality';
 import Pollution from './Pollution/Pollution';
 import Training from './Training/Training';
 import Repairs from './Repairs/Repairs';
+import styles from './Home.module.scss';
 
-function Home({ data: { meta }, data }) {
+function Home({ data: { meta }, data, isAppFaded }) {
   const scrollTop = useRef(0);
   // const elemsStatesMemo = useRef({});
 
@@ -72,7 +74,7 @@ function Home({ data: { meta }, data }) {
   }, [])
 
   return (
-    <>
+    <div className={cx(styles.container, {[styles.containerHidden]: isAppFaded})}>
       <Helmet>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
@@ -87,7 +89,7 @@ function Home({ data: { meta }, data }) {
       <Pollution data={data.pollution} />
       <Training data={data.training} />
       <Repairs data={data.repairs} />
-    </>
+    </div>
   )
 }
 

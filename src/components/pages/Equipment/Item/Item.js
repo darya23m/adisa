@@ -13,18 +13,18 @@ function Item({ data, isAnimationFadeoutActive }) {
 
   useEffect(() => {
     setTimeout(() => {
-      tableWrapRef.current.style.overflowX = 'auto';
+      if (tableWrapRef.current) tableWrapRef.current.style.overflowX = 'auto';
     }, previewAnimationDelay);
   }, []);
 
   const renderPreviewImages = (images) => images.map((curr, index) => (
-    <div className={cx(styles.previewItem, {[styles.previewItemWide]: curr.isWide})}>
+    <div key={index} className={cx(styles.previewItem, {[styles.previewItemWide]: curr.isWide})}>
       { curr.description &&
         <div className={styles.previewDescription}>
           { curr.description }
         </div>
       }
-      <img key={index} src={curr.path} alt={curr.alt} className={styles.previewImage} />
+      <img src={curr.path} alt={curr.alt} className={styles.previewImage} />
     </div>
   ));
 
@@ -113,7 +113,9 @@ function Item({ data, isAnimationFadeoutActive }) {
       </div>
       <div className={styles.tableWrap} ref={tableWrapRef}>
         <table className={styles.table}>
-          { renderTable() }
+          <tbody>
+            { renderTable() }
+          </tbody>
         </table>
       </div >
       { renderPreview() }
