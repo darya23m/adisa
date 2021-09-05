@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import cx from 'classnames';
 
 import styles from './Item.module.scss';
@@ -6,10 +6,16 @@ import ecoImg from './img/eco.jpg';
 import { ReactComponent as IconDownload } from './img/Download.svg';
 import { ReactComponent as IconLink } from './img/Link.svg';
 
-function Item(
-  { data: { name, description, features, docsIntro, docs, table, preview }, isAnimationFadeoutActive }
-) {
-  const docsAnimationDuration = docs.length * 100;
+function Item({ data, isAnimationFadeoutActive }) {
+  const tableWrapRef = useRef(null);
+  const { name, description, features, docsIntro, docs, table, preview } = data;
+  const previewAnimationDelay = table.length * 100 + 1900;
+
+  useEffect(() => {
+    setTimeout(() => {
+      tableWrapRef.current.style.overflowX = 'auto';
+    }, previewAnimationDelay);
+  }, []);
 
   const renderPreviewImages = (images) => images.map((curr, index) => (
     <div className={cx(styles.previewItem, {[styles.previewItemWide]: curr.isWide})}>
@@ -29,7 +35,7 @@ function Item(
           className={styles.video}
           src={src}
           title={title}
-          frameborder={0}
+          frameBorder={0}
           allow={"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"}>
         </iframe>
       </div>
@@ -40,7 +46,7 @@ function Item(
 
   const renderPreview = () =>
     preview.map((curr, index) =>
-      <div key={index} className={styles.preview}>
+      <div key={index} className={styles.preview} style={{animationDelay: `${previewAnimationDelay}ms`}}>
         { isImagesPresent(curr.images) && renderPreviewImages(curr.images) }
         { isVideosPresent(curr.videos) && renderPreviewVideo(curr.videos) }
       </div>
@@ -55,7 +61,7 @@ function Item(
     table.map((curr, index) =>
       <tr key={index}
           className={styles.tableRow}
-          style={{animationDelay: `${index * 300 + 3000 + docsAnimationDuration}ms`}}
+          style={{animationDelay: `${index * 100 + 1700}ms`}}
       >
         { renderCell(curr) }
       </tr>
@@ -66,7 +72,7 @@ function Item(
       const isDownloadable = curr.type === 'doc';
 
       return (
-        <div key={index} className={styles.doc} style={{animationDelay: `${index * 100 + 2800}ms`}}>
+        <div key={index} className={styles.doc} style={{animationDelay: `${index * 150 + 1200}ms`}}>
           { isDownloadable
             ? <IconDownload className={styles.downloadIcon} />
             : <IconLink className={styles.linkIcon} />
@@ -105,7 +111,7 @@ function Item(
         <div className={styles.docsIntro}>{ docsIntro }</div>
         { renderDocs() }
       </div>
-      <div className={styles.tableWrap}>
+      <div className={styles.tableWrap} ref={tableWrapRef}>
         <table className={styles.table}>
           { renderTable() }
         </table>
