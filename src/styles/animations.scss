@@ -49,6 +49,13 @@
   100% { transform: scale3d(1, 1,    1); }
 }
 
+@keyframes showAndBounceHorizontal {
+  0%   { transform: scale3d(0, 1, 1); }
+  50%  { transform: scale3d(1.1, 1, 1); }
+  75%  { transform: scale3d(0.94, 1, 1); }
+  100% { transform: scale3d(1, 1, 1); }
+}
+
 @keyframes showAndMoveUp {
   0%   { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }

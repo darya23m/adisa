@@ -37,26 +37,26 @@ function Economy({ data }) {
 
   const renderScaleItems = () =>
     data.scaleItems.map((curr, index) =>
-      <div key={index} className={styles.scaleItem}>
+      <div key={index} className={cx(styles.scaleItem, {[styles.scaleItemWithResult]: isResultShown})}>
         <div className={styles.defaultRect}
              style={ !isResultShown
-               ? { transform: "scale3d(1, 1, 1)", transitionDelay: `${0.3 + 0.1 * index}s` }
-               : { transform: "scale3d(1, 0, 1)", transitionDelay: `${0.1 * index}s` }
+               ? { transitionDelay: `${0.3 + 0.1 * index}s` }
+               : { transitionDelay: `${0.1 * index}s` }
              }
         />
         <div className={styles.resultRect}
              style={ isResultShown
-               ? { transform: "scale3d(1, 1, 1)", transitionDelay: `${0.3 + 0.1 * index}s` }
-               : { transform: "scale3d(1, 0, 1)", transitionDelay: `${0.1 * index}s` }
+               ? { transitionDelay: `${0.3 + 0.1 * index}s` }
+               : { transitionDelay: `${0.1 * index}s` }
              }
         />
-        <div className={cx(styles.resultValue, {[styles.resultValueShown]: isResultShown})}
+        <div className={styles.resultValue}
              style={ isResultShown
                ? { transitionDelay: `${0.5 + 0.1 * index}s` }
                : { transitionDelay: `${0.1 * index}s` }
              }
         >
-          { (resultEconomyValue * curr.mod).toFixed(1) }м<sup>3</sup>
+          { (resultEconomyValue * curr.mod).toFixed() }м<sup>3</sup>
         </div>
         <div className={styles.scaleLabel}>{ curr.label }</div>
       </div>
@@ -103,6 +103,9 @@ function Economy({ data }) {
           <div className={styles.chartWrap}>
             <div className={styles.gridWrap}>
               <Grid rows={22} cols={45} borderColor="#cce4fa" borderWidth="1" />
+            </div>
+            <div className={styles.gridWrapMob}>
+              <Grid rows={41} cols={20} borderColor="#cce4fa" borderWidth="1" />
             </div>
             <div className={styles.scale}>
               { renderScaleItems() }
