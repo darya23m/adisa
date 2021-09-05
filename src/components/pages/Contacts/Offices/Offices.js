@@ -9,7 +9,7 @@ const Offices = ({ data: { mainOffice, listOffices } }) => {
 
   const renderOffices = () =>
   listOffices.list.map((item, index) => (
-      <div key={index} className={styles.officeWrap} style={{animationDelay: `${index * 100 + 1000}ms`}}>
+      <div key={index} className={styles.officeWrap} style={{animationDelay: `${index * 100 + 900}ms`}}>
         <Office data={item} onClick={() => setActive(active === index ? false : index)} active={active === index} />
       </div>
     ));

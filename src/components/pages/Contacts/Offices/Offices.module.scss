@@ -1,14 +1,15 @@
 @import "src/styles/animations";
+
 .content {
   max-width: 1040px;
-  margin: 0 auto;
   padding-top: 72px;
-  margin-bottom: 92px;
+  margin: 0 auto 92px;
 }
 
 .horizontalDividerWrap {
   display: flex;
   align-items: center;
+  animation: showAndMoveDown30 0.3s linear 0.65s both;
   margin-bottom: 38px;
 }
 
@@ -29,7 +30,7 @@
 }
 
 .officeWrap {
-  animation-name: fadeIn;
+  animation-name: showAndMoveDown;
   animation-duration: 0.4s;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
@@ -38,7 +39,7 @@
 @media (max-width: 1024px) {
   .content {
     padding: 60px 30px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }
 

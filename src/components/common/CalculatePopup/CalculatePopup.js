@@ -5,13 +5,13 @@ import Popup from 'components/common/Popup/Popup';
 import CalculateForm from 'components/common/CalculateForm/CalculateForm';
 import FormSuccessMessage from 'components/common/FormSuccessMessage/FormSuccessMessage';
 
-function CalculatePopup({ data }) {
+function CalculatePopup({ data, isHidden }) {
   const [isPopupShown, setIsPopupShown] = useState(false);
   const [isPopupFadeOutActive, setIsPopupFadeOutActive] = useState(false);
   const [success, setSuccess] = useState(false);
 
   const handleClosePopup = (e) => {
-    if(e && e.target.id !== "popup-wrapper" && e.target.id !== "popup-close") return;
+    if (e && e.target.id !== "popup-wrapper" && e.target.id !== "popup-close") return;
     setIsPopupFadeOutActive(true);
 
     setTimeout(() => {
@@ -26,11 +26,19 @@ function CalculatePopup({ data }) {
     setTimeout(handleClosePopup, 5000);
   }
 
-  return !isPopupShown ? 
-      (<ButtonCalculate data={ data.calculateBtn } type="button" onClick={() => setIsPopupShown(true)} />) :
-      (<Popup closePopup={handleClosePopup} isPopupFadeOutActive={isPopupFadeOutActive}>
-        {!success ? <CalculateForm data={ data } onSuccess={onSuccess} /> : <FormSuccessMessage data={ data.form.success } />}
-      </Popup>);
+  return (
+    !isPopupShown
+      ? <ButtonCalculate data={ data.calculateBtn }
+                         onClick={() => setIsPopupShown(true)}
+                         isHidden={isHidden}
+        />
+      : <Popup closePopup={handleClosePopup} isPopupFadeOutActive={isPopupFadeOutActive}>
+          { !success
+              ? <CalculateForm data={ data } onSuccess={onSuccess} />
+              : <FormSuccessMessage data={ data.form.success } />
+          }
+        </Popup>
+  );
 }
 
 export default CalculatePopup;

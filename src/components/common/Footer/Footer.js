@@ -1,17 +1,18 @@
 import React from 'react';
+import cx from 'classnames';
 
 import styles from './Footer.module.scss';
 import { ReactComponent as Eclipse } from './img/eclipse.svg';
 import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 
-const Footer = ({ data: { title, leftDescriptions, rightDescriptions }}) => {
+const Footer = ({ data: { title, leftDescriptions, rightDescriptions }, isAppFaded }) => {
   const renderDescriptions = (descriptionsList) =>
     descriptionsList.map((curr, index) =>
       <p key={index} className={styles.paragraph}>{ parseStrWithBoldElems(curr) }</p>
     )
 
   return (
-    <div className={styles.container}>
+    <div className={cx(styles.container, {[styles.containerHidden]: isAppFaded})}>
       <Eclipse className={styles.eclipse} />
       <div className={styles.content}>
         <h2 className={styles.header}>{ title }</h2>

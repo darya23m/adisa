@@ -7,16 +7,17 @@ const Office = ({ data: { city, addresses }, active, onClick }) => {
   const externalUrl = (url) => (/^http?/im).test(url) ? url : `https://${url}`;
 
   const renderContactsItem = (list, label, type) => 
-    list.map((curr, index) => (
+    list.map((curr, index) =>
       <div key={index} className={styles.contactsItem}>
         { label }:&ensp;
-        { type === 'tel' && <a href={`tel:${curr}`} className={styles.contact}>{curr}</a> }
+        { type === 'tel' && <a href={`tel:${curr}`} className={styles.contact}>{ curr }</a> }
         { type === 'email' && <a href={`mailto:${curr}`} className={styles.contact}>{ curr }</a> }
         { type === 'web' && <a href={ externalUrl(curr) } className={styles.contact} target="_blank">{ curr }</a> }
       </div>
-      ));
+    )
 
-  const renderAddresses = () => addresses.map((curr, index) => (
+  const renderAddresses = () =>
+    addresses.map((curr, index) =>
       <li key={index} className={styles.listItem}>
         <div className={styles.listItemBlock}>
           <div className={styles.officeName}>{ curr.officeName }</div>
@@ -26,7 +27,7 @@ const Office = ({ data: { city, addresses }, active, onClick }) => {
           { curr.webs && renderContactsItem(curr.webs, 'Web', 'web') }
         </div>
       </li>
-    ));
+    )
 
   const renderCurrOffice = () =>
     <div className={cx(styles.element, {[styles.elementActive]: active})}>
@@ -38,13 +39,7 @@ const Office = ({ data: { city, addresses }, active, onClick }) => {
       </ul>
     </div>
 
-  
-
-  return (
-    <>
-      {renderCurrOffice()}
-    </>
-  );
+  return renderCurrOffice();
 };
 
 export default Office;

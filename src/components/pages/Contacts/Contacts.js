@@ -6,7 +6,7 @@ import styles from './Contacts.module.scss';
 import Offices from 'components/pages/Contacts/Offices/Offices';
 import ContactsForm from './ContactsForm/ContactsForm';
 
-const Contacts = ({ data, isRerouted }) => {
+const Contacts = ({ data, isRerouted, isAppFaded }) => {
   const contactsHeaderRef = useRef(null);
 
   return (
@@ -17,10 +17,12 @@ const Contacts = ({ data, isRerouted }) => {
         <meta name="keywords" content={data.meta.keywords} />
       </Helmet>
       <div className={styles.container}>
-        <div ref={contactsHeaderRef} className={cx(styles.header, {[styles.headerNoDelay]: isRerouted})}>
+        <div ref={contactsHeaderRef}
+             className={cx(styles.header, {[styles.headerNoDelay]: isRerouted, [styles.headerHidden]: isAppFaded})}
+        >
           { data.header }
         </div>
-        <div className={styles.content}>
+        <div className={cx(styles.content, {[styles.contentHidden]: isAppFaded})}>
           <Offices data={data.offices} />
         </div>
         <ContactsForm data={data.form} parentRef={contactsHeaderRef} />
