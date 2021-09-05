@@ -231,6 +231,7 @@ const ContactsForm = ({ data, parentRef }) => {
           ref={recaptchaRef}
           sitekey={config.RECAPTCHA_PUBLIC_KEY}
           onChange={setVerificationKey}
+          className={styles.captcha}
         />
         <button type='submit' className={cx(styles.submitBtn, {[styles.submitBtnDisabled]: isLoading})}>{data.submitBtn}</button>
       </form>

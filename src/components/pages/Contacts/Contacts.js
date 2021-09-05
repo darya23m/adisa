@@ -22,8 +22,8 @@ const Contacts = ({ data, isRerouted }) => {
         </div>
         <div className={styles.content}>
           <Offices data={data.offices} />
-          <ContactsForm data={data.form} parentRef={contactsHeaderRef} />
         </div>
+        <ContactsForm data={data.form} parentRef={contactsHeaderRef} />
       </div>
     </>
   );
