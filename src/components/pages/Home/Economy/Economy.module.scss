@@ -65,15 +65,15 @@
   transform: translateX(-50vw);
 
   &:after {
-      content: '';
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 100%;
-      border-top: 48px solid transparent;
-      border-bottom: 48px solid transparent;
-      border-left: 20px solid #0077E4;
-    }
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 100%;
+    border-top: 48px solid transparent;
+    border-bottom: 48px solid transparent;
+    border-left: 20px solid #0077E4;
+  }
 }
 
 .arrowAnimate {
@@ -176,9 +176,14 @@
   position: relative;
 }
 
-.gridWrap {
+.gridWrap,
+.gridWrapMob {
   border: 1px solid #cce4fa;
   animation: clip 0.8s linear 0.5s both;
+}
+
+.gridWrapMob {
+  display: none;
 }
 
 .scale {
@@ -199,6 +204,25 @@
   animation-timing-function: ease;
   animation-fill-mode: both;
   transform-origin: bottom;
+
+  &WithResult {
+    .defaultRect {
+      transform: scale3d(1, 0, 1);
+    }
+
+    .resultRect {
+      transform: scale3d(1, 1, 1);
+    }
+
+    .scaleLabel {
+      color: #0280F4;
+    }
+
+    .resultValue {
+      opacity: 1;
+      transform: translate3d(0, -100%, 0);
+    }
+  }
 
   &:nth-child(1) {
     grid-column: 5/12;
@@ -246,6 +270,7 @@
 .resultRect {
   @extend .rect;
   background-color: #0280F4;
+  transform: scale3d(1, 0, 1);
 }
 
 .resultValue {
@@ -262,11 +287,6 @@
   transition-duration: 0.3s;
   transform: translate3d(0, 0, 0);
   z-index: 5;
-
-  &Shown {
-    opacity: 1;
-    transform: translate3d(0, -100%, 0);
-  }
 }
 
 .scaleLabel {
@@ -278,6 +298,7 @@
   font-size: 16px;
   line-height: 22px;
   color: #80bbf2;
+  transition: all 0.5s ease-in-out;
 }
 
 @media (max-width: 1024px) {
@@ -342,6 +363,13 @@
     width: 100%;
   }
 
+  .error {
+    top: unset;
+    bottom: 0;
+    left: 10px;
+    pointer-events: none;
+  }
+
   .unitMob {
     display: block;
   }
@@ -358,12 +386,111 @@
     width: 100%;
   }
 
-  .chart {
+  .resultValue {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .calculator {
+    padding-bottom: 40px;
+  }
+
+  .calcBtn {
+    padding: 16px;
+  }
+
+  .chartDescription {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 30px 0 10px;
+  }
+
+  .chartWrap {
+    margin-left: 20px;
+  }
+
+  .gridWrap {
     display: none;
   }
 
+  .gridWrapMob {
+    display: block;
+  }
+
   .scale {
-    display: none;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(41, 1fr);
+  }
+
+  .scaleItem {
+    animation-name: showAndBounceHorizontal;
+    transform-origin: left;
+
+    &WithResult {
+      .defaultRect {
+        transform: scale3d(0, 1, 1);
+      }
+
+      .resultValue {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    &:nth-child(1) {
+      grid-column: 1/2;
+      grid-row: 3/10;
+    }
+
+    &:nth-child(2) {
+      grid-column: 1/6;
+      grid-row: 13/20;
+    }
+
+    &:nth-child(3) {
+      grid-column: 1/11;
+      grid-row: 23/30;
+    }
+
+    &:nth-child(4) {
+      grid-column: 1/21;
+      grid-row: 33/40;
+
+      .resultValue {
+        width: 100%;
+        left: 0;
+        color: #fff;
+        z-index: 15;
+      }
+    }
+  }
+
+  .defaultRect,
+  .resultRect {
+    transform-origin: left;
+  }
+
+  .resultRect {
+    transform: scale3d(0, 1, 1);
+  }
+
+  .resultValue {
+    width: auto;
+    top: calc(50% - 18px);
+    left: calc(100% + 10px);
+    font-size: 20px;
+    line-height: 26px;
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  .scaleLabel {
+    transform-origin: left;
+    transform: rotate(-90deg) translateX(-50%);
+    white-space: nowrap;
+    top: calc(50% - 11px);
+    width: auto;
+    left: -15px;
   }
 }
 
