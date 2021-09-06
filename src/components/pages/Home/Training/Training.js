@@ -8,7 +8,7 @@ import styles from './Training.module.scss';
 const Training = ({ data: { title, trainingText, videoUrl, watchButtonText }}) => {
   return (
     <div className={styles.container}>
-      <video width="100%" autoPlay controls={false} loop muted={true} className={styles.videoDesc}>
+      <video width="100%" playsInline autoPlay controls={false} loop muted={true} className={styles.videoDesc}>
         <source src={factoryPath} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
