@@ -8,7 +8,6 @@ import ContactsForm from './ContactsForm/ContactsForm';
 
 const Contacts = ({ data, isRerouted, isAppFaded }) => {
   const headerBgRef = useRef(null);
-  const contactsHeaderRef = useRef(null);
 
   useEffect(() => {
     const handleMouseMove = ({ x, y, view }) => {
@@ -39,16 +38,14 @@ const Contacts = ({ data, isRerouted, isAppFaded }) => {
         <meta name="keywords" content={data.meta.keywords} />
       </Helmet>
       <div className={styles.container}>
-        <div ref={contactsHeaderRef}
-             className={cx(styles.header, {[styles.headerNoDelay]: isRerouted, [styles.headerHidden]: isAppFaded})}
-        >
+        <div className={cx(styles.header, {[styles.headerNoDelay]: isRerouted, [styles.headerHidden]: isAppFaded})}>
           <div className={styles.headerBg} ref={headerBgRef} />
           { data.header }
         </div>
         <div className={cx(styles.content, {[styles.contentHidden]: isAppFaded})}>
           <Offices data={data.offices} />
         </div>
-        <ContactsForm data={data.form} parentRef={contactsHeaderRef} />
+        <ContactsForm data={data.form} />
       </div>
     </>
   );

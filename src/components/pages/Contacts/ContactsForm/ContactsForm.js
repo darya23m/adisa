@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import cx from 'classnames';
 
 import config from 'config/app';
@@ -9,7 +9,8 @@ import FormSuccessMessage from 'components/common/FormSuccessMessage/FormSuccess
 import ReCAPTCHA from "react-google-recaptcha";
 import { ReactComponent as Error } from './img/error.svg';
 
-const ContactsForm = ({ data, parentRef }) => {
+const ContactsForm = ({ data }) => {
+  const formTopRef = useRef(null);
   const recaptchaRef = React.createRef();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -130,7 +131,7 @@ const ContactsForm = ({ data, parentRef }) => {
       setSuccess(true);
     } else {
       setRequestErrors([result.message]);
-      parentRef.current.scrollIntoView();
+      formTopRef.current.scrollIntoView();
     }
   };
   
@@ -141,7 +142,7 @@ const ContactsForm = ({ data, parentRef }) => {
     const isFormValid = validateForm();
 
     if (!isFormValid) {
-      parentRef.current.scrollIntoView();
+      formTopRef.current.scrollIntoView();
     } else {
       resetAllErrors();
       setIsLoading(true);
@@ -173,7 +174,7 @@ const ContactsForm = ({ data, parentRef }) => {
   }
 
   return (
-    <div className={styles.content}>
+    <div className={styles.content} ref={formTopRef}>
       <div className={styles.title}>{data.title}</div>
       { success && renderSuccess() }
       <form onSubmit={handleSubmit} className={styles.form}>
