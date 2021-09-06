@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, useImperativeHandle } from 'react';
+import cx from 'classnames';
 
 import Title from 'components/common/Title/Title';
 import styles from './NoiseLvl.module.scss';
@@ -9,13 +10,24 @@ import feature2 from './img/feature2.jpg';
 import feature3 from './img/feature3.jpg';
 import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 
-const NoiseLvl = ({ data }) => {
+const NoiseLvl = React.forwardRef(({ data }, ref) => {
   const {
     title, description, advantagesListTitle, advantagesList, boilerAlt, featureName1, featureAlt1, featureName2,
     featureAlt2, featureName3, featureAlt3
   } = data;
   const renderAdvantagesList = () =>
     advantagesList.map((curr, index) => <li key={index}>{ parseStrWithBoldElems(curr) }</li>)
+
+  const noiseLvlRightChartRef = useRef();
+  const noiseLvlExampleRef = useRef();
+  useImperativeHandle(ref, () => ({
+    get noiseLvlRightChart() {
+      return noiseLvlRightChartRef.current
+    },
+    get noiseLvlExample() {
+      return noiseLvlExampleRef.current
+    }
+  }));
 
   return (
     <div className={styles.container}>
@@ -29,7 +41,7 @@ const NoiseLvl = ({ data }) => {
               { renderAdvantagesList() }
             </ul>
           </div>
-          <div className={styles.chartWrap}>
+          <div className={styles.chartWrap} ref={noiseLvlRightChartRef}>
             <svg viewBox="0 0 487 414" className={styles.chart} fill="none" xmlns="http://www.w3.org/2000/svg">
               <line opacity="0.5" x1="38" y1="63.5" x2="438" y2="63.5" stroke="#0077E4"/>
               <line opacity="0.5" x1="38" y1="409.5" x2="487" y2="409.5" stroke="#0077E4"/>
@@ -110,22 +122,22 @@ const NoiseLvl = ({ data }) => {
             </svg>
           </div>
         </div>
-        <div className={styles.example}>
+        <div className={styles.example} ref={noiseLvlExampleRef}>
           <div className={styles.boiler}>
             <div className={styles.connector} />
             <img src={boiler} alt={boilerAlt} className={styles.boilerImg} />
           </div>
           <div className={styles.features}>
             <div className={styles.redLine} />
-            <div className={styles.feature}>
+            <div className={cx(styles.feature, styles.feature1)}>
               <div className={styles.nameWrap}><div className={styles.name}>{ featureName1 }</div></div>
               <img src={feature1} alt={featureAlt1} className={styles.imageFeature} />
             </div>
-            <div className={styles.feature}>
+            <div className={cx(styles.feature, styles.feature2)}>
             <div className={styles.nameWrap}><div className={styles.name}>{ featureName2 }</div></div>
               <img src={feature2} alt={featureAlt2} className={styles.imageFeature} />
             </div>
-            <div className={styles.feature}>
+            <div className={cx(styles.feature, styles.feature3)}>
             <div className={styles.nameWrap3}><div className={styles.name}>{ featureName3 }</div></div>
               <img src={feature3} alt={featureAlt3} className={styles.imageFeature} />
             </div>
@@ -134,6 +146,6 @@ const NoiseLvl = ({ data }) => {
       </div> 
     </div>
   );
-};
+});
 
 export default NoiseLvl;

@@ -1,5 +1,8 @@
+@import "src/styles/animations";
+
 .container {
   text-align: center;
+  animation: showAndMoveDown 0.5s ease-in-out 2.4s both;
   padding: 60px 30px;
 }
 

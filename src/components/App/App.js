@@ -6,7 +6,7 @@ import styles from './App.module.scss';
 function App() {
   useEffect(() => {
     setTimeout(() => {
-      // window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
     }, 500);
   }, []);
 

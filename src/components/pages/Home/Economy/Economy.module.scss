@@ -15,7 +15,7 @@
 .calculator {
   position: relative;
   max-width: 1040px;
-  background: #e7f1fc;
+  background-color: rgba(231, 241, 252, 0);
   padding: 42px 30px 90px;
   margin: 0 auto;
 }
@@ -90,6 +90,28 @@
 .content {
   max-width: 720px;
   margin: 0 auto;
+
+  .fieldWrap, .unit, .unitMob, .calcBtn, .chartDescription {
+    opacity: 0;
+  }
+
+  &Shown {
+    .fieldWrap {
+      animation: showAndMoveRight30 0.3s ease-in-out 0.6s both;
+    }
+
+    .unit, .unitMob {
+      animation: showAndMoveDown30 0.3s ease-in-out 0.7s both;
+    }
+
+    .calcBtn {
+      animation: showAndMoveLeft30 0.3s ease-in-out 0.8s both;
+    }
+
+    .chartDescription {
+      animation: showAndMoveUp30 0.3s ease-in-out 0.9s both;
+    }
+  }
 }
 
 .form {
@@ -174,12 +196,23 @@
 
 .chartWrap {
   position: relative;
+
+  &[data-visibility=true] {
+    .gridWrap,
+    .gridWrapMob {
+      animation: clip 0.8s linear 0.5s both;
+    }
+
+    .scaleItem {
+      display: block;
+    }
+  }
 }
 
 .gridWrap,
 .gridWrapMob {
+  clip-path: inset(0% 100%);
   border: 1px solid #cce4fa;
-  animation: clip 0.8s linear 0.5s both;
 }
 
 .gridWrapMob {
@@ -198,6 +231,7 @@
 }
 
 .scaleItem {
+  display: none;
   position: relative;
   animation-name: showAndBounce;
   animation-duration: 0.8s;

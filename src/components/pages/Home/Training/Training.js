@@ -17,7 +17,7 @@ const Training = ({ data: { title, trainingText, videoUrl, watchButtonText }}) =
           <Title title={title} number="6" isWhite />
           <p className={styles.trainingText}>{ parseStrWithBoldElems(trainingText) }</p>
         </div>
-          <a href={videoUrl} className={styles.watchBtn} target="_blank">{ watchButtonText }</a>
+          <a href={videoUrl} className={styles.watchBtn} target="_blank" rel="noreferrer">{ watchButtonText }</a>
         <div />
       </div>
     </div>

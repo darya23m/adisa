@@ -15,13 +15,13 @@
 
 @keyframes rotate1 {
   0%   { transform: rotate3d(0, 0, 1, 1deg); }
-  50% { transform: rotate3d(0, 0, 1, -1deg); }
+  50%  { transform: rotate3d(0, 0, 1, -1deg); }
   100% { transform: rotate3d(0, 0, 1, 1deg); }
 }
 
 @keyframes rotate2 {
   0%   { transform: rotate3d(0, 0, 1, 2deg); }
-  50% { transform: rotate3d(0, 0, 1, -2deg); }
+  50%  { transform: rotate3d(0, 0, 1, -2deg); }
   100% { transform: rotate3d(0, 0, 1, 2deg); }
 }
 
@@ -59,6 +59,16 @@
 @keyframes showAndMoveUp {
   0%   { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes showAndMoveRight30 {
+  0%   { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes showAndMoveLeft30 {
+  0%   { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes showAndMoveUp30 {
@@ -131,6 +141,16 @@
   100% { width: 0; }
 }
 
+@keyframes restoreWidth {
+  0%   { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes restoreWidth25 {
+  0%   { width: 0; }
+  100% { width: 25%; }
+}
+
 @keyframes collapseHorizontal {
   0%   { height: 100%; }
   100% { height: 0; }
@@ -179,4 +199,15 @@
 @keyframes dashOffsetReverse {
   0%   { stroke-dashoffset: 0; }
   100% { stroke-dashoffset: -400; }
+}
+
+@keyframes scaleIn {
+  0%   { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+@keyframes skew4 {
+  0%   { transform: rotate3d(1, 1, 0, 30deg); }
+  50%  { transform: rotate3d(1, 1, 0, 0deg); }
+  100% { transform: rotate3d(1, 1, 0, 30deg); }
 }

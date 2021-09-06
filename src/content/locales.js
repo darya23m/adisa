@@ -1,4 +1,4 @@
-export default [
+const locales = [
   {
     uri: 'ru',
     text: 'Рус'
@@ -8,3 +8,5 @@ export default [
     text: 'Укр'
   }
 ];
+
+export default locales;

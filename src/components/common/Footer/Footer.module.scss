@@ -65,8 +65,32 @@
 }
 
 .linkLogge {
+  position: relative;
   color: #fff;
   font-weight: 600;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      &:after {
+        transition: all 0.3s ease-in-out 10s;
+        opacity: 1;
+      }
+    }
+  }
+
+  &:after {
+    opacity: 0;
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    line-height: 20px;
+    content: "| Darya M. :)";
+    left: calc(100% + 5px);
+    top: calc(50% - 10px);
+    white-space: nowrap;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -92,12 +116,18 @@
   .eclipse {
     height: 12px;
   }
+
+  .linkLogge {
+    &:after {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 480px) {
   .container {
     position: relative;
-    padding: 50px 25px 26px;
+    padding: 50px 25px 68px;
   }
 
   .header {
@@ -128,7 +158,7 @@
 
   .divider{
     position: absolute;
-    bottom: 50px;
+    bottom: 70px;
     left: 0;
   }
 

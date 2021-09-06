@@ -18,7 +18,7 @@ function Nav() {
   const [isAppFaded, setIsAppFaded] = useState(false);
   const [isHeaderFaded, setIsHeaderFaded] = useState(false);
 
-  const handleAppFaded = (newLocation, isLang) => {
+  const handleNextLocationWithFading = (newLocation, isLang) => {
     if (isAppFaded) return;
 
     setIsAppFaded(true);
@@ -41,10 +41,17 @@ function Nav() {
   const renderMainRoutes = (data, locale) => {
     return (
       <>
-        <Header locale={locale} data={data.header} handleAppFaded={handleAppFaded} isHeaderFaded={isHeaderFaded} />
+        <Header locale={locale}
+                data={data.header}
+                handleNextLocationWithFading={handleNextLocationWithFading}
+                isHeaderFaded={isHeaderFaded} />
         <Switch>
           <Route exact path={locale}>
-            <Home data={data.home} isAppFaded={isAppFaded} />
+            <Home data={data.home}
+                  isAppFaded={isAppFaded}
+                  goToContacts={() => handleNextLocationWithFading(`${locale}/contacts`)}
+                  locale={locale}
+            />
           </Route>
           <Route path={`${locale}/equipment`}>
             <Equipment data={data.equipment} isAppFaded={isAppFaded} />

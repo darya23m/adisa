@@ -5,7 +5,7 @@ import styles from './Footer.module.scss';
 import { ReactComponent as Eclipse } from './img/eclipse.svg';
 import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 
-const Footer = ({ data: { title, leftDescriptions, rightDescriptions }, isAppFaded }) => {
+function Footer({ data: { title, leftDescriptions, rightDescriptions }, isAppFaded }) {
   const renderDescriptions = (descriptionsList) =>
     descriptionsList.map((curr, index) =>
       <p key={index} className={styles.paragraph}>{ parseStrWithBoldElems(curr) }</p>
@@ -34,6 +34,6 @@ const Footer = ({ data: { title, leftDescriptions, rightDescriptions }, isAppFad
       </div>
     </div>
   );
-};
+}
 
- export default Footer;
+export default Footer;

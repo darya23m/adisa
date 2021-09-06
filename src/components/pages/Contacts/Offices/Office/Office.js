@@ -12,7 +12,11 @@ const Office = ({ data: { city, addresses }, active, onClick }) => {
         { label }:&ensp;
         { type === 'tel' && <a href={`tel:${curr}`} className={styles.contact}>{ curr }</a> }
         { type === 'email' && <a href={`mailto:${curr}`} className={styles.contact}>{ curr }</a> }
-        { type === 'web' && <a href={ externalUrl(curr) } className={styles.contact} target="_blank">{ curr }</a> }
+        { type === 'web' &&
+          <a href={ externalUrl(curr) } className={styles.contact} target="_blank" rel="noreferrer">
+            { curr }
+          </a>
+        }
       </div>
     )
 

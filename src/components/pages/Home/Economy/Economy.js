@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useImperativeHandle } from 'react';
 import cx from 'classnames';
 
 import Title from 'components/common/Title/Title';
@@ -7,7 +7,19 @@ import styles from './Economy.module.scss';
 import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 import FirstTimeSeen from 'components/common/FirstTimeSeen/FirstTimeSeen';
 
-function Economy({ data }) {
+const Economy = React.forwardRef(({ data }, ref) => {
+  const calculatorRef = useRef(null);
+  const chartRef = useRef(null);
+
+  useImperativeHandle(ref, () => ({
+    get calculator() {
+      return calculatorRef.current
+    },
+    get chart() {
+      return chartRef.current
+    }
+  }));
+
   const [isArrowVisible, setIsArrowVisible] = useState(false);
   const [isArrowInitiallyVisible, setIsArrowInitiallyVisible] = useState(false);
   const [powerValue, setPowerValue] = useState('');
@@ -66,7 +78,7 @@ function Economy({ data }) {
     <div className={cx("commonContentContainer", styles.container)}>
       <Title title={data.title} number="1" />
       <div className={styles.subtitle}> { parseStrWithBoldElems(data.subtitle) }</div>
-      <div className={styles.calculator}>
+      <div className={styles.calculator} ref={calculatorRef}>
         <div className={styles.labelWrap}>
           <div className={cx(styles.label, {
               [styles.labelAnimate]: isArrowVisible, 
@@ -77,7 +89,7 @@ function Economy({ data }) {
               [styles.arrowInitVisible]: isArrowInitiallyVisible
             })} />
         </div>
-        <div className={styles.content}>
+        <div className={cx(styles.content, {[styles.contentShown]: isArrowVisible})}>
           <FirstTimeSeen onEncounter={setIsArrowVisible} initiallyVisible={setIsArrowInitiallyVisible}>
             <div className={styles.form}>
               <div className={styles.spacer} />
@@ -100,7 +112,7 @@ function Economy({ data }) {
             </div>
           </FirstTimeSeen>
           <div className={styles.chartDescription}>{ parseStrWithBoldElems(data.chartDescription) }</div>
-          <div className={styles.chartWrap}>
+          <div className={styles.chartWrap} ref={chartRef}>
             <div className={styles.gridWrap}>
               <Grid rows={22} cols={45} borderColor="#cce4fa" borderWidth="1" />
             </div>
@@ -115,6 +127,6 @@ function Economy({ data }) {
       </div>
     </div>
   );
-}
+});
 
 export default Economy;

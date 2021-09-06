@@ -1,11 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Title from 'components/common/Title/Title';
 import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 import styles from './Repairs.module.scss';
 
-const Repairs = ({ data: { title, description, serviceLinkText }}) => {
+const Repairs = ({ data: { title, description, serviceLinkText }, goToContacts, locale }) => {
+  const handleServiceLinkClick = (ev) => {
+    ev.preventDefault();
+
+    goToContacts();
+  }
+
   return (
     <div className={styles.container}>
       <Title title={title} number="7" />
@@ -72,7 +77,9 @@ const Repairs = ({ data: { title, description, serviceLinkText }}) => {
         </div>
         <div className={styles.text}>
           { parseStrWithBoldElems(description) }
-          <Link to="contacts" className={styles.serviceLink}>{ serviceLinkText }</Link>
+          <a href={`${locale}/contacts`} onClick={handleServiceLinkClick} className={styles.serviceLink}>
+            { serviceLinkText }
+          </a>
         </div>
       </div>
     </div>

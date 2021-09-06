@@ -20,7 +20,7 @@ const Power = ({ data: {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <Title title={title} number="2" />
+        <Title title={title} number="2" titleStyles={styles.title} />
         <div>
           { renderDescription() }
         </div>
