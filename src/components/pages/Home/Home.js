@@ -83,7 +83,7 @@ function Home({ data: { meta }, data, isAppFaded, goToContacts, locale }) {
     const { pollutionLeftChart, pollutionRightChart } = pollutionRef.current;
     const pollutionRightChartRect = pollutionRightChart.getBoundingClientRect();
     const pollutionChartsTopAndViewportMidOffset = (
-      (pollutionRightChartRect.top + pollutionRightChartRect.height / 2) - (viewportHeight / 2)
+      (pollutionRightChartRect.top + pollutionRightChartRect.height / 4) - (viewportHeight / 2)
     );
     const pollutionLeftChartOffset = pollutionChartsTopAndViewportMidOffset * -0.4;
     const pollutionRightChartOffset = pollutionChartsTopAndViewportMidOffset * 0.4;
