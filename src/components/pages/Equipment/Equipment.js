@@ -12,6 +12,7 @@ function Equipment({ data: { meta , data }, isAppFaded}) {
   const { isExact, path} = useRouteMatch();
   const [ isContentShown, setIsContentShown ] = useState(true);
   const [ isAnimationFadeoutActive, setIsAnimationFadeoutActive ] = useState(false);
+  const [ isAnimationRemove, setIsAnimationRemove ] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -22,7 +23,11 @@ function Equipment({ data: { meta , data }, isAppFaded}) {
   const equipmentRoutes = (list) =>
     list.map((item, index) =>
       <Route key={index} path={`${path}/${item.path}`}>
-        <Item data={item} isAnimationFadeoutActive={isAnimationFadeoutActive} />
+        <Item data={item}
+              isAnimationFadeoutActive={isAnimationFadeoutActive}
+              isAnimationRemove={isAnimationRemove}
+              setIsAnimationRemove={setIsAnimationRemove}
+        />
       </Route>
     )
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useImperativeHandle} from 'react';
 import cx from 'classnames';
 
 import Title from 'components/common/Title/Title';
@@ -6,7 +6,20 @@ import styles from './Pollution.module.scss';
 import eco from './img/eco.jpg';
 import parseStrWithBoldElems from 'utils/parseStrWithBoldElems';
 
-const Pollution = ({ data: { title, ecoAlt, ecoDescription, chartNameAdisa, chartNameCommon, pollutionDescription }}) => {
+const Pollution = React.forwardRef(({ data }, ref) => {
+  const { title, ecoAlt, ecoDescription, chartNameAdisa, chartNameCommon } = data;
+  const pollutionLeftChartRef = useRef(null);
+  const pollutionRightChartRef = useRef(null);
+
+  useImperativeHandle(ref, () => ({
+    get pollutionLeftChart() {
+      return pollutionLeftChartRef.current
+    },
+    get pollutionRightChart() {
+      return pollutionRightChartRef.current
+    }
+  }));
+
   return (
     <div className={styles.container}>
       <Title title={title} number="5" />
@@ -18,7 +31,7 @@ const Pollution = ({ data: { title, ecoAlt, ecoDescription, chartNameAdisa, char
            <div className={styles.ecoDescription}>{ parseStrWithBoldElems(ecoDescription) }</div>
         </div>
         <div className={styles.pollutionCharts}>
-          <div className={styles.chartWrap}>
+          <div className={styles.chartWrap} ref={pollutionLeftChartRef}>
             <svg viewBox="0 0 520 352" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.chart}>
               <g>
                 <path id="lessPollutionPath" d="M520 351.528C494.48 351.528 350.121 351.724 337.034 350.55C323.947 349.375 314.786 341.939 302.354 334.306C293.057 328.598 282.723 324.326 275.525 322.955C268.327 321.585 260.475 321.781 254.586 322.956C248.697 324.13 238.227 327.261 225.794 334.306C211.452 342.433 201.012 347.224 191.113 349.376C181.215 351.528 144 352 144 352" stroke="url(#lessPolution1)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -65,7 +78,7 @@ const Pollution = ({ data: { title, ecoAlt, ecoDescription, chartNameAdisa, char
             </svg>
             <div className={cx(styles.chartName, styles.chartNameBlue)}>{ chartNameAdisa }</div>
           </div>
-          <div className={styles.chartWrap}>
+          <div className={styles.chartWrap} ref={pollutionRightChartRef}>
             <div className={styles.firstCircle} />
             <div className={styles.secondCircle} />
             <div className={styles.thirdCircle} />
@@ -121,6 +134,6 @@ const Pollution = ({ data: { title, ecoAlt, ecoDescription, chartNameAdisa, char
       </div>
     </div>
   );
-};
+});
 
 export default Pollution;

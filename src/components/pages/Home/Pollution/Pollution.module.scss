@@ -1,6 +1,7 @@
 @import "src/styles/animations";
 
 .container {
+  overflow: hidden;
   padding: 65px 30px 80px;
 }
 
@@ -45,6 +46,7 @@
 .chartWrap {
   position: relative;
   width: 48%;
+  transform-origin: bottom;
 
   &::before {
     content: '';

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import cx from 'classnames';
 
 import { ReactComponent as Logo } from './img/logo.svg';
 import locales from 'content/locales';
 import styles from './Header.module.scss';
 
-function Header({ data, locale, handleAppFaded, isHeaderFaded }) {
+function Header({ data, locale, handleNextLocationWithFading, isHeaderFaded }) {
   const [ isMobMenuOpen, setIsMobMenuOpen ] = useState(false);
   const location = useLocation();
   const { pathname } = location;
@@ -24,7 +24,9 @@ function Header({ data, locale, handleAppFaded, isHeaderFaded }) {
   const handleLinkClick = (ev, nextLocation, options = {}) => {
     ev.preventDefault();
 
-    handleAppFaded(nextLocation, options.isLang);
+    if (nextLocation === location.pathname) return;
+
+    handleNextLocationWithFading(nextLocation, options.isLang);
   }
 
   const checkIsActive = ({ url, exact }) => {

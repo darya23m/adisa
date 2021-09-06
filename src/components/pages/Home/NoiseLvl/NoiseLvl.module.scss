@@ -39,11 +39,23 @@
 
 .chartWrap {
   width: 45%;
+
+  &[data-visibility=true] {
+    .chart {
+      &Rect1, &Rect2, &Rect3, &Rect4, &Pic1, &Pic2, &Pic3, &Pic4 {
+        display: block;
+      }
+    }
+  }
 }
 
 .chart {
   min-width: 100%;
   height: auto;
+
+  &Rect1, &Rect2, &Rect3, &Rect4, &Pic1, &Pic2, &Pic3, &Pic4 {
+    display: none;
+  }
 
   &Rect1, &Rect2, &Rect3, &Rect4 {
     transform-origin: bottom;
@@ -55,28 +67,28 @@
   }
 
   &Rect1 {
-    animation: showAndBounce 1s ease-in-out 0.5s both;
+    animation: showAndBounce 1s ease-in-out 0s both;
   }
   &Rect2 {
-    animation: showAndBounce 1s ease-in-out 0.7s both;
+    animation: showAndBounce 1s ease-in-out 0.2s both;
   }
   &Rect3 {
-    animation: showAndBounce 1s ease-in-out 0.9s both;
+    animation: showAndBounce 1s ease-in-out 0.4s both;
   }
   &Rect4 {
-    animation: showAndBounce 1s ease-in-out 1.1s both;
+    animation: showAndBounce 1s ease-in-out 0.6s both;
   }
   &Pic1 {
-    animation: rotateAndScaleAll 0.5s ease-in-out 0.9s both;
+    animation: rotateAndScaleAll 0.5s ease-in-out 0.4s both;
   }
   &Pic2 {
-    animation: rotateAndScaleAll 0.5s ease-in-out 1.1s both;
+    animation: rotateAndScaleAll 0.5s ease-in-out 0.6s both;
   }
   &Pic3 {
-    animation: rotateAndScaleAll 0.5s ease-in-out 1.3s both;
+    animation: rotateAndScaleAll 0.5s ease-in-out 0.8s both;
   }
   &Pic4 {
-    animation: rotateAndScaleAll 0.5s ease-in-out 1.5s both;
+    animation: rotateAndScaleAll 0.5s ease-in-out 1s both;
   }
 }
 
@@ -85,6 +97,16 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 48px;
+
+  &[data-visibility=true] {
+    .connector {
+      display: block;
+    }
+
+    .features {
+      display: flex;
+    }
+  }
 }
 
 .boiler {
@@ -99,11 +121,13 @@
 }
 
 .connector {
+  display: none;
   position: absolute;
   top: 50%;
   left: 92%;
   width: 25%;
   height: 1px;
+  animation: restoreWidth25 0.2s linear 0s both;
   background-color: #922033;
   
   &::before {
@@ -119,8 +143,8 @@
 }
 
 .features {
+  display: none;
   position: relative;
-  display: flex;
   justify-content: space-between;
   width: 65%;
 }
@@ -128,15 +152,44 @@
 .redLine {
   position: absolute;
   top: 50%;
-  left: 30%;
-  width: 50%;
+  left: 0;
+  width: 100%;
   height: 1px;
   background-color: #922033;
+  animation: restoreWidth 1.5s linear 0.2s both;
 }
 
 .feature {
   position: relative;
   width: 30%;
+  animation-name: scaleIn;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+.feature1 {
+  animation-delay: 0.4s;
+
+  .name {
+    animation-delay: 0.7s;
+  }
+}
+
+.feature2 {
+  animation-delay: 0.8s;
+
+  .name {
+    animation-delay: 1.1s;
+  }
+}
+
+.feature3 {
+  animation-delay: 1.2s;
+
+  .name {
+    animation-delay: 1.5s;
+  }
 }
 
 .nameWrap, .nameWrap3 {
@@ -153,6 +206,10 @@
   font-size: 20px;
   line-height: 28px;
   color: #922033;
+  animation-name: showAndMoveUp30;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
 }
 
 .imageFeature {
@@ -212,11 +269,13 @@
   }
 
   .connector {
+    display: block;
     top: 82%;
     left: 70%;
     width: 1px;
     height: 18%;
-    
+    animation: none;
+
     &::before {
       top: -5%;
       left: -8px;
@@ -226,6 +285,7 @@
   }
 
   .features {
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
@@ -235,10 +295,12 @@
     left: 70%;
     width: 1px;
     height: 50%;
+    animation: none;
   }
 
   .feature {
     width: 60%;
+    animation: none;
   }
 
   .feature:not(:nth-child(2)) {
@@ -255,6 +317,7 @@
   .name {
     font-size: 20px;
     line-height: 24px;
+    animation: none;
   }
 }
 

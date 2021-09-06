@@ -6,7 +6,7 @@ import ecoImg from './img/eco.jpg';
 import { ReactComponent as IconDownload } from './img/Download.svg';
 import { ReactComponent as IconLink } from './img/Link.svg';
 
-function Item({ data, isAnimationFadeoutActive }) {
+function Item({ data, isAnimationFadeoutActive, isAnimationRemove, setIsAnimationRemove }) {
   const tableWrapRef = useRef(null);
   const { name, description, features, docsIntro, docs, table, preview } = data;
   const previewAnimationDelay = table.length * 100 + 1900;
@@ -15,6 +15,18 @@ function Item({ data, isAnimationFadeoutActive }) {
     setTimeout(() => {
       if (tableWrapRef.current) tableWrapRef.current.style.overflowX = 'auto';
     }, previewAnimationDelay);
+
+    let removeAllAnimationsTimerId;
+
+    if (!isAnimationRemove) {
+      removeAllAnimationsTimerId = setTimeout(() => {
+        setIsAnimationRemove(true);
+      }, previewAnimationDelay + 1000);
+    }
+
+    return () => {
+      clearTimeout(removeAllAnimationsTimerId);
+    };
   }, []);
 
   const renderPreviewImages = (images) => images.map((curr, index) => (
@@ -80,6 +92,7 @@ function Item({ data, isAnimationFadeoutActive }) {
           <a download={isDownloadable}
              href={curr.link}
              target="_blank"
+             rel="noreferrer"
              className={cx(styles.docLink, {[styles.docLinkDownloadable]: isDownloadable})}>
             { curr.text }
           </a>
@@ -93,7 +106,10 @@ function Item({ data, isAnimationFadeoutActive }) {
     );
 
   return (
-    <div className={cx(styles.container, {[styles.containerHidden]: isAnimationFadeoutActive})}>
+    <div className={cx(
+      styles.container,
+      {[styles.containerHidden]: isAnimationFadeoutActive, [styles.withoutAnimations]: isAnimationRemove}
+    )}>
       <div className={styles.captionWrap}>
         <div className={styles.caption}>
           <h2 className={styles.name}>{ name }</h2>

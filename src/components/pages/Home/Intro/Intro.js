@@ -9,6 +9,7 @@ import boiler3 from './img/boiler-big.png';
 import styles from './Intro.module.scss';
 
 const Intro = React.forwardRef(({ data }, ref) => {
+  const containerRef = useRef(null);
   const boiler1Ref = useRef(null);
   const boiler2Ref = useRef(null);
   const boiler3Ref = useRef(null);
@@ -16,6 +17,9 @@ const Intro = React.forwardRef(({ data }, ref) => {
   const descriptionRef = useRef(null);
 
   useImperativeHandle(ref, () => ({
+    get container() {
+      return containerRef.current
+    },
     get boiler1() {
       return boiler1Ref.current;
     },
@@ -30,11 +34,11 @@ const Intro = React.forwardRef(({ data }, ref) => {
     },
     get description() {
       return descriptionRef.current;
-    },
+    }
   }));
 
   return (
-      <div className={styles.container}>
+      <div className={styles.container} ref={containerRef}>
         <div className={styles.bgLayoutWrap}>
           <div className={styles.bgLayout} />
           <div className={styles.boilers}>
