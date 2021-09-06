@@ -87,8 +87,8 @@ const NoiseLvl = React.forwardRef(({ data }, ref) => {
               <line opacity="0.5" x1="288.5" y1="63" x2="288.5" y2="410" stroke="#0077E4"/>
               <line opacity="0.5" x1="188.5" y1="63" x2="188.5" y2="410" stroke="#0077E4"/>
               <line opacity="0.5" x1="338.5" y1="63" x2="338.5" y2="410" stroke="#0077E4"/>
-              <line x1="388.5" y1="63" x2="388.5" y2="410" stroke="#0077E4"/>
-              <line x1="438.5" y1="63" x2="438.5" y2="410" stroke="#0077E4"/>
+              <line opacity="0.5" x1="388.5" y1="63" x2="388.5" y2="410" stroke="#0077E4"/>
+              <line opacity="0.5" x1="438.5" y1="63" x2="438.5" y2="410" stroke="#0077E4"/>
               <line opacity="0.5" x1="38.3904" y1="27.3123" x2="34.3904" y2="32.3123" stroke="#0077E4"/>
               <line opacity="0.5" y1="-0.5" x2="6.40312" y2="-0.5" transform="matrix(0.624695 0.780869 0.780869 -0.624695 39 27)" stroke="#0077E4"/>
             </svg>
