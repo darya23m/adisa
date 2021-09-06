@@ -1,3 +1,5 @@
+@import "src/styles/animations";
+
 .container {
   padding: 0 30px;
 }
@@ -35,9 +37,47 @@
   line-height: 28px;
 }
 
-.chart {
+.chartWrap {
   width: 45%;
+}
+
+.chart {
+  min-width: 100%;
   height: auto;
+
+  &Rect1, &Rect2, &Rect3, &Rect4 {
+    transform-origin: bottom;
+  }
+
+  &Pic1, &Pic2, &Pic3, &Pic4 {
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  &Rect1 {
+    animation: showAndBounce 1s ease-in-out 0.5s both;
+  }
+  &Rect2 {
+    animation: showAndBounce 1s ease-in-out 0.7s both;
+  }
+  &Rect3 {
+    animation: showAndBounce 1s ease-in-out 0.9s both;
+  }
+  &Rect4 {
+    animation: showAndBounce 1s ease-in-out 1.1s both;
+  }
+  &Pic1 {
+    animation: rotateAndScaleAll 0.5s ease-in-out 0.9s both;
+  }
+  &Pic2 {
+    animation: rotateAndScaleAll 0.5s ease-in-out 1.1s both;
+  }
+  &Pic3 {
+    animation: rotateAndScaleAll 0.5s ease-in-out 1.3s both;
+  }
+  &Pic4 {
+    animation: rotateAndScaleAll 0.5s ease-in-out 1.5s both;
+  }
 }
 
 .example {
@@ -123,14 +163,14 @@
 }
 
 @media (max-width: 1024px) {
-  .infoText, .chart {
+  .infoText, .chartWrap {
     width: 48%;
   }
-  
+
   .listTitle {
     margin: 28px 0;
   }
-  
+
   .list {
     padding-left: 20px;
   }
@@ -146,7 +186,7 @@
     width: 100%;
   }
 
-  .chart {
+  .chartWrap {
     width: 100%;
   }
 

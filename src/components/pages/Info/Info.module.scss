@@ -5,10 +5,8 @@
 }
 
 .header {
-  background-image: url(./img/Background_Sertificates.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  overflow: hidden;
+  position: relative;
   color: #fff;
   font-weight: 600;
   font-size: 30px;
@@ -27,6 +25,25 @@
   }
 }
 
+.headerBg {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  transition: all 80ms linear;
+  transform: translate3d(0, 0, 0);
+  background-image: url(./img/Background_Sertificates.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+
+  @media (hover: hover) and (pointer: fine) {
+    display: block;
+  }
+}
+
 .content {
   max-width: 1200px;
   transition: opacity 0.28s ease-in-out;
@@ -41,6 +58,17 @@
 @media (max-width: 1024px) {
   .content {
     padding: 0 90px;
+  }
+
+  .header {
+    background-image: url(./img/Background_Sertificates.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .headerBg {
+    display: none;
   }
 }
 

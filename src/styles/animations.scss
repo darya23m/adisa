@@ -154,6 +154,11 @@
   100% { transform: scale(1) rotate(0deg); }
 }
 
+@keyframes rotateAndScaleAll {
+  0%   { transform: scale(0) rotate(-360deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
 @keyframes clip {
   0%   { clip-path: inset(0% 100%); }
   100% { clip-path: inset(0% 0%); }
