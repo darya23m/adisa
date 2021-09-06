@@ -1,5 +1,3 @@
-@import "src/styles/animations";
-
 .container {
   width: 100%;
   background-color: #0078e9;
@@ -37,7 +35,6 @@
 
 .siemensImgWrap {
   width: 34%;
-  animation: skew4 10s ease-in-out 0s infinite;
 }
 
 .siemensImg {
