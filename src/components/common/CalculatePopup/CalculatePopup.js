@@ -18,7 +18,7 @@ function CalculatePopup({ data, isHidden }) {
       setIsPopupShown(false);
       setIsPopupFadeOutActive(false);
       setSuccess(false);
-    }, 400)
+    }, 100)
   }
 
   const onSuccess = () => {
