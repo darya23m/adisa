@@ -10,7 +10,7 @@
   background-color: rgba(0,0,0,0.4);
   z-index: 1120;
   animation-name: fadeIn;
-  animation-delay: 0.3s;
+  animation-delay: 0.2s;
   animation-timing-function: ease-in-out;
   animation-duration: 0.3s;
   animation-fill-mode: backwards;
@@ -37,11 +37,6 @@
   border-radius: 4px;
   padding: 48px 36px;
   margin: 0 auto;
-  animation-name: fadeIn;
-  animation-delay: 0.7s;
-  animation-timing-function: ease-in-out;
-  animation-duration: 0.3s;
-  animation-fill-mode: backwards;
 }
 
 .closeButton {
