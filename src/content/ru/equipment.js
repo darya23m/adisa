@@ -2,7 +2,7 @@ export default [ // resizable
   // ========== adi-lt ==========
   {
     name: "ADI LT",
-    path: "adi_lt",
+    path: "adi-lt",
     meta: {
       title: "ADI LT — Оборудование — ADISA",
       description: "description",
@@ -124,7 +124,7 @@ export default [ // resizable
   // ========== adi-cd ==========
   {
     name: "ADI CD",
-    path: "adi_cd",
+    path: "adi-cd",
     meta: {
       title: "ADI CD — Оборудование — ADISA",
       description: "description",
@@ -246,7 +246,7 @@ export default [ // resizable
   // ========== adi-mega ==========
   {
     name: "ADI MEGA",
-    path: "adi_mega",
+    path: "adi-mega",
     meta: {
       title: "ADI MEGA — Оборудование — ADISA",
       description: "description",
@@ -373,7 +373,7 @@ export default [ // resizable
   // ========== condensa-pro ==========
   {
     name: "Condexa PRO",
-    path: "condexa_pro",
+    path: "condexa-pro",
     meta: {
       title: "Condexa PRO — Оборудование — ADISA",
       description: "description",

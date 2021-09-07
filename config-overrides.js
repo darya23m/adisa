@@ -3,7 +3,7 @@ const ROUTES = [
   '/ru/equipment/adi-lt',
   '/ru/equipment/adi-cd',
   '/ru/equipment/adi-mega',
-  '/ru/equipment/condensa-pro',
+  '/ru/equipment/condexa-pro',
   '/ru/info',
   '/ru/offices',
   '/ru/contacts',
@@ -11,7 +11,7 @@ const ROUTES = [
   '/ua/equipment/adi-lt',
   '/ua/equipment/adi-cd',
   '/ua/equipment/adi-mega',
-  '/ua/equipment/condensa-pro',
+  '/ua/equipment/condexa-pro',
   '/ua/info',
   '/ua/offices',
   '/ua/contacts'
