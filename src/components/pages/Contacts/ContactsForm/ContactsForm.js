@@ -26,7 +26,7 @@ const ContactsForm = ({ data }) => {
     setTimeout(() => {
       setSuccess(false);
       setIsPopupFadeOutActive(false);
-    }, 400)
+    }, 100)
   }
 
   // Form fields
