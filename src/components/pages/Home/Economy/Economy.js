@@ -68,7 +68,7 @@ const Economy = React.forwardRef(({ data }, ref) => {
                : { transitionDelay: `${0.1 * index}s` }
              }
         >
-          { (resultEconomyValue * curr.mod).toFixed() }м<sup>3</sup>
+          { (resultEconomyValue * curr.mod).toFixed() }{" "}м<sup>3</sup>
         </div>
         <div className={styles.scaleLabel}>{ curr.label }</div>
       </div>
