@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: "ADISA | Документация",
+    title: "Документация — ADISA",
     description: "description",
     keywords: "ADISA"
   },
