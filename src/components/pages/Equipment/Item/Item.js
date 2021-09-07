@@ -1,4 +1,5 @@
 import React, {useEffect, useRef} from 'react';
+import { Helmet } from 'react-helmet';
 import cx from 'classnames';
 
 import styles from './Item.module.scss';
@@ -8,7 +9,7 @@ import { ReactComponent as IconLink } from './img/Link.svg';
 
 function Item({ data, isAnimationFadeoutActive, isAnimationRemove, setIsAnimationRemove }) {
   const tableWrapRef = useRef(null);
-  const { name, description, features, docsIntro, docs, table, preview } = data;
+  const { name, meta, description, features, docsIntro, docs, table, preview } = data;
   const previewAnimationDelay = table.length * 100 + 1900;
 
   useEffect(() => {
@@ -110,6 +111,11 @@ function Item({ data, isAnimationFadeoutActive, isAnimationRemove, setIsAnimatio
       styles.container,
       {[styles.containerHidden]: isAnimationFadeoutActive, [styles.withoutAnimations]: isAnimationRemove}
     )}>
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
+      </Helmet>
       <div className={styles.captionWrap}>
         <div className={styles.caption}>
           <h2 className={styles.name}>{ name }</h2>
