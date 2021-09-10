@@ -36,7 +36,8 @@ const Economy = React.forwardRef(({ data }, ref) => {
     setIsResultShown(false);
   }
 
-  const calcEconomy = () => {
+  const calcEconomy = (e) => {
+    e.preventDefault();
     if (!powerValue) {
       setHasError(true);
 
@@ -46,6 +47,8 @@ const Economy = React.forwardRef(({ data }, ref) => {
     setResultEconomyValue(powerValue);
     setIsResultShown(true);
   }
+
+  const numeric = (value) => value.toLocaleString('en-US', {maximumFractionDigits:0});
 
   const renderScaleItems = () =>
     data.scaleItems.map((curr, index) =>
@@ -68,7 +71,7 @@ const Economy = React.forwardRef(({ data }, ref) => {
                : { transitionDelay: `${0.1 * index}s` }
              }
         >
-          { (resultEconomyValue * curr.mod).toFixed() }{" "}м<sup>3</sup>
+          { numeric(resultEconomyValue * curr.mod) }{" "}м<sup>3</sup>
         </div>
         <div className={styles.scaleLabel}>{ curr.label }</div>
       </div>
@@ -91,7 +94,7 @@ const Economy = React.forwardRef(({ data }, ref) => {
         </div>
         <div className={cx(styles.content, {[styles.contentShown]: isArrowVisible})}>
           <FirstTimeSeen onEncounter={setIsArrowVisible} initiallyVisible={setIsArrowInitiallyVisible}>
-            <div className={styles.form}>
+            <form className={styles.form} onSubmit={calcEconomy}>
               <div className={styles.spacer} />
               <div className={styles.fieldWrap}>
                 <input type='text'
@@ -105,11 +108,11 @@ const Economy = React.forwardRef(({ data }, ref) => {
               <div className={styles.unitMob}>{ data.unit }</div>
               <div className={styles.right}>
                 <div className={styles.unit}>{ data.unit }</div>
-                <button type="button" className={styles.calcBtn} onClick={calcEconomy}>
+                <button type="submit" className={styles.calcBtn} onClick={calcEconomy}>
                   { data.calcButton }
                 </button>
               </div>
-            </div>
+            </form>
           </FirstTimeSeen>
           <div className={styles.chartDescription}>{ parseStrWithBoldElems(data.chartDescription) }</div>
           <div className={styles.chartWrap} ref={chartRef}>

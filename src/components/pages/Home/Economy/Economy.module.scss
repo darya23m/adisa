@@ -318,14 +318,15 @@
   top: 0;
   left: 0;
   width: 100%;
-  font-size: 23px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 38px;
   font-weight: 600;
   text-align: center;
   transition-property: all;
   transition-duration: 0.3s;
   transform: translate3d(0, 0, 0);
   z-index: 5;
+  white-space: nowrap;
 }
 
 .scaleLabel {
@@ -529,7 +530,6 @@
     left: calc(100% + 10px);
     font-size: 20px;
     line-height: 26px;
-    white-space: nowrap;
     transform: translate3d(-20px, 0, 0);
   }
 
