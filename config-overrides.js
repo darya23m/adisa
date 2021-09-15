@@ -5,7 +5,6 @@ const ROUTES = [
   '/ru/equipment/adi-mega',
   '/ru/equipment/condexa-pro',
   '/ru/info',
-  '/ru/offices',
   '/ru/contacts',
   '/ua',
   '/ua/equipment/adi-lt',
@@ -13,7 +12,6 @@ const ROUTES = [
   '/ua/equipment/adi-mega',
   '/ua/equipment/condexa-pro',
   '/ua/info',
-  '/ua/offices',
   '/ua/contacts'
 ];
 
@@ -21,18 +19,18 @@ const ROUTES = [
 //   ROUTES.push()
 // });
 
-// const PrerenderSPAPlugin = require('prerender-spa-plugin');
-// const path = require('path');
+const PrerenderSPAPlugin = require('prerender-spa-plugin');
+const path = require('path');
 
-// module.exports = (config, env) => {
-//   if (env === 'production') {
-//     config.plugins = config.plugins.concat([
-//       new PrerenderSPAPlugin({
-//         routes: ROUTES,
-//         staticDir: path.join(__dirname, 'build'),
-//       }),
-//     ]);
-//   }
+module.exports = (config, env) => {
+  if (env === 'production') {
+    config.plugins = config.plugins.concat([
+      new PrerenderSPAPlugin({
+        routes: ROUTES,
+        staticDir: path.join(__dirname, 'build'),
+      }),
+    ]);
+  }
 
-//   return config;
-// };
+  return config;
+};
