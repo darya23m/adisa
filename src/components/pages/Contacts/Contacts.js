@@ -43,7 +43,7 @@ const Contacts = ({ data, isRerouted, isAppFaded }) => {
           { data.header }
         </div>
         <div className={cx(styles.content, {[styles.contentHidden]: isAppFaded})}>
-          <Offices data={data.offices} />
+          <Offices data={data.offices} labels={data.labels} />
         </div>
         <ContactsForm data={data.form} />
       </div>

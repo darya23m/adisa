@@ -5,6 +5,12 @@ export default {
     keywords: "ADISA"
   },
   header: "Регіональні представництва",
+  labels: {
+    address: 'Адрес',
+    phone: 'Тел.',
+    email: 'E-mail',
+    web: 'Web'
+  },
   offices: {
     mainOffice: {
       title: "Головний офіс:",

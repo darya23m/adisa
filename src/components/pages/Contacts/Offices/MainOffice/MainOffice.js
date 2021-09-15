@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './MainOffice.module.scss';
 
-const MainOffice = ({ data }) => {
+const MainOffice = ({ data, labels }) => {
   const renderContacts = (list, label, type) =>
     list.map((curr, index) =>
       <div key={index} className={styles.contactsBlock}>
@@ -16,9 +16,9 @@ const MainOffice = ({ data }) => {
   const renderAddress = () =>
     <div className={styles.listItemBlock}>
       <div className={styles.address}>{ data.office.address }</div>
-      { data.office.tels && renderContacts(data.office.tels, 'Тел.', 'tel') }
-      { data.office.emails && renderContacts(data.office.emails, 'E-mail', 'email') }
-      { data.office.webs && renderContacts(data.office.webs, 'Web', 'web') }
+      { data.office.tels && renderContacts(data.office.tels, labels.phone, 'tel') }
+      { data.office.emails && renderContacts(data.office.emails, labels.email, 'email') }
+      { data.office.webs && renderContacts(data.office.webs, labels.web, 'web') }
     </div>
 
   return (

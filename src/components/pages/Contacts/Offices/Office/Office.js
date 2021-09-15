@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Office.module.scss';
 import cx from 'classnames';
 
-const Office = ({ data: { city, addresses }, active, onClick }) => {
+const Office = ({ data: { city, addresses }, labels, active, onClick }) => {
   const externalUrl = (url) => (/^http?/im).test(url) ? url : `https://${url}`;
 
   const renderContactsItem = (list, label, type) => 
@@ -25,10 +25,10 @@ const Office = ({ data: { city, addresses }, active, onClick }) => {
       <li key={index} className={styles.listItem}>
         <div className={styles.listItemBlock}>
           <div className={styles.officeName}>{ curr.officeName }</div>
-          { curr.address && <div key={index} className={styles.address}>Адрес: { curr.address }</div>}
-          { curr.tels && renderContactsItem(curr.tels, 'Тел.', 'tel') }
-          { curr.emails && renderContactsItem(curr.emails, 'E-mail', 'email') }
-          { curr.webs && renderContactsItem(curr.webs, 'Web', 'web') }
+          { curr.address && <div key={index} className={styles.address}>{labels.address}: { curr.address }</div>}
+          { curr.tels && renderContactsItem(curr.tels, labels.phone, 'tel') }
+          { curr.emails && renderContactsItem(curr.emails, labels.email, 'email') }
+          { curr.webs && renderContactsItem(curr.webs, labels.web, 'web') }
         </div>
       </li>
     )

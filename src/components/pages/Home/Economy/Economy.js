@@ -48,8 +48,6 @@ const Economy = React.forwardRef(({ data }, ref) => {
     setIsResultShown(true);
   }
 
-  const numeric = (value) => value.toLocaleString('en-US', {maximumFractionDigits:0});
-
   const renderScaleItems = () =>
     data.scaleItems.map((curr, index) =>
       <div key={index} className={cx(styles.scaleItem, {[styles.scaleItemWithResult]: isResultShown})}>
@@ -71,7 +69,7 @@ const Economy = React.forwardRef(({ data }, ref) => {
                : { transitionDelay: `${0.1 * index}s` }
              }
         >
-          { numeric(resultEconomyValue * curr.mod) }{" "}м<sup>3</sup>
+          { Math.trunc(resultEconomyValue * curr.mod) }{" "}м<sup>3</sup>
         </div>
         <div className={styles.scaleLabel}>{ curr.label }</div>
       </div>
