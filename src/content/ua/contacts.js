@@ -6,7 +6,7 @@ export default {
   },
   header: "Регіональні представництва",
   labels: {
-    address: 'Адрес',
+    address: 'Адреса',
     phone: 'Тел.',
     email: 'E-mail',
     web: 'Web'
