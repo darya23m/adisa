@@ -87,6 +87,20 @@ export default {
               webs: [
                 "www.grandenergy.com.ua"
               ]
+            },
+            // ---------- Термоинжиниринг ----------
+            { officeName: "ТОВ “Термоінжиніринг”",
+              address: "г.Киев, ул.Институтская, оф. 1/3",
+              tels: [
+                "+38(044)227-08-84",
+                "+38(073)227-08-84"
+              ],
+              emails: [
+                "info@termoeng.com.ua"
+              ],
+              webs: [
+                "www.termoeng.com.ua"
+              ]
             }
             // ---------- Add+ ----------
           ]
