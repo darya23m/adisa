@@ -1,8 +1,8 @@
 export default {
   meta: {
-    title: "ADISA",
+    title: "ADISA. Конденсационные котлы для крышных котельных.",
     description: "description",
-    keywords: "ADISA"
+    keywords: "ADISA, Конденсационные котлы, Крышные котельные, Газовые котлы, Высокоэфективные котлы"
   },
   // ========== Intro ==========
   intro: {
