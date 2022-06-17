@@ -1,11 +1,11 @@
 const locales = [
   {
-    uri: 'ru',
-    text: 'Рус'
-  },
-  {
     uri: 'ua',
     text: 'Укр'
+  },
+  {
+    uri: 'ru',
+    text: 'Рус'
   }
 ];
 
