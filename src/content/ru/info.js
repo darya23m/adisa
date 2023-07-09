@@ -27,6 +27,11 @@ export default {
         },
         {
           type: "link",
+          text: "Инструкция по сборке ADISA ADI MEGA.",
+          link: "/resources/ADI-MEGA-assembly.pdf"
+        },
+        {
+          type: "link",
           text: "Инструкция ADISA Condexa PRO.",
           link: "/resources/ADI-Condexa-PRO-Rus.pdf"
         },
