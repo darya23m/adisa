@@ -27,7 +27,7 @@ export default {
         },
         {
           type: "link",
-          text: "Інструкція зі збирання ADISA ADI MEGA.",
+          text: "Інструкція із збирання ADISA ADI MEGA.",
           link: "/resources/ADI-MEGA-assembly.pdf"
         }
         {
