@@ -279,6 +279,11 @@ export default [ // resizable
       },
       {
         type: "link",
+        text: "Инструкция по сборке ADISA ADI MEGA.",
+        link: "/resources/ADI-MEGA-assembly.pdf"
+      },
+      {
+        type: "link",
         text: "Сертификат соответствия.",
         link: "/resources/UA024C0555-20.pdf"
       },
