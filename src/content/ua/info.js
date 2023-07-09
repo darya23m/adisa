@@ -27,6 +27,11 @@ export default {
         },
         {
           type: "link",
+          text: "Інструкція зі збирання ADISA ADI MEGA.",
+          link: "/resources/ADI-MEGA-assembly.pdf"
+        }
+        {
+          type: "link",
           text: "Інструкція ADISA Condexa PRO.",
           link: "/resources/ADI-Condexa-PRO-Rus.pdf"
         },
@@ -39,7 +44,7 @@ export default {
     },
     // ========== Сертификаты и разрешения ==========
     {
-      caption: "Сертифікати і дозволи",
+      caption: "Сертифікати та дозволи",
       list: [
         {
           type: "link",
