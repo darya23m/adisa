@@ -74,6 +74,11 @@ export default {
       list: [
         {
           type: "link",
+          text: "Обучение эксплуатации котлов ADISA.",
+          link: "/resources/ADISA_education.pdf"
+        },
+        {
+          type: "link",
           text: "Полная инструкция на контроллер Siemens LMS.",
           link: "/resources/LMS-Rus.pdf"
         },
