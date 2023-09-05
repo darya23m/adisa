@@ -75,7 +75,7 @@ export default {
         {
           type: "link",
           text: "Навчання з експлуатації котлів ADISA.",
-          link: "/resources/ADISA_education.pdf"
+          link: "/resources/ADISA_education.pptx"
         },
         {
           type: "link",
