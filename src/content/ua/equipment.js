@@ -275,7 +275,7 @@ export default [ // resizable
       {
         type: "link",
         text: "Інструкція ADISA ADI MEGA.",
-        link: "/resources/ADI-MEGA-CD-Rus.pdf"
+        link: "/resources/ADI-MEGA-CD-UKR.pdf"
       },
       {
         type: "link",
