@@ -23,7 +23,7 @@ export default {
         {
           type: "link",
           text: "Інструкція ADISA ADI MEGA.",
-          link: "/resources/ADI-MEGA-CD-Rus.pdf"
+          link: "/resources/ADI-MEGA-CD-UKR.pdf"
         },
         {
           type: "link",
@@ -72,6 +72,11 @@ export default {
     {
       caption: "Сервісному інженеру",
       list: [
+        {
+          type: "link",
+          text: "Навчання з експлуатації котлів ADISA.",
+          link: "/resources/ADISA_education.pdf"
+        },
         {
           type: "link",
           text: "Повна інструкція на контролер Siemens LMS.",
